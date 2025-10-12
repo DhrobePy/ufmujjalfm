@@ -1,0 +1,87 @@
+[11-Oct-2025 19:20:30 UTC] PHP Warning:  Undefined variable $pdo in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login_handler.php on line 8
+[11-Oct-2025 19:20:30 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/User.php:11
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login_handler.php(10): User->login()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/User.php on line 11
+[11-Oct-2025 19:22:07 UTC] PHP Warning:  Undefined variable $pdo in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login_handler.php on line 8
+[11-Oct-2025 19:22:07 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/User.php:11
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login_handler.php(10): User->login()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/User.php on line 11
+[11-Oct-2025 19:23:16 UTC] PHP Warning:  Undefined variable $pdo in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login_handler.php on line 8
+[11-Oct-2025 19:23:16 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/User.php:11
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login_handler.php(10): User->login()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/User.php on line 11
+[11-Oct-2025 19:51:06 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function is_admin_logged_in() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login.php on line 5
+[11-Oct-2025 19:53:01 UTC] PHP Warning:  Undefined array key "email" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login_handler.php on line 8
+[11-Oct-2025 19:53:01 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function User::__construct(), 0 passed in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login_handler.php on line 11 and exactly 1 expected in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/User.php:5
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login_handler.php(11): User->__construct()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/User.php on line 5
+[11-Oct-2025 19:54:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Database::prepare() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/User.php:11
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login_handler.php(16): User->login()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/User.php on line 11
+[11-Oct-2025 19:55:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Database::query() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/User.php:17
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login_handler.php(16): User->login()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/User.php on line 17
+[11-Oct-2025 19:57:00 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "DB_PASSWORD" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php:16
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php(25): Database->__construct()
+#1 /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login_handler.php(11): Database::getInstance()
+#2 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php on line 16
+[11-Oct-2025 19:58:46 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "DB_PASSWORD" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php:16
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php(25): Database->__construct()
+#1 /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login_handler.php(11): Database::getInstance()
+#2 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php on line 16
+[11-Oct-2025 20:04:08 UTC] PHP Fatal error:  Uncaught Error: Class "Database" not found in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/init.php:27
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login_handler.php(4): require_once()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/init.php on line 27
+[11-Oct-2025 20:05:08 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "DB_PASSWORD" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php:16
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php(25): Database->__construct()
+#1 /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/init.php(27): Database::getInstance()
+#2 /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login_handler.php(4): require_once('/home/ujjalfmc/...')
+#3 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php on line 16
+[11-Oct-2025 20:11:59 UTC] PHP Warning:  require_once(core/init.php): Failed to open stream: No such file or directory in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login.php on line 11
+[11-Oct-2025 20:11:59 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'core/init.php' (include_path='.:/opt/alt/php84/usr/share/pear:/opt/alt/php84/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login.php on line 11
+[11-Oct-2025 20:12:57 UTC] PHP Warning:  require_once(core/init.php): Failed to open stream: No such file or directory in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login.php on line 11
+[11-Oct-2025 20:12:57 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'core/init.php' (include_path='.:/opt/alt/php84/usr/share/pear:/opt/alt/php84/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login.php on line 11
+[11-Oct-2025 20:12:59 UTC] PHP Warning:  require_once(core/init.php): Failed to open stream: No such file or directory in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login.php on line 11
+[11-Oct-2025 20:12:59 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'core/init.php' (include_path='.:/opt/alt/php84/usr/share/pear:/opt/alt/php84/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login.php on line 11
+[11-Oct-2025 20:13:10 UTC] PHP Warning:  require_once(core/init.php): Failed to open stream: No such file or directory in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login.php on line 11
+[11-Oct-2025 20:13:10 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'core/init.php' (include_path='.:/opt/alt/php84/usr/share/pear:/opt/alt/php84/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login.php on line 11
+[11-Oct-2025 20:13:12 UTC] PHP Warning:  require_once(core/init.php): Failed to open stream: No such file or directory in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login.php on line 11
+[11-Oct-2025 20:13:12 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'core/init.php' (include_path='.:/opt/alt/php84/usr/share/pear:/opt/alt/php84/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login.php on line 11

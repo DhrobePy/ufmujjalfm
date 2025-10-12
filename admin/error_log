@@ -1,0 +1,332 @@
+[03-Oct-2025 19:15:59 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ujjalfmc_hr.holidays' doesn't exist in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/holidays.php:35
+Stack trace:
+#0 /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/holidays.php(35): PDO->prepare()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/holidays.php on line 35
+[03-Oct-2025 19:21:09 UTC] PHP Deprecated:  Implicit conversion from float 10903.225806451614 to int loses precision in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/core/functions/helpers.php on line 44
+[03-Oct-2025 19:21:09 UTC] PHP Deprecated:  Implicit conversion from float 10903.225806451614 to int loses precision in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/core/functions/helpers.php on line 44
+[03-Oct-2025 19:27:55 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ujjalfmc_hr.holidays' doesn't exist in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/holidays.php:35
+Stack trace:
+#0 /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/holidays.php(35): PDO->prepare()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/holidays.php on line 35
+[03-Oct-2025 19:31:17 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'transaction_type' in 'SELECT' in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/accounting_complete.php:67
+Stack trace:
+#0 /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/accounting_complete.php(67): PDO->query()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/accounting_complete.php on line 67
+[03-Oct-2025 19:32:10 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'transaction_type' in 'SELECT' in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/accounting_complete.php:67
+Stack trace:
+#0 /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/accounting_complete.php(67): PDO->query()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/accounting_complete.php on line 67
+[05-Oct-2025 14:11:13 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1364 Field 'payroll_id' doesn't have a default value in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/loan_enhanced.php:44
+Stack trace:
+#0 /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/loan_enhanced.php(44): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/loan_enhanced.php on line 44
+[05-Oct-2025 14:13:38 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1364 Field 'payroll_id' doesn't have a default value in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/loan_enhanced.php:44
+Stack trace:
+#0 /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/loan_enhanced.php(44): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/loan_enhanced.php on line 44
+[05-Oct-2025 14:28:29 UTC] PHP Warning:  Undefined array key -17097 in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/core/functions/helpers.php on line 46
+[05-Oct-2025 14:28:29 UTC] PHP Deprecated:  ucwords(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/core/functions/helpers.php on line 59
+[06-Oct-2025 05:42:22 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1364 Field 'payroll_id' doesn't have a default value in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/loan_enhanced.php:44
+Stack trace:
+#0 /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/loan_enhanced.php(44): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/loan_enhanced.php on line 44
+[06-Oct-2025 05:43:07 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1364 Field 'payroll_id' doesn't have a default value in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/loan_enhanced.php:44
+Stack trace:
+#0 /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/loan_enhanced.php(44): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/loan_enhanced.php on line 44
+[06-Oct-2025 05:57:25 UTC] PHP Warning:  Undefined array key -15162 in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/core/functions/helpers.php on line 46
+[06-Oct-2025 05:57:25 UTC] PHP Deprecated:  ucwords(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/core/functions/helpers.php on line 59
+[06-Oct-2025 06:07:14 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`ujjalfmc_hr`.`loan_installments`, CONSTRAINT `loan_installments_ibfk_2` FOREIGN KEY (`payroll_id`) REFERENCES `payrolls` (`id`) ON DELETE CASCADE) in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/loan_enhanced.php:44
+Stack trace:
+#0 /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/loan_enhanced.php(44): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/loan_enhanced.php on line 44
+[10-Oct-2025 15:15:14 UTC] PHP Warning:  Undefined variable $end_date in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/prepare_payroll.php on line 22
+[10-Oct-2025 16:00:58 UTC] PHP Warning:  Undefined variable $end_date in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/prepare_payroll.php on line 22
+[10-Oct-2025 17:43:33 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`ujjalfmc_hr`.`loan_installments`, CONSTRAINT `loan_installments_ibfk_1` FOREIGN KEY (`loan_id`) REFERENCES `loans` (`id`) ON DELETE CASCADE) in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/core/classes/Loan.php:35
+Stack trace:
+#0 /home/ujjalfmc/public_html/binimoy.ujjalfm.com/core/classes/Loan.php(35): PDOStatement->execute()
+#1 /home/ujjalfmc/public_html/binimoy.ujjalfm.com/core/classes/Payroll.php(137): Loan->record_installment()
+#2 /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/ajax_update_payroll.php(30): Payroll->update_single_payroll_record()
+#3 {main}
+  thrown in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/core/classes/Loan.php on line 35
+[10-Oct-2025 19:02:54 UTC] PHP Warning:  Undefined array key "earned_basic" in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/payslip.php on line 216
+[10-Oct-2025 19:02:54 UTC] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/payslip.php on line 216
+[10-Oct-2025 19:02:54 UTC] PHP Warning:  Undefined array key "allowances" in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/payslip.php on line 217
+[10-Oct-2025 19:02:54 UTC] PHP Warning:  Trying to access array offset on null in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/payslip.php on line 217
+[10-Oct-2025 19:02:54 UTC] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/payslip.php on line 217
+[10-Oct-2025 19:02:54 UTC] PHP Warning:  Undefined array key "allowances" in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/payslip.php on line 218
+[10-Oct-2025 19:02:54 UTC] PHP Warning:  Trying to access array offset on null in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/payslip.php on line 218
+[10-Oct-2025 19:02:54 UTC] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/payslip.php on line 218
+[10-Oct-2025 19:02:54 UTC] PHP Warning:  Undefined array key "allowances" in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/payslip.php on line 219
+[10-Oct-2025 19:02:54 UTC] PHP Warning:  Trying to access array offset on null in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/payslip.php on line 219
+[10-Oct-2025 19:02:54 UTC] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/payslip.php on line 219
+[10-Oct-2025 19:02:54 UTC] PHP Warning:  Undefined array key "allowances" in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/payslip.php on line 220
+[10-Oct-2025 19:02:54 UTC] PHP Warning:  Trying to access array offset on null in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/payslip.php on line 220
+[10-Oct-2025 19:02:54 UTC] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/payslip.php on line 220
+[10-Oct-2025 19:31:41 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Employee::get_attendance_days() in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/payslip.php:60
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/payslip.php on line 60
+[10-Oct-2025 19:42:47 UTC] PHP Warning:  Undefined variable $end_date in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/prepare_payroll.php on line 22
+[10-Oct-2025 19:42:47 UTC] PHP Warning:  Undefined array key "success_count" in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/prepare_payroll.php on line 52
+[11-Oct-2025 05:44:52 UTC] PHP Warning:  Undefined variable $end_date in /home/ujjalfmc/public_html/binimoy.ujjalfm.com/admin/prepare_payroll.php on line 27
+[11-Oct-2025 19:02:11 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function asset() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php:12
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php(48): include()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php on line 12
+[11-Oct-2025 19:02:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function asset() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php:12
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(18): include()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php on line 12
+[11-Oct-2025 19:02:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function asset() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php:12
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(18): include()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php on line 12
+[11-Oct-2025 19:03:46 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function asset() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php:12
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(18): include()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php on line 12
+[11-Oct-2025 19:04:43 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function asset() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php:12
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(18): include()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php on line 12
+[11-Oct-2025 19:04:46 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function asset() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php:12
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(18): include()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php on line 12
+[11-Oct-2025 19:06:08 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function asset() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php:12
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(18): include()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php on line 12
+[11-Oct-2025 19:08:50 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "BASE_URL" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php:12
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(18): include()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php on line 12
+[11-Oct-2025 19:11:16 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "BASE_URL" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php:18
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(18): include()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php on line 18
+[11-Oct-2025 19:13:15 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "BASE_URL" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php:18
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(18): include()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php on line 18
+[11-Oct-2025 19:14:31 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "BASE_URL" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php:18
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(18): include()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php on line 18
+[11-Oct-2025 19:16:10 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "BASE_URL" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/functions/helpers.php:107
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/footer.php(34): asset()
+#1 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(55): include('/home/ujjalfmc/...')
+#2 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/functions/helpers.php on line 107
+[11-Oct-2025 20:19:11 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "BASE_URL" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php:18
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(13): include_once()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php on line 18
+[11-Oct-2025 20:19:14 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "BASE_URL" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php:18
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(13): include_once()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php on line 18
+[11-Oct-2025 20:20:00 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "BASE_URL" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php:18
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(13): include_once()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php on line 18
+[11-Oct-2025 20:20:03 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "BASE_URL" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php:18
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(13): include_once()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php on line 18
+[11-Oct-2025 20:20:32 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "BASE_URL" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php:18
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(13): include_once()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php on line 18
+[11-Oct-2025 20:21:27 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "BASE_URL" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php:18
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(13): include_once()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php on line 18
+[11-Oct-2025 20:23:00 UTC] PHP Warning:  Undefined variable $totalEmployees in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php on line 9
+[11-Oct-2025 20:23:00 UTC] PHP Warning:  Undefined variable $todaysAttendance in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php on line 14
+[11-Oct-2025 20:23:00 UTC] PHP Warning:  Undefined variable $pendingLeaves in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php on line 19
+[11-Oct-2025 20:23:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function isLoggedIn() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/footer.php:1
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(24): include_once()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/footer.php on line 1
+[11-Oct-2025 20:23:31 UTC] PHP Warning:  Undefined variable $totalEmployees in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php on line 9
+[11-Oct-2025 20:23:31 UTC] PHP Warning:  Undefined variable $todaysAttendance in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php on line 14
+[11-Oct-2025 20:23:31 UTC] PHP Warning:  Undefined variable $pendingLeaves in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php on line 19
+[11-Oct-2025 20:23:31 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function isLoggedIn() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/footer.php:1
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(24): include_once()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/footer.php on line 1
+[11-Oct-2025 20:34:23 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "BASE_URL" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php:18
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(18): include_once()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php on line 18
+[12-Oct-2025 02:29:04 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "BASE_URL" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php:18
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(18): include_once()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php on line 18
+[12-Oct-2025 07:15:24 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "BASE_URL" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php:18
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(18): include_once()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php on line 18
+[12-Oct-2025 18:02:04 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "BASE_URL" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php:18
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(18): include_once()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php on line 18
+[12-Oct-2025 18:03:26 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "BASE_URL" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php:18
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(18): include_once()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php on line 18
+[12-Oct-2025 18:03:49 UTC] PHP Warning:  Undefined variable $totalEmployees in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php on line 29
+[12-Oct-2025 18:03:49 UTC] PHP Warning:  Undefined variable $todaysAttendance in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php on line 33
+[12-Oct-2025 18:03:49 UTC] PHP Warning:  Undefined variable $pendingLeaves in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php on line 37
+[12-Oct-2025 18:03:49 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "APP_VERSION" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/footer.php:18
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(42): include_once()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/footer.php on line 18
+[12-Oct-2025 18:04:33 UTC] PHP Warning:  Undefined variable $totalEmployees in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php on line 35
+[12-Oct-2025 18:04:33 UTC] PHP Warning:  Undefined variable $todaysAttendance in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php on line 39
+[12-Oct-2025 18:04:33 UTC] PHP Warning:  Undefined variable $pendingLeaves in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php on line 43
+[12-Oct-2025 18:04:33 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "APP_VERSION" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/footer.php:18
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(48): include_once()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/footer.php on line 18
+[12-Oct-2025 18:05:23 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "BASE_URL" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php:18
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(18): include_once()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php on line 18
+[12-Oct-2025 18:05:38 UTC] PHP Warning:  Undefined variable $totalEmployees in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php on line 51
+[12-Oct-2025 18:05:38 UTC] PHP Warning:  Undefined variable $todaysAttendance in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php on line 55
+[12-Oct-2025 18:05:38 UTC] PHP Warning:  Undefined variable $pendingLeaves in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php on line 59
+[12-Oct-2025 18:05:38 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "APP_VERSION" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/footer.php:18
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(64): include_once()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/footer.php on line 18
+[12-Oct-2025 18:10:10 UTC] PHP Fatal error:  Cannot redeclare function is_admin_logged_in() (previously declared in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/functions/helpers.php:5) in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/functions/helpers.php on line 80
+[12-Oct-2025 18:10:29 UTC] PHP Fatal error:  Cannot redeclare function display_message() (previously declared in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/functions/helpers.php:28) in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/functions/helpers.php on line 84
+[12-Oct-2025 18:10:48 UTC] PHP Parse error:  Unmatched '}' in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/functions/helpers.php on line 46
+[12-Oct-2025 18:11:10 UTC] PHP Fatal error:  Cannot redeclare function isLoggedIn() (previously declared in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/functions/helpers.php:6) in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/functions/helpers.php on line 136
+[12-Oct-2025 18:11:35 UTC] PHP Fatal error:  Cannot redeclare function getCurrentUser() (previously declared in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/functions/helpers.php:8) in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/functions/helpers.php on line 138
+[12-Oct-2025 18:11:53 UTC] PHP Fatal error:  Cannot redeclare function canView() (previously declared in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/functions/helpers.php:18) in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/functions/helpers.php on line 149
+[12-Oct-2025 18:12:10 UTC] PHP Fatal error:  Cannot redeclare function canCreate() (previously declared in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/functions/helpers.php:20) in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/functions/helpers.php on line 151
+[12-Oct-2025 18:12:23 UTC] PHP Fatal error:  Cannot redeclare function asset() (previously declared in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/functions/helpers.php:10) in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/functions/helpers.php on line 152
+[12-Oct-2025 18:12:36 UTC] PHP Fatal error:  Cannot redeclare function url() (previously declared in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/functions/helpers.php:6) in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/functions/helpers.php on line 153
+[12-Oct-2025 18:12:51 UTC] PHP Warning:  Undefined variable $totalEmployees in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php on line 51
+[12-Oct-2025 18:12:51 UTC] PHP Warning:  Undefined variable $todaysAttendance in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php on line 55
+[12-Oct-2025 18:12:51 UTC] PHP Warning:  Undefined variable $pendingLeaves in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php on line 59
+[12-Oct-2025 18:12:51 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "APP_VERSION" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/footer.php:18
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(64): include_once()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/footer.php on line 18
+[12-Oct-2025 18:13:37 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "BASE_URL" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/functions/helpers.php:144
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php(12): asset()
+#1 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(18): include_once('/home/ujjalfmc/...')
+#2 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/functions/helpers.php on line 144
+[12-Oct-2025 18:16:53 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "BASE_URL" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/functions/helpers.php:144
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php(12): asset()
+#1 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(19): include_once('/home/ujjalfmc/...')
+#2 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/functions/helpers.php on line 144
+[12-Oct-2025 18:17:53 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "BASE_URL" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/functions/helpers.php:144
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php(12): asset()
+#1 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(19): include_once('/home/ujjalfmc/...')
+#2 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/functions/helpers.php on line 144
+[12-Oct-2025 18:18:16 UTC] PHP Warning:  Undefined variable $totalEmployees in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php on line 49
+[12-Oct-2025 18:18:16 UTC] PHP Warning:  Undefined variable $todaysAttendance in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php on line 53
+[12-Oct-2025 18:18:16 UTC] PHP Warning:  Undefined variable $pendingLeaves in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php on line 57
+[12-Oct-2025 18:18:16 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "APP_VERSION" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/footer.php:18
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(62): include_once()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/footer.php on line 18
+[12-Oct-2025 18:18:42 UTC] PHP Warning:  Undefined variable $todaysAttendance in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php on line 53
+[12-Oct-2025 18:18:42 UTC] PHP Warning:  Undefined variable $pendingLeaves in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php on line 57
+[12-Oct-2025 18:18:42 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "APP_VERSION" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/footer.php:18
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(62): include_once()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/footer.php on line 18
+[12-Oct-2025 18:19:07 UTC] PHP Warning:  Undefined variable $pendingLeaves in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php on line 57
+[12-Oct-2025 18:19:07 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "APP_VERSION" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/footer.php:18
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(62): include_once()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/footer.php on line 18
+[12-Oct-2025 18:19:22 UTC] PHP Warning:  Undefined variable $pendingLeaves in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php on line 57
+[12-Oct-2025 18:19:22 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "APP_VERSION" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/footer.php:18
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(62): include_once()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/footer.php on line 18
+[12-Oct-2025 18:19:35 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "APP_VERSION" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/footer.php:18
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(62): include_once()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/footer.php on line 18
+[13-Oct-2025 00:23:32 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Undefined constant "BASE_URL" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/functions/helpers.php:144
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/footer.php(34): asset()
+#1 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(62): include_once('/home/ujjalfmc/...')
+#2 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/functions/helpers.php on line 144
+[13-Oct-2025 00:24:28 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Undefined constant "BASE_URL" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/functions/helpers.php:144
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/footer.php(18): asset()
+#1 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(62): include_once('/home/ujjalfmc/...')
+#2 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/functions/helpers.php on line 144
+[13-Oct-2025 00:25:20 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Undefined constant "BASE_URL" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/functions/helpers.php:144
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php(12): asset()
+#1 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(19): include_once('/home/ujjalfmc/...')
+#2 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/functions/helpers.php on line 144
+[13-Oct-2025 00:28:54 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_logged_in() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 4
+[13-Oct-2025 00:52:02 Asia/Dhaka] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php on line 103

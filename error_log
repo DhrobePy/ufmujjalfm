@@ -1,0 +1,79 @@
+[11-Oct-2025 19:37:38 UTC] PHP Warning:  require_once(../core/init.php): Failed to open stream: No such file or directory in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php on line 4
+[11-Oct-2025 19:37:38 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../core/init.php' (include_path='.:/opt/alt/php84/usr/share/pear:/opt/alt/php84/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php on line 4
+[11-Oct-2025 19:37:38 UTC] PHP Warning:  require_once(../core/init.php): Failed to open stream: No such file or directory in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php on line 4
+[11-Oct-2025 19:37:38 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../core/init.php' (include_path='.:/opt/alt/php84/usr/share/pear:/opt/alt/php84/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php on line 4
+[11-Oct-2025 19:37:54 UTC] PHP Warning:  require_once(../core/init.php): Failed to open stream: No such file or directory in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php on line 4
+[11-Oct-2025 19:37:54 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../core/init.php' (include_path='.:/opt/alt/php84/usr/share/pear:/opt/alt/php84/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php on line 4
+[11-Oct-2025 19:37:54 UTC] PHP Warning:  require_once(../core/init.php): Failed to open stream: No such file or directory in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php on line 4
+[11-Oct-2025 19:37:54 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../core/init.php' (include_path='.:/opt/alt/php84/usr/share/pear:/opt/alt/php84/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php on line 4
+[11-Oct-2025 19:41:27 UTC] PHP Warning:  require_once(../core/init.php): Failed to open stream: No such file or directory in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php on line 4
+[11-Oct-2025 19:41:27 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../core/init.php' (include_path='.:/opt/alt/php84/usr/share/pear:/opt/alt/php84/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php on line 4
+[11-Oct-2025 19:41:27 UTC] PHP Warning:  require_once(../core/init.php): Failed to open stream: No such file or directory in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php on line 4
+[11-Oct-2025 19:41:27 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../core/init.php' (include_path='.:/opt/alt/php84/usr/share/pear:/opt/alt/php84/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php on line 4
+[11-Oct-2025 19:41:31 UTC] PHP Warning:  require_once(../core/init.php): Failed to open stream: No such file or directory in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php on line 4
+[11-Oct-2025 19:41:31 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../core/init.php' (include_path='.:/opt/alt/php84/usr/share/pear:/opt/alt/php84/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php on line 4
+[11-Oct-2025 19:41:31 UTC] PHP Warning:  require_once(../core/init.php): Failed to open stream: No such file or directory in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php on line 4
+[11-Oct-2025 19:41:31 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../core/init.php' (include_path='.:/opt/alt/php84/usr/share/pear:/opt/alt/php84/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php on line 4
+[11-Oct-2025 19:41:58 UTC] PHP Warning:  require_once(../core/init.php): Failed to open stream: No such file or directory in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php on line 4
+[11-Oct-2025 19:41:58 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../core/init.php' (include_path='.:/opt/alt/php84/usr/share/pear:/opt/alt/php84/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php on line 4
+[11-Oct-2025 19:41:58 UTC] PHP Warning:  require_once(../core/init.php): Failed to open stream: No such file or directory in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php on line 4
+[11-Oct-2025 19:41:58 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../core/init.php' (include_path='.:/opt/alt/php84/usr/share/pear:/opt/alt/php84/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php on line 4
+[11-Oct-2025 19:42:22 UTC] PHP Warning:  require_once(../core/init.php): Failed to open stream: No such file or directory in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php on line 4
+[11-Oct-2025 19:42:22 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../core/init.php' (include_path='.:/opt/alt/php84/usr/share/pear:/opt/alt/php84/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php on line 4
+[11-Oct-2025 19:42:22 UTC] PHP Warning:  require_once(../core/init.php): Failed to open stream: No such file or directory in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php on line 4
+[11-Oct-2025 19:42:22 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../core/init.php' (include_path='.:/opt/alt/php84/usr/share/pear:/opt/alt/php84/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php on line 4
+[11-Oct-2025 19:43:17 UTC] PHP Warning:  require_once(../core/init.php): Failed to open stream: No such file or directory in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php on line 4
+[11-Oct-2025 19:43:17 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../core/init.php' (include_path='.:/opt/alt/php84/usr/share/pear:/opt/alt/php84/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php on line 4
+[11-Oct-2025 19:44:26 UTC] PHP Warning:  require_once(../core/init.php): Failed to open stream: No such file or directory in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php on line 4
+[11-Oct-2025 19:44:26 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../core/init.php' (include_path='.:/opt/alt/php84/usr/share/pear:/opt/alt/php84/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php on line 4
+[11-Oct-2025 19:46:22 UTC] PHP Warning:  require_once(../core/init.php): Failed to open stream: No such file or directory in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php on line 4
+[11-Oct-2025 19:46:22 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../core/init.php' (include_path='.:/opt/alt/php84/usr/share/pear:/opt/alt/php84/usr/share/php:/usr/share/pear:/usr/share/php') in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php on line 4
+[11-Oct-2025 19:49:43 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function is_admin_logged_in() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/index.php on line 7
