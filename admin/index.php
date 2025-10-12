@@ -92,17 +92,122 @@ $topEarners = $topEarnersResult ? $topEarnersResult->results() : [];
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl shadow-lg p-6 text-white transform hover:scale-105 transition-transform duration-300"><div><p class="font-semibold">Total Employees</p><p class="text-4xl font-bold mt-2"><?php echo $totalEmployees; ?></p></div></div>
-        <div class="bg-gradient-to-br from-green-500 to-teal-600 rounded-xl shadow-lg p-6 text-white transform hover:scale-105 transition-transform duration-300"><div><p class="font-semibold">Present Today</p><p class="text-4xl font-bold mt-2"><?php echo $presentCount; ?></p></div></div>
-        <div class="bg-gradient-to-br from-amber-500 to-orange-600 rounded-xl shadow-lg p-6 text-white transform hover:scale-105 transition-transform duration-300"><div><p class="font-semibold">Pending Leave</p><p class="text-4xl font-bold mt-2"><?php echo $onLeaveCount; ?></p></div></div>
+        <!-- Total Employees Card -->
+        <div class="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl shadow-lg p-6 text-white transform hover:scale-105 transition-transform duration-300">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="font-semibold text-blue-100">Total Employees</p>
+                    <p class="text-4xl font-bold mt-2"><?php echo $totalEmployees; ?></p>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-full p-4">
+                    <i class="fas fa-users text-4xl"></i>
+                </div>
+            </div>
+        </div>
         
-        <div class="bg-gradient-to-br from-rose-500 to-pink-600 rounded-xl shadow-lg p-6 text-white transform hover:scale-105 transition-transform duration-300"><div><p class="font-semibold">Today's Salary Expense</p><p class="text-3xl font-bold mt-2">৳<?php echo number_format($todaysSalaryExpense, 2); ?></p></div></div>
-        <div class="bg-gradient-to-br from-cyan-500 to-sky-600 rounded-xl shadow-lg p-6 text-white transform hover:scale-105 transition-transform duration-300"><div><p class="font-semibold">Cumulative Expense (MTD)</p><p class="text-3xl font-bold mt-2">৳<?php echo number_format($cumulativeSalaryExpense, 2); ?></p></div></div>
-        <div class="bg-gradient-to-br from-purple-500 to-violet-600 rounded-xl shadow-lg p-6 text-white transform hover:scale-105 transition-transform duration-300"><div><p class="font-semibold">Est. Monthly Salary</p><p class="text-3xl font-bold mt-2">৳<?php echo number_format($estimatedMonthlySalary, 2); ?></p></div></div>
+        <!-- Present Today Card -->
+        <div class="bg-gradient-to-br from-green-500 to-teal-600 rounded-xl shadow-lg p-6 text-white transform hover:scale-105 transition-transform duration-300">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="font-semibold text-green-100">Present Today</p>
+                    <p class="text-4xl font-bold mt-2"><?php echo $presentCount; ?></p>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-full p-4">
+                    <i class="fas fa-user-check text-4xl"></i>
+                </div>
+            </div>
+        </div>
         
-        <div class="bg-gradient-to-br from-red-500 to-red-700 rounded-xl shadow-lg p-6 text-white transform hover:scale-105 transition-transform duration-300"><div><p class="font-semibold">Salary Advance (This Month)</p><p class="text-3xl font-bold mt-2">৳<?php echo number_format($monthlyAdvances, 2); ?></p></div></div>
-        <div class="bg-gradient-to-br from-fuchsia-500 to-purple-600 rounded-xl shadow-lg p-6 text-white transform hover:scale-105 transition-transform duration-300"><div><p class="font-semibold">Loans Taken (This Month)</p><p class="text-3xl font-bold mt-2">৳<?php echo number_format($monthlyLoans, 2); ?></p></div></div>
-        <div class="bg-gradient-to-br from-lime-500 to-green-600 rounded-xl shadow-lg p-6 text-white transform hover:scale-105 transition-transform duration-300"><div><p class="font-semibold">Remaining Salary Expense</p><p class="text-3xl font-bold mt-2">৳<?php echo number_format($remainingSalary, 2); ?></p></div></div>
+        <!-- Pending Leave Card -->
+        <div class="bg-gradient-to-br from-amber-500 to-orange-600 rounded-xl shadow-lg p-6 text-white transform hover:scale-105 transition-transform duration-300">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="font-semibold text-amber-100">Pending Leave</p>
+                    <p class="text-4xl font-bold mt-2"><?php echo $onLeaveCount; ?></p>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-full p-4">
+                    <i class="fas fa-calendar-times text-4xl"></i>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Today's Salary Expense Card -->
+        <div class="bg-gradient-to-br from-rose-500 to-pink-600 rounded-xl shadow-lg p-6 text-white transform hover:scale-105 transition-transform duration-300">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="font-semibold text-rose-100">Today's Salary Expense</p>
+                    <p class="text-3xl font-bold mt-2">৳<?php echo number_format($todaysSalaryExpense, 2); ?></p>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-full p-4">
+                    <i class="fas fa-calendar-day text-4xl"></i>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Cumulative Expense Card -->
+        <div class="bg-gradient-to-br from-cyan-500 to-sky-600 rounded-xl shadow-lg p-6 text-white transform hover:scale-105 transition-transform duration-300">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="font-semibold text-cyan-100">Cumulative Expense (MTD)</p>
+                    <p class="text-3xl font-bold mt-2">৳<?php echo number_format($cumulativeSalaryExpense, 2); ?></p>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-full p-4">
+                    <i class="fas fa-chart-line text-4xl"></i>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Est. Monthly Salary Card -->
+        <div class="bg-gradient-to-br from-purple-500 to-violet-600 rounded-xl shadow-lg p-6 text-white transform hover:scale-105 transition-transform duration-300">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="font-semibold text-purple-100">Est. Monthly Salary</p>
+                    <p class="text-3xl font-bold mt-2">৳<?php echo number_format($estimatedMonthlySalary, 2); ?></p>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-full p-4">
+                    <i class="fas fa-money-bill-wave text-4xl"></i>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Salary Advance Card -->
+        <div class="bg-gradient-to-br from-red-500 to-red-700 rounded-xl shadow-lg p-6 text-white transform hover:scale-105 transition-transform duration-300">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="font-semibold text-red-100">Salary Advance (This Month)</p>
+                    <p class="text-3xl font-bold mt-2">৳<?php echo number_format($monthlyAdvances, 2); ?></p>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-full p-4">
+                    <i class="fas fa-hand-holding-usd text-4xl"></i>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Loans Taken Card -->
+        <div class="bg-gradient-to-br from-fuchsia-500 to-purple-600 rounded-xl shadow-lg p-6 text-white transform hover:scale-105 transition-transform duration-300">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="font-semibold text-fuchsia-100">Loans Taken (This Month)</p>
+                    <p class="text-3xl font-bold mt-2">৳<?php echo number_format($monthlyLoans, 2); ?></p>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-full p-4">
+                    <i class="fas fa-file-invoice-dollar text-4xl"></i>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Remaining Salary Expense Card -->
+        <div class="bg-gradient-to-br from-lime-500 to-green-600 rounded-xl shadow-lg p-6 text-white transform hover:scale-105 transition-transform duration-300">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="font-semibold text-lime-100">Remaining Salary Expense</p>
+                    <p class="text-3xl font-bold mt-2">৳<?php echo number_format($remainingSalary, 2); ?></p>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-full p-4">
+                    <i class="fas fa-wallet text-4xl"></i>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">

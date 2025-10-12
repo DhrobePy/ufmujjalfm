@@ -330,3 +330,7 @@ Stack trace:
 #0 {main}
   thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 4
 [13-Oct-2025 00:52:02 Asia/Dhaka] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php on line 103
+[13-Oct-2025 01:58:13 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_logged_in() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 4
