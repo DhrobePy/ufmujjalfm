@@ -334,3 +334,598 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 4
+[13-Oct-2025 02:23:55 Asia/Dhaka] PHP Warning:  Undefined property: stdClass::$date_of_birth in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employee_profile.php on line 258
+[13-Oct-2025 02:24:40 Asia/Dhaka] PHP Warning:  Undefined property: stdClass::$date_of_birth in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employee_profile.php on line 258
+[13-Oct-2025 02:25:29 Asia/Dhaka] PHP Warning:  Undefined property: stdClass::$date_of_birth in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employee_profile.php on line 258
+[13-Oct-2025 02:28:59 Asia/Dhaka] PHP Warning:  Undefined property: stdClass::$date_of_birth in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employee_profile.php on line 258
+[13-Oct-2025 02:39:56 Asia/Dhaka] PHP Warning:  Undefined array key 0 in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php on line 134
+[13-Oct-2025 02:40:15 Asia/Dhaka] PHP Warning:  Undefined property: stdClass::$date_of_birth in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employee_profile.php on line 258
+[13-Oct-2025 02:55:27 Asia/Dhaka] PHP Warning:  Undefined property: stdClass::$date_of_birth in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employee_profile.php on line 258
+[13-Oct-2025 02:55:29 Asia/Dhaka] PHP Warning:  Undefined array key 0 in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php on line 134
+[13-Oct-2025 02:57:01 Asia/Dhaka] PHP Warning:  Undefined array key 0 in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php on line 134
+[13-Oct-2025 02:57:02 Asia/Dhaka] PHP Warning:  Undefined property: stdClass::$date_of_birth in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employee_profile.php on line 258
+[13-Oct-2025 02:57:15 Asia/Dhaka] PHP Warning:  Undefined array key 0 in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php on line 134
+[13-Oct-2025 02:57:36 Asia/Dhaka] PHP Warning:  Undefined array key 0 in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php on line 134
+[13-Oct-2025 02:57:36 Asia/Dhaka] PHP Warning:  Undefined property: stdClass::$date_of_birth in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employee_profile.php on line 258
+[13-Oct-2025 02:57:42 Asia/Dhaka] PHP Warning:  Undefined property: stdClass::$date_of_birth in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employee_profile.php on line 258
+[13-Oct-2025 02:57:47 Asia/Dhaka] PHP Warning:  Undefined array key 0 in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php on line 134
+[13-Oct-2025 02:57:50 Asia/Dhaka] PHP Warning:  Undefined property: stdClass::$date_of_birth in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employee_profile.php on line 258
+[13-Oct-2025 02:58:07 Asia/Dhaka] PHP Warning:  Undefined array key 0 in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php on line 134
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:01:38 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:10 Asia/Dhaka] PHP Warning:  Undefined property: stdClass::$date_of_birth in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employee_profile.php on line 258
+[13-Oct-2025 03:02:17 Asia/Dhaka] PHP Warning:  Undefined property: stdClass::$date_of_birth in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employee_profile.php on line 258
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Undefined variable $employee in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:02:19 Asia/Dhaka] PHP Warning:  Attempt to read property "id" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employees.php on line 331
+[13-Oct-2025 03:04:24 Asia/Dhaka] PHP Warning:  Undefined property: stdClass::$date_of_birth in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/employee_profile.php on line 258
+[13-Oct-2025 03:28:14 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_logged_in() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/attendance.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/attendance.php on line 4
+[13-Oct-2025 03:30:26 Asia/Dhaka] PHP Fatal error:  Uncaught TypeError: Unsupported operand types: float - string in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php:58
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php on line 58
+[13-Oct-2025 03:49:12 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_logged_in() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/attendance.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/attendance.php on line 4
+[13-Oct-2025 10:16:52 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_logged_in() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/attendance.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/attendance.php on line 4
+[13-Oct-2025 10:25:51 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_logged_in() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/attendance.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/attendance.php on line 4
+[13-Oct-2025 10:26:09 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_logged_in() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/payroll.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/payroll.php on line 4
+[13-Oct-2025 10:27:07 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_logged_in() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/attendance.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/attendance.php on line 4
+[13-Oct-2025 10:27:16 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_logged_in() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/leave.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/leave.php on line 4
+[13-Oct-2025 10:27:30 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_logged_in() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/payroll.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/payroll.php on line 4
+[13-Oct-2025 10:27:35 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_logged_in() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/attendance.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/attendance.php on line 4
+[13-Oct-2025 10:33:05 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_logged_in() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/payroll.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/payroll.php on line 4
+[13-Oct-2025 10:33:27 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_logged_in() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/attendance.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/attendance.php on line 4
+[13-Oct-2025 11:19:49 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_logged_in() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/attendance.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/attendance.php on line 4
+[13-Oct-2025 11:19:57 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_logged_in() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/payroll.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/payroll.php on line 4
+[13-Oct-2025 13:22:27 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_logged_in() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/attendance.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/attendance.php on line 4
+[13-Oct-2025 17:58:23 Asia/Dhaka] PHP Warning:  Undefined array key "position_id" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 26
+[13-Oct-2025 17:58:23 Asia/Dhaka] PHP Warning:  Undefined array key "hire_date" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 27
+[13-Oct-2025 17:58:23 Asia/Dhaka] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 27
+[13-Oct-2025 17:59:06 Asia/Dhaka] PHP Warning:  Undefined array key "position_id" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 26
+[13-Oct-2025 17:59:06 Asia/Dhaka] PHP Warning:  Undefined array key "hire_date" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 27
+[13-Oct-2025 17:59:06 Asia/Dhaka] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 27
+[13-Oct-2025 18:00:12 Asia/Dhaka] PHP Warning:  Undefined array key "position_id" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 26
+[13-Oct-2025 18:00:12 Asia/Dhaka] PHP Warning:  Undefined array key "hire_date" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 27
+[13-Oct-2025 18:00:12 Asia/Dhaka] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 27
+[13-Oct-2025 18:12:00 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined method Database::lastInsertId() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php:73
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 73
+[13-Oct-2025 12:41:56 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/init.php on line 6
+[13-Oct-2025 18:41:56 Asia/Dhaka] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/generate_payslip.php:1) in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/generate_payslip.php on line 224
+[13-Oct-2025 19:25:15 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_logged_in() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/payroll.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/payroll.php on line 4
+[13-Oct-2025 19:25:21 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_logged_in() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/leave.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/leave.php on line 4

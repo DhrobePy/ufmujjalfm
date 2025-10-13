@@ -55,7 +55,7 @@ $loansResult = $db->query($loansSql, [$startOfMonth, $endOfMonth]);
 $monthlyLoans = $loansResult->first()->total_loans ?? 0;
 
 // (NEW) Remaining Salary Expense
-$remainingSalary = $estimatedMonthlySalary - $cumulativeSalaryExpense;
+$remainingSalary = $estimatedMonthlySalary - $cumulativeSalaryExpense - $monthlyAdvances;
 
 // --- Data for Charts & Lists ---
 $absentCount = $totalEmployees > 0 ? ($totalEmployees - $presentCount - $onLeaveCount) : 0;
@@ -83,6 +83,54 @@ $monthData = array_values($monthData);
 $topEarnersSql = "SELECT e.first_name, e.last_name, e.base_salary, p.name AS position_name FROM employees e LEFT JOIN positions p ON e.position_id = p.id WHERE e.status = 'active' ORDER BY e.base_salary DESC LIMIT 10";
 $topEarnersResult = $db->query($topEarnersSql);
 $topEarners = $topEarnersResult ? $topEarnersResult->results() : [];
+
+// (NEW) Data for Outstanding Debts List
+$outstandingDebtsSql = "
+    SELECT e.id, e.first_name, e.last_name, 'Salary Advance' as type, sa.amount, sa.advance_date as date
+    FROM salary_advances sa
+    JOIN employees e ON sa.employee_id = e.id
+    WHERE sa.status = 'approved'
+    UNION ALL
+    SELECT e.id, e.first_name, e.last_name, 'Loan' as type, l.amount - IFNULL((SELECT SUM(amount) FROM loan_installments WHERE loan_id = l.id), 0) as amount, l.loan_date as date
+    FROM loans l
+    JOIN employees e ON l.employee_id = e.id
+    WHERE l.status = 'active'
+    ORDER BY date DESC
+    LIMIT 10
+";
+$outstandingDebtsResult = $db->query($outstandingDebtsSql);
+$outstandingDebts = $outstandingDebtsResult ? $outstandingDebtsResult->results() : [];
+
+// (NEW) Data for Salary Advance List
+$recentAdvancesSql = "
+    SELECT e.first_name, e.last_name, sa.amount, sa.advance_date
+    FROM salary_advances sa
+    JOIN employees e ON sa.employee_id = e.id
+    ORDER BY sa.advance_date DESC
+    LIMIT 10
+";
+$recentAdvancesResult = $db->query($recentAdvancesSql);
+$recentAdvances = $recentAdvancesResult ? $recentAdvancesResult->results() : [];
+
+
+// (NEW) Data for Most Frequent Absence List
+$frequentAbsenceSql = "
+    SELECT 
+        e.first_name, 
+        e.last_name, 
+        p.name as position_name,
+        COUNT(a.id) as absent_days
+    FROM attendance a
+    JOIN employees e ON a.employee_id = e.id
+    LEFT JOIN positions p ON e.position_id = p.id
+    WHERE a.status = 'absent' AND MONTH(a.clock_in) = MONTH(CURRENT_DATE()) AND YEAR(a.clock_in) = YEAR(CURRENT_DATE())
+    GROUP BY e.id, e.first_name, e.last_name, p.name
+    ORDER BY absent_days DESC
+    LIMIT 5
+";
+$frequentAbsenceResult = $db->query($frequentAbsenceSql);
+$frequentAbsences = $frequentAbsenceResult ? $frequentAbsenceResult->results() : [];
+
 ?>
 
 <div class="space-y-8">
@@ -217,6 +265,79 @@ $topEarners = $topEarnersResult ? $topEarnersResult->results() : [];
     
     <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6"><h2 class="text-lg font-semibold text-gray-800 mb-4">Monthly Salary Expense by Department</h2><div style="height: 400px;"><canvas id="departmentSalaryPieChart"></canvas></div></div>
     <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6"><h2 class="text-lg font-semibold text-gray-800 mb-4">Paid Salary Expense for <?php echo date('Y'); ?></h2><div style="height: 400px;"><canvas id="monthlyExpenseBarChart"></canvas></div></div>
+    
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 animate-on-scroll">
+    <h2 class="text-lg font-semibold text-gray-800 mb-4">Most Frequent Absences (This Month)</h2>
+    <div class="space-y-4">
+        <?php if($frequentAbsences): ?>
+            <?php foreach($frequentAbsences as $absence): ?>
+            <div class="flex items-center bg-gray-50 rounded-lg p-3">
+                <div class="flex-shrink-0 h-10 w-10 bg-red-100 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-calendar-times text-red-600"></i>
+                </div>
+                <div class="ml-4 flex-grow">
+                    <p class="font-semibold text-gray-900"><?php echo htmlspecialchars($absence->first_name . ' ' . $absence->last_name); ?></p>
+                    <p class="text-sm text-gray-500"><?php echo htmlspecialchars($absence->position_name ?? 'N/A'); ?></p>
+                </div>
+                <div class="text-right">
+                    <p class="text-lg font-bold text-red-600"><?php echo $absence->absent_days; ?> days</p>
+                </div>
+            </div>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <p class="text-center text-gray-500 py-8">No absence records found for this month.</p>
+        <?php endif; ?>
+    </div>
+</div>
+    
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 animate-on-scroll">
+    <h2 class="text-lg font-semibold text-gray-800 mb-4">Recent Outstanding Debts</h2>
+    <div class="space-y-4">
+        <?php if($outstandingDebts): ?>
+            <?php foreach($outstandingDebts as $debt): ?>
+            <div class="flex items-center bg-gray-50 rounded-lg p-3">
+                <div class="flex-shrink-0 h-10 w-10 <?php echo $debt->type === 'Loan' ? 'bg-red-100' : 'bg-orange-100'; ?> rounded-lg flex items-center justify-center">
+                    <i class="fas <?php echo $debt->type === 'Loan' ? 'fa-landmark text-red-600' : 'fa-hand-holding-usd text-orange-600'; ?>"></i>
+                </div>
+                <div class="ml-4 flex-grow">
+                    <p class="font-semibold text-gray-900"><?php echo htmlspecialchars($debt->first_name . ' ' . $debt->last_name); ?></p>
+                    <p class="text-sm text-gray-500"><?php echo htmlspecialchars($debt->type); ?></p>
+                </div>
+                <div class="text-right">
+                    <p class="text-md font-bold text-red-600">৳<?php echo number_format($debt->amount, 2); ?></p>
+                    <p class="text-xs text-gray-400"><?php echo date('M d, Y', strtotime($debt->date)); ?></p>
+                </div>
+            </div>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <p class="text-center text-gray-500 py-8">No outstanding debts found.</p>
+        <?php endif; ?>
+    </div>
+</div>
+
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 animate-on-scroll">
+    <h2 class="text-lg font-semibold text-gray-800 mb-4">Recent Salary Advances</h2>
+    <div class="space-y-4">
+        <?php if($recentAdvances): ?>
+            <?php foreach($recentAdvances as $advance): ?>
+            <div class="flex items-center bg-gray-50 rounded-lg p-3">
+                <div class="flex-shrink-0 h-10 w-10 bg-orange-100 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-hand-holding-usd text-orange-600"></i>
+                </div>
+                <div class="ml-4 flex-grow">
+                    <p class="font-semibold text-gray-900"><?php echo htmlspecialchars($advance->first_name . ' ' . $advance->last_name); ?></p>
+                    <p class="text-sm text-gray-500"><?php echo date('M d, Y', strtotime($advance->advance_date)); ?></p>
+                </div>
+                <div class="text-right">
+                    <p class="text-md font-bold text-orange-600">৳<?php echo number_format($advance->amount, 2); ?></p>
+                </div>
+            </div>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <p class="text-center text-gray-500 py-8">No recent salary advances found.</p>
+        <?php endif; ?>
+    </div>
+</div>
 
     <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
         <h2 class="text-lg font-semibold text-gray-800 mb-4">Top 10 Highest Earning Employees</h2>

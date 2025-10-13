@@ -129,10 +129,15 @@ class Database
         return $this->_results;
     }
 
+
     public function first()
     {
-        return $this->results()[0];
+        return $this->results()[0] ?? null;
     }
+    //public function first()
+    //{
+        //return $this->results()[0];
+   // }
 
     public function count()
     {

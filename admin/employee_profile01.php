@@ -146,75 +146,15 @@ include_once '../templates/header.php';
                 </div>
 
                 <!-- Action Buttons -->
-                <!-- Action Buttons -->
-                <div class="flex flex-wrap gap-2">
-    <a href="edit_employee.php?id=<?php echo $employee->id; ?>" 
-       class="inline-flex items-center px-4 py-2 bg-white text-primary-600 rounded-lg hover:bg-primary-50 transition-colors shadow-md">
-        <i class="fas fa-edit mr-2"></i>
-        Edit Profile
-    </a>
-    
-    <!-- Dropdown Menu Button -->
-    <div class="relative inline-block text-left" id="actionDropdown">
-        <button type="button" 
-                onclick="toggleDropdown()"
-                class="inline-flex items-center px-4 py-2 bg-white bg-opacity-10 text-white rounded-lg hover:bg-opacity-20 transition-colors">
-            <i class="fas fa-ellipsis-v"></i>
-        </button>
-        
-        <!-- Dropdown Menu -->
-        <div id="dropdownMenu" 
-             class="hidden absolute right-0 mt-2 w-56 rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
-            <div class="py-1" role="menu">
-                <!-- Generate Payslip -->
-                <a href="generate_payslip.php?id=<?php echo $employee->id; ?>" 
-                   target="_blank"
-                   class="group flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors">
-                    <div class="flex-shrink-0 h-8 w-8 bg-indigo-100 rounded-lg flex items-center justify-center mr-3 group-hover:bg-indigo-200">
-                        <i class="fas fa-file-invoice text-indigo-600"></i>
-                    </div>
-                    <div>
-                        <p class="font-medium">Generate Payslip</p>
-                        <p class="text-xs text-gray-500">Download salary slip</p>
-                    </div>
-                </a>
-                
-                <!-- Generate Salary Certificate -->
-                <a href="generate_salary_certificate.php?id=<?php echo $employee->id; ?>" 
-                   target="_blank"
-                   class="group flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-600 transition-colors">
-                    <div class="flex-shrink-0 h-8 w-8 bg-green-100 rounded-lg flex items-center justify-center mr-3 group-hover:bg-green-200">
-                        <i class="fas fa-certificate text-green-600"></i>
-                    </div>
-                    <div>
-                        <p class="font-medium">Salary Certificate</p>
-                        <p class="text-xs text-gray-500">Download certificate</p>
-                    </div>
-                </a>
-                
-                <div class="border-t border-gray-100"></div>
-                
-                <!-- Print Profile -->
-                <a href="javascript:window.print()" 
-                   class="group flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors">
-                    <div class="flex-shrink-0 h-8 w-8 bg-purple-100 rounded-lg flex items-center justify-center mr-3 group-hover:bg-purple-200">
-                        <i class="fas fa-print text-purple-600"></i>
-                    </div>
-                    <div>
-                        <p class="font-medium">Print Profile</p>
-                        <p class="text-xs text-gray-500">Print this page</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-
-                
-                
-                
-                
-                
+                <div class="flex gap-2">
+                    <a href="edit_employee.php?id=<?php echo $employee->id; ?>" class="inline-flex items-center px-4 py-2 bg-white text-primary-600 rounded-lg hover:bg-primary-50 transition-colors shadow-md">
+                        <i class="fas fa-edit mr-2"></i>
+                        Edit Profile
+                    </a>
+                    <button class="inline-flex items-center px-4 py-2 bg-white bg-opacity-10 text-white rounded-lg hover:bg-opacity-20 transition-colors">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -539,22 +479,5 @@ include_once '../templates/header.php';
         </div>
     </div>
 </div>
-<script>
-// Toggle dropdown menu
-function toggleDropdown() {
-    const dropdown = document.getElementById('dropdownMenu');
-    dropdown.classList.toggle('hidden');
-}
-
-// Close dropdown when clicking outside
-document.addEventListener('click', function(event) {
-    const dropdown = document.getElementById('actionDropdown');
-    const menu = document.getElementById('dropdownMenu');
-    
-    if (dropdown && !dropdown.contains(event.target)) {
-        menu.classList.add('hidden');
-    }
-});
-</script>
 
 <?php include_once '../templates/footer.php'; ?>

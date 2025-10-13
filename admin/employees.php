@@ -99,7 +99,7 @@ $totalEmployees = count($employees);
                 </p>
             </div>
             <div class="mt-4 sm:mt-0">
-                <a href="#" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700">
+                <a href="add_employee.php" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700">
                     <i class="fas fa-plus mr-2"></i>
                     Add New Employee
                 </a>
@@ -283,10 +283,16 @@ $totalEmployees = count($employees);
                             <tr class="hover:bg-gray-50 transition-colors duration-150">
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <div class="flex items-center">
-                                        <div class="h-10 w-10 flex-shrink-0 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full flex items-center justify-center">
-                                            <span class="text-white font-semibold text-sm">
-                                                <?php echo strtoupper(substr($emp->first_name, 0, 1) . substr($emp->last_name, 0, 1)); ?>
-                                            </span>
+                                        <div class="h-10 w-10 flex-shrink-0">
+                                            <?php if (!empty($emp->profile_picture) && file_exists('../' . $emp->profile_picture)): ?>
+                                                <img class="h-10 w-10 rounded-full object-cover" src="../<?php echo htmlspecialchars($emp->profile_picture); ?>" alt="Profile">
+                                            <?php else: ?>
+                                                <div class="h-10 w-10 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full flex items-center justify-center">
+                                                    <span class="text-white font-semibold text-sm">
+                                                        <?php echo strtoupper(substr($emp->first_name, 0, 1) . substr($emp->last_name, 0, 1)); ?>
+                                                    </span>
+                                                </div>
+                                            <?php endif; ?>
                                         </div>
                                         <div class="ml-4">
                                             <div class="text-sm font-medium text-gray-900"><?php echo htmlspecialchars($emp->first_name . ' ' . $emp->last_name); ?></div>
@@ -325,11 +331,14 @@ $totalEmployees = count($employees);
                                     </span>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                    <a href="#" class="text-blue-600 hover:text-blue-900 transition-colors" title="View Details">
+                                    <a href="employee_profile.php?id=<?php echo $emp->id; ?>" class="text-blue-600 hover:text-blue-900 transition-colors" title="View Details">
                                         <i class="fas fa-eye"></i>
                                     </a>
-                                    <a href="#" class="text-green-600 hover:text-green-900 ml-4 transition-colors" title="Edit Employee">
+                                    <a href="edit_employee.php?id=<?php echo $emp->id; ?>" class="text-green-600 hover:text-green-900 ml-4 transition-colors" title="Edit Employee">
                                         <i class="fas fa-pencil-alt"></i>
+                                    </a>
+                                    <a href="#" @click.prevent="alert('Implement delete for employee ' + emp.id)" class="text-red-500 hover:text-red-700 ml-4" title="Delete Employee">
+                                        <i class="fas fa-trash-alt"></i>
                                     </a>
                                 </td>
                             </tr>
