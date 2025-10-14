@@ -25,7 +25,7 @@
         }
     </script>
 </head>
-<body class="bg-gray-50 font-sans">
+<body class="bg-gray-50 font-sans min-h-screen flex flex-col">
     
     <?php if (isLoggedIn()): ?>
     <nav class="bg-white shadow-lg border-b border-gray-200" x-data="{ mobileMenuOpen: false }">
@@ -91,6 +91,6 @@
     </nav>
     <?php endif; ?>
     
-    <main class="py-6">
+    <main class="py-6 flex-grow">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <?php echo display_message(); ?>

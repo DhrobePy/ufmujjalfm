@@ -1,10 +1,12 @@
 <?php
-// new_ufmhrm/admin/prepare_payroll.php
+// new_ufmhrm/admin/prepare_payroll.php (Final Corrected Version)
 
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
 require_once '../core/init.php';
+require_once 'repositories/EmployeeRepository.php'; // Include the repository
+require_once 'services/PayrollService.php';       // Include the service
 
 if (!is_admin_logged_in()) {
     header('Location: ../auth/login.php');
@@ -14,13 +16,12 @@ if (!is_admin_logged_in()) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $month = (int)$_POST['month'];
     $year = (int)$_POST['year'];
-
-    // --- 1. Validation ---
+    
     $payPeriodStart = date('Y-m-d', mktime(0, 0, 0, $month, 1, $year));
     $payPeriodEnd = date('Y-m-t', mktime(0, 0, 0, $month, 1, $year));
     $daysInMonth = date('t', mktime(0, 0, 0, $month, 1, $year));
 
-    // Check if payroll for this period already exists
+    // --- 1. Validation ---
     $existingPayroll = $db->query("SELECT id FROM payrolls WHERE pay_period_start = ? AND pay_period_end = ?", [$payPeriodStart, $payPeriodEnd])->first();
     if ($existingPayroll) {
         $_SESSION['error_flash'] = 'Payroll for ' . date('F Y', strtotime($payPeriodStart)) . ' has already been generated.';
@@ -28,59 +29,54 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 
-    // --- 2. Fetch Data ---
-    $activeEmployees = $db->query("SELECT * FROM employees WHERE status = 'active'")->results();
-    
+    // --- Instantiate our classes ---
+    $employeeRepo = new EmployeeRepository($db);
+    $payrollService = new PayrollService();
+
     $db->getPdo()->beginTransaction();
     try {
-        foreach ($activeEmployees as $employee) {
-            $salaryStructure = $db->query("SELECT * FROM salary_structures WHERE employee_id = ?", [$employee->id])->first();
+        // --- 2. Fetch all data efficiently ---
+        $allEmployeeDetails = $employeeRepo->getActiveEmployeesWithDetails($payPeriodStart, $payPeriodEnd, str_pad($month, 2, '0', STR_PAD_LEFT), (string)$year);
+
+        foreach ($allEmployeeDetails as $employeeId => $employeeData) {
             
-            // If no salary structure, use base salary from employees table
-            $basicSalary = $salaryStructure ? $salaryStructure->basic_salary : $employee->base_salary;
-            $grossSalary = $salaryStructure ? $salaryStructure->gross_salary : $employee->base_salary;
+            // --- 3. Calculate payroll using the service ---
+            $payrollCalculations = $payrollService->calculatePayrollForEmployee($employeeData, $daysInMonth);
 
-            // --- 3. Calculate Deductions ---
-            $totalDeductions = 0;
-            
-            // a) Absences Deduction
-            $absentDaysResult = $db->query("SELECT COUNT(*) as count FROM attendance WHERE employee_id = ? AND status = 'absent' AND clock_in BETWEEN ? AND ?", [$employee->id, $payPeriodStart, $payPeriodEnd]);
-            $absentDays = $absentDaysResult ? $absentDaysResult->first()->count : 0;
-            $dailyRate = $basicSalary / $daysInMonth;
-            $absenceDeduction = $absentDays * $dailyRate;
-            $totalDeductions += $absenceDeduction;
-
-            // b) Salary Advance Deduction
-            $advanceResult = $db->query("SELECT SUM(amount) as total FROM salary_advances WHERE employee_id = ? AND advance_month = ? AND advance_year = ?", [$employee->id, str_pad($month, 2, '0', STR_PAD_LEFT), $year]);
-            $advanceDeduction = $advanceResult ? $advanceResult->first()->total : 0;
-            $totalDeductions += $advanceDeduction;
-
-            // c) Loan Installment Deduction
-            $loanInstallment = 0;
-            $activeLoan = $db->query("SELECT * FROM loans WHERE employee_id = ? AND status = 'active'", [$employee->id])->first();
-            if ($activeLoan) {
-                $loanInstallment = $activeLoan->monthly_payment;
-                $totalDeductions += $loanInstallment;
-            }
-
-            // --- 4. Calculate Net Salary ---
-            $netSalary = $grossSalary - $totalDeductions;
-
-            // --- 5. Insert into Payroll Table ---
+            // --- 4. Insert summary into the main payrolls table ---
             $db->insert('payrolls', [
-                'employee_id' => $employee->id,
+                'employee_id' => $employeeId,
                 'pay_period_start' => $payPeriodStart,
                 'pay_period_end' => $payPeriodEnd,
-                'gross_salary' => $grossSalary,
-                'deductions' => $totalDeductions,
-                'net_salary' => $netSalary,
-                'status' => 'pending_approval' // Set initial status
+                'gross_salary' => $payrollCalculations['gross_salary'],
+                'deductions' => $payrollCalculations['total_deductions'],
+                'net_salary' => $payrollCalculations['net_salary'],
+                'status' => 'pending_approval'
+            ]);
+
+            // --- 5. Get the ID of the payroll we just created (THE FIX) ---
+            $newPayrollId = $db->getPdo()->lastInsertId();
+
+            // --- 6. Insert the detailed breakdown into the new table ---
+            $db->insert('payroll_details', [
+                'payroll_id' => $newPayrollId,
+                'basic_salary' => $payrollCalculations['basic_salary'],
+                'gross_salary' => $payrollCalculations['gross_salary'],
+                'days_in_month' => $payrollCalculations['days_in_month'],
+                'absent_days' => $payrollCalculations['absent_days'],
+                'daily_rate' => $payrollCalculations['daily_rate'],
+                'absence_deduction' => $payrollCalculations['absence_deduction'],
+                'salary_advance_deduction' => $payrollCalculations['salary_advance_deduction'],
+                'loan_installment_deduction' => $payrollCalculations['loan_installment_deduction'],
+                'other_deductions' => $payrollCalculations['other_deductions'],
+                'total_deductions' => $payrollCalculations['total_deductions'],
+                'net_salary' => $payrollCalculations['net_salary']
             ]);
         }
 
         $db->getPdo()->commit();
         $_SESSION['success_flash'] = 'Payroll for ' . date('F Y', strtotime($payPeriodStart)) . ' has been generated successfully and is ready for review.';
-        header('Location: approve_payroll.php'); // Redirect to the review page
+        header('Location: approve_payroll.php');
         exit();
 
     } catch (Exception $e) {
