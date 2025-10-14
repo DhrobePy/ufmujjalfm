@@ -295,6 +295,12 @@ include __DIR__ . '/../templates/header.php';
 
         <div class="mt-6 no-print flex justify-center gap-4">
             <button onclick="window.print()" class="px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-xl font-bold hover:from-green-600 hover:to-emerald-700 transition-all shadow-lg flex items-center gap-3"><i class="fas fa-print text-xl"></i>Print Payslip</button>
+            <button onclick="downloadPayslipPDF()" 
+                    class="bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700 shadow">
+                <i class="fas fa-file-pdf mr-2"></i> Download PDF
+            </button>
+
+
             <a href="payslip.php" class="px-8 py-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-xl font-bold hover:from-primary-600 hover:to-primary-700 transition-all shadow-lg flex items-center gap-3"><i class="fas fa-file-alt text-xl"></i>Generate Another</a>
             <a href="payroll_history.php" class="px-8 py-4 bg-gradient-to-r from-gray-500 to-gray-600 text-white rounded-xl font-bold hover:from-gray-600 hover:to-gray-700 transition-all shadow-lg flex items-center gap-3"><i class="fas fa-history text-xl"></i>View History</a>
         </div>
@@ -302,4 +308,22 @@ include __DIR__ . '/../templates/header.php';
     </div>
 </div>
 
-<?php include __DIR__ . '/../templates/footer.php'; ?>
+<?php include __DIR__ . '/../templates/footer.php'; 
+?>
+<script>
+function downloadPayslipPDF() {
+    const payslip = document.getElementById('payslip');
+    
+    // Configure PDF options
+    const opt = {
+        margin:       0.3,
+        filename:     'Payslip_<?php echo date("F_Y"); ?>.pdf',
+        image:        { type: 'jpeg', quality: 1 },
+        html2canvas:  { scale: 2, useCORS: true },
+        jsPDF:        { unit: 'in', format: 'A4', orientation: 'portrait' }
+    };
+
+    // Generate and download
+    html2pdf().set(opt).from(payslip).save();
+}
+</script>

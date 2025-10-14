@@ -3256,3 +3256,7 @@ Stack trace:
 #1 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/payslip.php(172): Database->query()
 #2 {main}
   thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php on line 49
+[15-Oct-2025 03:44:01 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_logged_in() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/attendance.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/attendance.php on line 4
