@@ -1,128 +1,96 @@
 <?php
-require_once __DIR__ . '/../core/init.php';
+// new_ufmhrm/admin/prepare_payroll.php
 
-if (!is_logged_in()) { 
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+require_once '../core/init.php';
+
+if (!is_admin_logged_in()) {
     header('Location: ../auth/login.php');
     exit();
 }
 
-$payroll_handler = new Payroll($pdo);
-$prepared_payrolls = null;
-$results = null;
-$error_message = null;
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $month = (int)$_POST['month'];
+    $year = (int)$_POST['year'];
 
-// Handle form submission to prepare a new payroll batch
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['prepare_salaries'])) {
-    $pay_period_start = $_POST['pay_period_start'];
-    $pay_period_end = $_POST['pay_period_end'];
-    $results = $payroll_handler->prepare_bulk_payroll($pay_period_start, $pay_period_end);
-    
-    // --- FIX: Check for success or failure from the prepare function ---
-    if (isset($results['success']) && $results['success'] === false) {
-        // Handle the error case (e.g., duplicate payroll)
-        $error_message = $results['message'];
-    } else {
-        // Handle the success case
-        $_SESSION['last_prepared_results'] = $results;
-        $_SESSION['last_period_heading'] = "Pay Period: " . date('F d, Y', strtotime($pay_period_start)) . " to " . date('F d, Y', strtotime($end_date));
-        header('Location: prepare_payroll.php?prepared=true');
+    // --- 1. Validation ---
+    $payPeriodStart = date('Y-m-d', mktime(0, 0, 0, $month, 1, $year));
+    $payPeriodEnd = date('Y-m-t', mktime(0, 0, 0, $month, 1, $year));
+    $daysInMonth = date('t', mktime(0, 0, 0, $month, 1, $year));
+
+    // Check if payroll for this period already exists
+    $existingPayroll = $db->query("SELECT id FROM payrolls WHERE pay_period_start = ? AND pay_period_end = ?", [$payPeriodStart, $payPeriodEnd])->first();
+    if ($existingPayroll) {
+        $_SESSION['error_flash'] = 'Payroll for ' . date('F Y', strtotime($payPeriodStart)) . ' has already been generated.';
+        header('Location: payroll.php');
         exit();
     }
-}
 
-// Check if there are results from a recent successful submission in the session
-if (isset($_GET['prepared']) && isset($_SESSION['last_prepared_results'])) {
-    $results = $_SESSION['last_prepared_results'];
+    // --- 2. Fetch Data ---
+    $activeEmployees = $db->query("SELECT * FROM employees WHERE status = 'active'")->results();
     
-    if (!empty($results['prepared_ids'])) {
-        $prepared_payrolls = $payroll_handler->get_pending_payroll_details();
+    $db->getPdo()->beginTransaction();
+    try {
+        foreach ($activeEmployees as $employee) {
+            $salaryStructure = $db->query("SELECT * FROM salary_structures WHERE employee_id = ?", [$employee->id])->first();
+            
+            // If no salary structure, use base salary from employees table
+            $basicSalary = $salaryStructure ? $salaryStructure->basic_salary : $employee->base_salary;
+            $grossSalary = $salaryStructure ? $salaryStructure->gross_salary : $employee->base_salary;
+
+            // --- 3. Calculate Deductions ---
+            $totalDeductions = 0;
+            
+            // a) Absences Deduction
+            $absentDaysResult = $db->query("SELECT COUNT(*) as count FROM attendance WHERE employee_id = ? AND status = 'absent' AND clock_in BETWEEN ? AND ?", [$employee->id, $payPeriodStart, $payPeriodEnd]);
+            $absentDays = $absentDaysResult ? $absentDaysResult->first()->count : 0;
+            $dailyRate = $basicSalary / $daysInMonth;
+            $absenceDeduction = $absentDays * $dailyRate;
+            $totalDeductions += $absenceDeduction;
+
+            // b) Salary Advance Deduction
+            $advanceResult = $db->query("SELECT SUM(amount) as total FROM salary_advances WHERE employee_id = ? AND advance_month = ? AND advance_year = ?", [$employee->id, str_pad($month, 2, '0', STR_PAD_LEFT), $year]);
+            $advanceDeduction = $advanceResult ? $advanceResult->first()->total : 0;
+            $totalDeductions += $advanceDeduction;
+
+            // c) Loan Installment Deduction
+            $loanInstallment = 0;
+            $activeLoan = $db->query("SELECT * FROM loans WHERE employee_id = ? AND status = 'active'", [$employee->id])->first();
+            if ($activeLoan) {
+                $loanInstallment = $activeLoan->monthly_payment;
+                $totalDeductions += $loanInstallment;
+            }
+
+            // --- 4. Calculate Net Salary ---
+            $netSalary = $grossSalary - $totalDeductions;
+
+            // --- 5. Insert into Payroll Table ---
+            $db->insert('payrolls', [
+                'employee_id' => $employee->id,
+                'pay_period_start' => $payPeriodStart,
+                'pay_period_end' => $payPeriodEnd,
+                'gross_salary' => $grossSalary,
+                'deductions' => $totalDeductions,
+                'net_salary' => $netSalary,
+                'status' => 'pending_approval' // Set initial status
+            ]);
+        }
+
+        $db->getPdo()->commit();
+        $_SESSION['success_flash'] = 'Payroll for ' . date('F Y', strtotime($payPeriodStart)) . ' has been generated successfully and is ready for review.';
+        header('Location: approve_payroll.php'); // Redirect to the review page
+        exit();
+
+    } catch (Exception $e) {
+        $db->getPdo()->rollBack();
+        $_SESSION['error_flash'] = 'An error occurred while generating payroll: ' . $e->getMessage();
+        header('Location: payroll.php');
+        exit();
     }
-    
-    unset($_SESSION['last_prepared_results']);
-    unset($_SESSION['last_period_heading']);
+} else {
+    header('Location: payroll.php');
+    exit();
 }
-
-$page_title = 'Prepare Salary List';
-include __DIR__ . '/../templates/header.php';
-include __DIR__ . '/../templates/sidebar.php';
 ?>
-
-<h1 class="mt-4">Prepare Salary Disbursement</h1>
-<p class="text-muted">Step 1: Accounts team prepares the salary list and submits it for approval.</p>
-
-<?php if ($error_message): ?>
-    <div class="alert alert-danger">
-        <strong>Action Failed:</strong> <?php echo htmlspecialchars($error_message); ?>
-    </div>
-<?php endif; ?>
-
-<?php if (isset($_GET['prepared']) && $results && ($results['success_count'] > 0)): ?>
-    <div class="alert alert-success">
-        Successfully prepared payroll for <strong><?php echo $results['success_count']; ?> employees</strong>. The list below has been submitted for approval.
-    </div>
-<?php endif; ?>
-
-<div class="card mb-4">
-    <div class="card-header">Prepare Payroll for a Period</div>
-    <div class="card-body">
-        <form action="prepare_payroll.php" method="POST">
-            <div class="row g-3 align-items-end">
-                <div class="col-md-5">
-                    <label for="pay_period_start" class="form-label">Pay Period Start</label>
-                    <input type="date" class="form-control" name="pay_period_start" required>
-                </div>
-                <div class="col-md-5">
-                    <label for="pay_period_end" class="form-label">Pay Period End</label>
-                    <input type="date" class="form-control" name="pay_period_end" required>
-                </div>
-                <div class="col-md-2">
-                    <button type="submit" name="prepare_salaries" class="btn btn-primary w-100">Prepare & Submit</button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
-
-<?php if ($prepared_payrolls): ?>
-<div class="card mb-4">
-    <div class="card-header bg-primary text-white">
-        <h5 class="mb-0">Newly Submitted for Approval</h5>
-    </div>
-    <div class="card-body">
-        <div class="table-responsive">
-            <table class="table table-hover table-bordered">
-                <thead class="table-light">
-                    <tr>
-                        <th>Employee</th>
-                        <th>Position</th>
-                        <th class="text-end">Gross Salary</th>
-                        <th class="text-center">Absent Days</th>
-                        <th class="text-end text-danger">Absence Deduction</th>
-                        <th class="text-end text-danger">Advance Deduction</th>
-                        <th class="text-end text-danger">Loan (EMI)</th>
-                        <th class="text-end fw-bold">Net Salary</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($prepared_payrolls as $payroll): ?>
-                        <?php if (in_array($payroll['id'], $results['prepared_ids'])): ?>
-                            <tr>
-                                <td><?php echo htmlspecialchars($payroll['first_name'] . ' ' . $payroll['last_name']); ?></td>
-                                <td><?php echo htmlspecialchars($payroll['position_name'] ?? 'N/A'); ?></td>
-                                <td class="text-end">Tk. <?php echo number_format($payroll['gross_salary'], 2); ?></td>
-                                <td class="text-center"><?php echo $payroll['absent_days']; ?></td>
-                                <td class="text-end text-danger">(Tk. <?php echo number_format($payroll['salary_deducted_for_absent'], 2); ?>)</td>
-                                <td class="text-end text-danger">(Tk. <?php echo number_format($payroll['advance_salary_deducted'], 2); ?>)</td>
-                                <td class="text-end text-danger">(Tk. <?php echo number_format($payroll['loan_deduction'], 2); ?>)</td>
-                                <td class="text-end fw-bold">Tk. <?php echo number_format($payroll['net_salary'], 2); ?></td>
-                            </tr>
-                        <?php endif; ?>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
-<?php endif; ?>
-
-<?php include __DIR__ . '/../templates/footer.php'; ?>

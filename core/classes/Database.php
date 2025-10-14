@@ -13,7 +13,6 @@ class Database
     private function __construct()
     {
         try {
-            // This is the CORRECT line for Database.php
             $this->_pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
         } catch (PDOException $e) {
             die($e->getMessage());
@@ -27,6 +26,13 @@ class Database
         }
         return self::$_instance;
     }
+    
+    // --- THIS IS THE NEWLY ADDED METHOD ---
+    public function getPdo()
+    {
+        return $this->_pdo;
+    }
+    // ------------------------------------
 
     public function query($sql, $params = [])
     {
@@ -97,7 +103,8 @@ class Database
             $sql = "INSERT INTO {$table} (`" . implode('`, `', $keys) . "`) VALUES ({$values})";
 
             if (!$this->query($sql, $fields)->error()) {
-                return true;
+                // Return the last insert ID
+                return $this->_pdo->lastInsertId();
             }
         }
         return false;
@@ -129,15 +136,14 @@ class Database
         return $this->_results;
     }
 
-
     public function first()
     {
-        return $this->results()[0] ?? null;
+        // Add a check to prevent errors on empty results
+        if ($this->count()) {
+            return $this->results()[0];
+        }
+        return null;
     }
-    //public function first()
-    //{
-        //return $this->results()[0];
-   // }
 
     public function count()
     {

@@ -1,180 +1,99 @@
 <?php
-require_once __DIR__ . '/../core/init.php';
+// new_ufmhrm/admin/payroll.php
 
-if (!is_logged_in()) {
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+require_once '../core/init.php';
+
+if (!is_admin_logged_in()) {
     header('Location: ../auth/login.php');
     exit();
 }
 
-$payroll_handler = new Payroll($pdo);
-$employee_handler = new Employee($pdo);
+$pageTitle = 'Payroll Management - ' . APP_NAME;
+include_once '../templates/header.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['run_payroll'])) {
-    $employee_id = (int)$_POST['employee_id'];
-    $start_date = sanitize_input($_POST['start_date']);
-    $end_date = sanitize_input($_POST['end_date']);
+// --- Check for any payroll currently in a non-paid state ---
+$pendingPayrollResult = $db->query("SELECT * FROM payrolls WHERE status IN ('pending_approval', 'approved', 'disbursed') ORDER BY pay_period_end DESC LIMIT 1");
+$pendingPayroll = $pendingPayrollResult->count() ? $pendingPayrollResult->first() : null;
 
-    $allowances = [];
-    if (isset($_POST['allowance_name'])) {
-        foreach ($_POST['allowance_name'] as $key => $name) {
-            if (!empty($name)) {
-                $allowances[] = ['name' => sanitize_input($name), 'amount' => (float)$_POST['allowance_amount'][$key]];
-            }
-        }
-    }
 
-    $deductions = [];
-    if (isset($_POST['deduction_name'])) {
-        foreach ($_POST['deduction_name'] as $key => $name) {
-            if (!empty($name)) {
-                $deductions[] = ['name' => sanitize_input($name), 'amount' => (float)$_POST['deduction_amount'][$key]];
-            }
-        }
-    }
+// --- Fetch Payroll History (status = 'paid') ---
+$historySql = "
+    SELECT 
+        DATE_FORMAT(pay_period_end, '%Y-%m') as payroll_month,
+        COUNT(id) as employee_count,
+        SUM(net_salary) as total_disbursed,
+        status
+    FROM payrolls
+    WHERE status = 'paid'
+    GROUP BY payroll_month, status
+    ORDER BY payroll_month DESC
+";
+$historyResult = $db->query($historySql);
+$payrollHistory = $historyResult ? $historyResult->results() : [];
 
-    $payroll_handler->run_payroll($employee_id, $start_date, $end_date, $allowances, $deductions);
-    header('Location: payroll.php?success=1');
-    exit();
-}
-
-$payroll_history = $payroll_handler->get_payroll_history();
-$employees = $employee_handler->get_all();
-$page_title = 'Payroll';
-
-include __DIR__ . '/../templates/header.php';
-include __DIR__ . '/../templates/sidebar.php';
 ?>
 
-<h1 class="mt-4">Payroll Management</h1>
-
-<?php if (isset($_GET['success'])): ?>
-    <div class="alert alert-success">Payroll run successfully!</div>
-<?php endif; ?>
-
-<div class="card mb-4">
-    <div class="card-header d-flex justify-content-between align-items-center">
-        <span>Payroll History</span>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#runPayrollModal">
-            Run New Payroll
-        </button>
+<div class="space-y-6">
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+        <h1 class="text-2xl font-bold text-gray-900"><i class="fas fa-money-check-alt text-primary-600 mr-3"></i>Payroll Management</h1>
+        <p class="mt-1 text-sm text-gray-600">Generate, review, and disburse monthly employee salaries.</p>
     </div>
-    <div class="card-body">
-        <div class="table-responsive">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Employee</th>
-                        <th>Pay Period</th>
-                        <th>Gross Salary</th>
-                        <th>Deductions</th>
-                        <th>Net Salary</th>
-                        <th>Status</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($payroll_history as $payroll): ?>
-                        <tr>
-                            <td><?php echo htmlspecialchars($payroll['first_name'] . ' ' . $payroll['last_name']); ?></td>
-                            <td><?php echo format_date($payroll['pay_period_start'], 'M d, Y') . ' - ' . format_date($payroll['pay_period_end'], 'M d, Y'); ?></td>
-                            <td><?php echo htmlspecialchars($payroll['gross_salary']); ?></td>
-                            <td><?php echo htmlspecialchars($payroll['deductions']); ?></td>
-                            <td><?php echo htmlspecialchars($payroll['net_salary']); ?></td>
-                            <td><span class="badge bg-success"><?php echo ucfirst($payroll['status']); ?></span></td>
-                            <td>
-                                <a href="#" class="btn btn-sm btn-info">View Payslip</a>
-                            </td>
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
+
+    <div x-data="{ activeTab: 'run' }">
+        <div class="border-b border-gray-200">
+            <nav class="-mb-px flex space-x-8" aria-label="Tabs">
+                <a href="#" @click.prevent="activeTab = 'run'" :class="{ 'border-primary-500 text-primary-600': activeTab === 'run', 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300': activeTab !== 'run' }" class="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">Run Payroll</a>
+                <a href="#" @click.prevent="activeTab = 'history'" :class="{ 'border-primary-500 text-primary-600': activeTab === 'history', 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300': activeTab !== 'history' }" class="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">Payroll History</a>
+            </nav>
+        </div>
+
+        <div class="mt-6">
+            <div x-show="activeTab === 'run'" x-cloak>
+                <?php if ($pendingPayroll): ?>
+                    <?php if ($pendingPayroll->status === 'pending_approval'): ?>
+                        <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg text-center">
+                            <h2 class="text-xl font-bold text-blue-900">Payroll in Progress</h2>
+                            <p class="text-blue-700 mt-2">Payroll for <strong><?php echo date('F Y', strtotime($pendingPayroll->pay_period_end)); ?></strong> is awaiting approval.</p>
+                            <a href="approve_payroll.php" class="mt-6 inline-flex items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700"><i class="fas fa-tasks mr-2"></i> Review & Approve Now</a>
+                        </div>
+                    <?php elseif ($pendingPayroll->status === 'approved' || $pendingPayroll->status === 'disbursed'): ?>
+                         <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-lg text-center">
+                            <h2 class="text-xl font-bold text-green-900">Payroll Ready for Disbursement</h2>
+                            <p class="text-green-700 mt-2">Payroll for <strong><?php echo date('F Y', strtotime($pendingPayroll->pay_period_end)); ?></strong> has been approved.</p>
+                            <a href="disburse_payroll.php" class="mt-6 inline-flex items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-green-600 hover:bg-green-700"><i class="fas fa-hand-holding-usd mr-2"></i> Manage Disbursement</a>
+                        </div>
+                    <?php endif; ?>
+                <?php else: ?>
+                    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8 text-center">
+                        <i class="fas fa-play-circle text-primary-500 text-5xl mb-4"></i>
+                        <h2 class="text-2xl font-bold text-gray-900">Generate New Payroll</h2>
+                        <p class="text-gray-600 mt-2 max-w-xl mx-auto">Select a month and year to calculate salaries for all active employees.</p>
+                        <form action="prepare_payroll.php" method="POST" class="mt-8 max-w-lg mx-auto flex items-center gap-4">
+                            <select name="month" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none">
+                                <?php for ($m = 1; $m <= 12; $m++): ?>
+                                    <option value="<?php echo $m; ?>" <?php echo (date('n') == $m) ? 'selected' : ''; ?>><?php echo date('F', mktime(0, 0, 0, $m, 1)); ?></option>
+                                <?php endfor; ?>
+                            </select>
+                            <select name="year" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none">
+                                <?php for ($y = date('Y'); $y >= date('Y') - 5; $y--): ?>
+                                    <option value="<?php echo $y; ?>"><?php echo $y; ?></option>
+                                <?php endfor; ?>
+                            </select>
+                            <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-primary-600 to-indigo-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all flex items-center justify-center gap-2">
+                                <i class="fas fa-cogs"></i> Generate
+                            </button>
+                        </form>
+                    </div>
+                <?php endif; ?>
+            </div>
+
+            <div x-show="activeTab === 'history'" x-cloak>
+                </div>
         </div>
     </div>
 </div>
 
-<!-- Run Payroll Modal -->
-<div class="modal fade" id="runPayrollModal" tabindex="-1" aria-labelledby="runPayrollModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="runPayrollModalLabel">Run New Payroll</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="payroll.php" method="POST">
-                    <input type="hidden" name="run_payroll" value="1">
-                    <div class="mb-3">
-                        <label for="employee_id" class="form-label">Employee</label>
-                        <select class="form-select" name="employee_id" required>
-                            <option value="">Select Employee</option>
-                            <?php foreach ($employees as $employee): ?>
-                                <option value="<?php echo $employee['id']; ?>"><?php echo htmlspecialchars($employee['first_name'] . ' ' . $employee['last_name']); ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="start_date" class="form-label">Pay Period Start</label>
-                            <input type="date" class="form-control" name="start_date" required>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="end_date" class="form-label">Pay Period End</label>
-                            <input type="date" class="form-control" name="end_date" required>
-                        </div>
-                    </div>
-
-                    <h5>Allowances</h5>
-                    <div id="allowances-container">
-                        <div class="row mb-2">
-                            <div class="col-md-6"><input type="text" name="allowance_name[]" class="form-control" placeholder="Allowance Name"></div>
-                            <div class="col-md-6"><input type="number" step="0.01" name="allowance_amount[]" class="form-control" placeholder="Amount"></div>
-                        </div>
-                    </div>
-                    <button type="button" class="btn btn-sm btn-outline-primary" id="add-allowance">Add Allowance</button>
-
-                    <h5 class="mt-4">Deductions</h5>
-                    <div id="deductions-container">
-                        <div class="row mb-2">
-                            <div class="col-md-6"><input type="text" name="deduction_name[]" class="form-control" placeholder="Deduction Name"></div>
-                            <div class="col-md-6"><input type="number" step="0.01" name="deduction_amount[]" class="form-control" placeholder="Amount"></div>
-                        </div>
-                    </div>
-                    <button type="button" class="btn btn-sm btn-outline-primary" id="add-deduction">Add Deduction</button>
-
-                    <div class="modal-footer mt-4">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Run Payroll</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-document.getElementById('add-allowance').addEventListener('click', function() {
-    const container = document.getElementById('allowances-container');
-    const newRow = document.createElement('div');
-    newRow.className = 'row mb-2';
-    newRow.innerHTML = `
-        <div class="col-md-6"><input type="text" name="allowance_name[]" class="form-control" placeholder="Allowance Name"></div>
-        <div class="col-md-6"><input type="number" step="0.01" name="allowance_amount[]" class="form-control" placeholder="Amount"></div>
-    `;
-    container.appendChild(newRow);
-});
-
-document.getElementById('add-deduction').addEventListener('click', function() {
-    const container = document.getElementById('deductions-container');
-    const newRow = document.createElement('div');
-    newRow.className = 'row mb-2';
-    newRow.innerHTML = `
-        <div class="col-md-6"><input type="text" name="deduction_name[]" class="form-control" placeholder="Deduction Name"></div>
-        <div class="col-md-6"><input type="number" step="0.01" name="deduction_amount[]" class="form-control" placeholder="Amount"></div>
-    `;
-    container.appendChild(newRow);
-});
-</script>
-
-<?php
-include __DIR__ . '/../templates/footer.php';
-?>
+<?php include_once '../templates/footer.php'; ?>
