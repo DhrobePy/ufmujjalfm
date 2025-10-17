@@ -1,5 +1,5 @@
 <?php
-// new_ufmhrm/admin/users.php (User Management Hub with Multi-Role, Delete & Permissions)
+// new_ufmhrm/admin/users.php (User Management Hub with RBAC)
 
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
@@ -12,10 +12,8 @@ if (!is_admin_logged_in()) {
 }
 
 $currentUser = getCurrentUser();
-// This assumes getCurrentUser() is updated to fetch roles from the new user_roles table if you have implemented that.
-// If not, this will still work based on the 'role' column in the users table.
-$isSuperAdmin = in_array('superadmin', $currentUser['roles'] ?? [$currentUser['role']]);
-
+// This will work correctly with your updated getCurrentUser() function
+$isSuperAdmin = in_array('superadmin', $currentUser['roles'] ?? []);
 
 // --- Master List of All Permissions & Roles in the System ---
 $permissions = [
@@ -113,7 +111,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $isSuperAdmin) {
             }
             // Save the rest of the roles
             foreach ($submitted_permissions as $role => $perms) {
-                if ($role === 'superadmin') continue; // Skip superadmin as it's already handled
+                if ($role === 'superadmin') continue;
                 foreach ($perms as $permission => $value) {
                     $db->insert('role_permissions', ['role' => $role, 'permission' => $permission]);
                 }

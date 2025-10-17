@@ -3450,3 +3450,35 @@ Stack trace:
 #1 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/users.php(71): Database->query()
 #2 {main}
   thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php on line 49
+[17-Oct-2025 17:36:51 Asia/Dhaka] PHP Fatal error:  Cannot redeclare function getCurrentUser() (previously declared in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/functions/helpers.php:13) in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/functions/helpers.php on line 54
+[17-Oct-2025 17:37:37 Asia/Dhaka] PHP Parse error:  Unmatched '}' in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/functions/helpers.php on line 70
+[17-Oct-2025 18:06:53 Asia/Dhaka] PHP Warning:  Undefined array key "status" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/attendance.php on line 45
+[17-Oct-2025 18:06:53 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'status' cannot be null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php:49
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php(49): PDOStatement->execute()
+#1 /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php(105): Database->query()
+#2 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/attendance.php(52): Database->insert()
+#3 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php on line 49
+[17-Oct-2025 18:08:26 Asia/Dhaka] PHP Warning:  Undefined array key "status" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/attendance.php on line 45
+[17-Oct-2025 18:08:26 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'status' cannot be null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php:49
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php(49): PDOStatement->execute()
+#1 /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php(105): Database->query()
+#2 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/attendance.php(52): Database->insert()
+#3 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php on line 49
+[17-Oct-2025 18:13:57 Asia/Dhaka] PHP Warning:  Undefined array key "status" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/attendance.php on line 45
+[17-Oct-2025 18:13:57 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'status' cannot be null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php:49
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php(49): PDOStatement->execute()
+#1 /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php(105): Database->query()
+#2 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/attendance.php(52): Database->insert()
+#3 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php on line 49
+[17-Oct-2025 18:33:32 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'id' in SELECT is ambiguous in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php:49
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php(49): PDOStatement->execute()
+#1 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/attendance.php(149): Database->query()
+#2 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php on line 49

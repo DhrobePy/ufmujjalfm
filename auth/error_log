@@ -106,3 +106,23 @@ Stack trace:
 #0 {main}
   thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/logout.php on line 5
 [17-Oct-2025 15:41:36 Asia/Dhaka] PHP Warning:  Undefined property: stdClass::$role in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/User.php on line 25
+[17-Oct-2025 17:38:43 Asia/Dhaka] PHP Warning:  Undefined property: stdClass::$role in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/User.php on line 25
+[17-Oct-2025 17:44:41 Asia/Dhaka] PHP Warning:  Undefined property: stdClass::$role in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/User.php on line 25
+[17-Oct-2025 17:48:07 Asia/Dhaka] PHP Warning:  Undefined property: stdClass::$role in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/User.php on line 25
+[17-Oct-2025 17:48:40 Asia/Dhaka] PHP Warning:  Undefined variable $pdo in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/logout.php on line 4
+[17-Oct-2025 17:48:40 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined method User::logout() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/logout.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/logout.php on line 5
+[17-Oct-2025 17:49:08 Asia/Dhaka] PHP Warning:  Undefined property: stdClass::$role in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/User.php on line 25
+[17-Oct-2025 17:59:11 Asia/Dhaka] PHP Warning:  Undefined property: stdClass::$role in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/User.php on line 25
+[17-Oct-2025 17:59:48 Asia/Dhaka] PHP Warning:  Undefined property: stdClass::$role in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/User.php on line 25
+[17-Oct-2025 18:01:44 Asia/Dhaka] PHP Warning:  Undefined property: stdClass::$role in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/User.php on line 25
+[17-Oct-2025 18:04:30 Asia/Dhaka] PHP Warning:  Undefined variable $pdo in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/logout.php on line 4
+[17-Oct-2025 18:04:30 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined method User::logout() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/logout.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/logout.php on line 5
+[17-Oct-2025 18:04:36 Asia/Dhaka] PHP Warning:  Undefined property: stdClass::$role in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/User.php on line 25
+[17-Oct-2025 18:05:00 Asia/Dhaka] PHP Warning:  Undefined property: stdClass::$role in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/User.php on line 25
+[17-Oct-2025 19:05:50 Asia/Dhaka] PHP Warning:  Undefined property: stdClass::$role in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/User.php on line 25

@@ -50,3 +50,28 @@ function display_message(){
     }
     return $message;
 }
+
+//function getCurrentUser() {
+    //global $db;
+    //if (isset($_SESSION['user_id'])) {
+        //$user_id = $_SESSION['user_id'];
+        //$user = $db->query("SELECT * FROM users WHERE id = ?", [$user_id])->first();
+        //if ($user) {
+            // Fetch all roles for this user and add them as an array to the user object
+            //$roles_result = $db->query("SELECT role FROM user_roles WHERE user_id = ?", [$user_id])->results();
+            
+            // Convert the array of objects to a simple array of role strings
+            //$user->roles = array_column($roles_result, 'role'); 
+            
+            //return (array)$user;
+        //}
+    //}
+    //return null;
+//}
+
+/**
+ * Checks if the current user has a specific permission based on their assigned roles.
+ *
+ * @param string $permission The permission to check (e.g., 'employee:create').
+ * @return bool True if the user has the permission, false otherwise.
+ */
