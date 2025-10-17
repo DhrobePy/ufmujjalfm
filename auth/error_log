@@ -105,3 +105,4 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/logout.php on line 5
+[17-Oct-2025 15:41:36 Asia/Dhaka] PHP Warning:  Undefined property: stdClass::$role in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/User.php on line 25

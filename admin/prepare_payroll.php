@@ -1,12 +1,14 @@
 <?php
-// new_ufmhrm/admin/prepare_payroll.php (Final Corrected Version)
+// /admin/prepare_payroll.php (Final Definitive Logic)
 
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
 require_once '../core/init.php';
-require_once 'repositories/EmployeeRepository.php'; // Include the repository
-require_once 'services/PayrollService.php';       // Include the service
+
+// Include our new architectural components
+require_once 'repositories/EmployeeRepository.php';
+require_once 'services/PayrollService.php';
 
 if (!is_admin_logged_in()) {
     header('Location: ../auth/login.php');
@@ -19,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     $payPeriodStart = date('Y-m-d', mktime(0, 0, 0, $month, 1, $year));
     $payPeriodEnd = date('Y-m-t', mktime(0, 0, 0, $month, 1, $year));
-    $daysInMonth = date('t', mktime(0, 0, 0, $month, 1, $year));
+    $daysInMonth = cal_days_in_month(CAL_GREGORIAN, $month, $year);
 
     // --- 1. Validation ---
     $existingPayroll = $db->query("SELECT id FROM payrolls WHERE pay_period_start = ? AND pay_period_end = ?", [$payPeriodStart, $payPeriodEnd])->first();
@@ -29,21 +31,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 
-    // --- Instantiate our classes ---
+    // --- Instantiate our new service and repository ---
     $employeeRepo = new EmployeeRepository($db);
     $payrollService = new PayrollService();
 
     $db->getPdo()->beginTransaction();
     try {
         // --- 2. Fetch all data efficiently ---
-        $allEmployeeDetails = $employeeRepo->getActiveEmployeesWithDetails($payPeriodStart, $payPeriodEnd, str_pad($month, 2, '0', STR_PAD_LEFT), (string)$year);
+        $allEmployeeDetails = $employeeRepo->getActiveEmployeesWithDetails(
+            $payPeriodStart, 
+            $payPeriodEnd, 
+            str_pad($month, 2, '0', STR_PAD_LEFT), 
+            (string)$year
+        );
 
         foreach ($allEmployeeDetails as $employeeId => $employeeData) {
             
-            // --- 3. Calculate payroll using the service ---
+            // --- 3. Calculate payroll using the dedicated service ---
             $payrollCalculations = $payrollService->calculatePayrollForEmployee($employeeData, $daysInMonth);
 
-            // --- 4. Insert summary into the main payrolls table ---
+            // --- 4. Insert summary record into the 'payrolls' table ---
             $db->insert('payrolls', [
                 'employee_id' => $employeeId,
                 'pay_period_start' => $payPeriodStart,
@@ -54,10 +61,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'status' => 'pending_approval'
             ]);
 
-            // --- 5. Get the ID of the payroll we just created (THE FIX) ---
+            // --- 5. Get the ID of the payroll summary we just created ---
             $newPayrollId = $db->getPdo()->lastInsertId();
 
-            // --- 6. Insert the detailed breakdown into the new table ---
+            // --- 6. Insert the detailed breakdown into the 'payroll_details' table ---
             $db->insert('payroll_details', [
                 'payroll_id' => $newPayrollId,
                 'basic_salary' => $payrollCalculations['basic_salary'],
@@ -75,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         $db->getPdo()->commit();
-        $_SESSION['success_flash'] = 'Payroll for ' . date('F Y', strtotime($payPeriodStart)) . ' has been generated successfully and is ready for review.';
+        $_SESSION['success_flash'] = 'Payroll for ' . date('F Y', strtotime($payPeriodStart)) . ' generated successfully and is ready for review.';
         header('Location: approve_payroll.php');
         exit();
 
@@ -89,4 +96,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     header('Location: payroll.php');
     exit();
 }
-?>

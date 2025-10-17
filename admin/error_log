@@ -3260,3 +3260,193 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/attendance.php on line 4
+[15-Oct-2025 04:11:46 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_logged_in() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/leave.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/leave.php on line 4
+[15-Oct-2025 04:19:45 Asia/Dhaka] PHP Warning:  Undefined array key "employee_id" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/leave.php on line 74
+[15-Oct-2025 04:21:18 Asia/Dhaka] PHP Warning:  Undefined array key "employee_id" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/leave.php on line 74
+[15-Oct-2025 04:21:32 Asia/Dhaka] PHP Warning:  Undefined array key "employee_id" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/leave.php on line 74
+[15-Oct-2025 08:53:35 Asia/Dhaka] PHP Warning:  Undefined array key "employee_id" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/loans.php on line 83
+[15-Oct-2025 08:53:35 Asia/Dhaka] PHP Warning:  Undefined array key "employee_id" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/loans.php on line 84
+[15-Oct-2025 09:33:39 Asia/Dhaka] PHP Warning:  Undefined array key "id" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/loans.php on line 60
+[15-Oct-2025 09:36:15 Asia/Dhaka] PHP Warning:  Undefined array key "status" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/attendance.php on line 45
+[15-Oct-2025 09:36:15 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'status' cannot be null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php:49
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php(49): PDOStatement->execute()
+#1 /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php(105): Database->query()
+#2 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/attendance.php(52): Database->insert()
+#3 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php on line 49
+[15-Oct-2025 09:39:09 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_superadmin() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/users.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/users.php on line 5
+[15-Oct-2025 14:29:53 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_superadmin() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/users.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/users.php on line 5
+[15-Oct-2025 14:46:30 Asia/Dhaka] PHP Warning:  Undefined array key "status" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/attendance.php on line 45
+[15-Oct-2025 14:46:30 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'status' cannot be null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php:49
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php(49): PDOStatement->execute()
+#1 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/attendance.php(50): Database->query()
+#2 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php on line 49
+[15-Oct-2025 22:22:48 Asia/Dhaka] PHP Warning:  Attempt to read property "total" on null in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 53
+[15-Oct-2025 22:22:48 Asia/Dhaka] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 136
+[15-Oct-2025 22:34:28 Asia/Dhaka] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 178
+[15-Oct-2025 22:54:11 Asia/Dhaka] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 178
+[15-Oct-2025 22:54:17 Asia/Dhaka] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 178
+[15-Oct-2025 17:06:17 UTC] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 173
+[16-Oct-2025 06:45:55 UTC] PHP Parse error:  syntax error, unexpected single-quoted string "; //  // Your database password" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 23
+[16-Oct-2025 06:46:59 UTC] PHP Parse error:  syntax error, unexpected identifier "r" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 55
+[16-Oct-2025 06:48:19 UTC] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 164
+[16-Oct-2025 06:48:40 UTC] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 164
+[16-Oct-2025 06:49:05 UTC] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 164
+[16-Oct-2025 06:52:05 UTC] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 164
+[16-Oct-2025 07:10:49 UTC] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 164
+[16-Oct-2025 20:07:58 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:10:43 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:10:52 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:13:06 Asia/Dhaka] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php:19) in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/prepare_payroll.php on line 85
+[16-Oct-2025 20:15:37 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 20:18:22 Asia/Dhaka] PHP Warning:  Undefined array key "absent_days" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/services/PayrollService.php on line 19
+[16-Oct-2025 21:51:03 Asia/Dhaka] PHP Warning:  Undefined array key "id" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/loans.php on line 60
+[16-Oct-2025 21:56:08 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_superadmin() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/users.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/users.php on line 5
+[16-Oct-2025 22:23:56 Asia/Dhaka] PHP Warning:  Undefined array key "id" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/loans.php on line 105
+[17-Oct-2025 15:10:14 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_superadmin() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/users.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/users.php on line 5
+[17-Oct-2025 15:17:36 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.last_login' in 'SELECT' in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php:49
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php(49): PDOStatement->execute()
+#1 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/users.php(71): Database->query()
+#2 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php on line 49

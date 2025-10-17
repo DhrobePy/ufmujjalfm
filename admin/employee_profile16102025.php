@@ -59,27 +59,6 @@ $recentAttendance = $db->query("
     LIMIT 10
 ", [$employeeId])->results();
 
-// Fetch full month attendance for calendar
-$currentMonth = isset($_GET['month']) ? (int)$_GET['month'] : date('m');
-$currentYear = isset($_GET['year']) ? (int)$_GET['year'] : date('Y');
-
-$attendanceCalendar = $db->query("
-    SELECT 
-        DATE(clock_in) as date,
-        status
-    FROM attendance 
-    WHERE employee_id = ? 
-    AND MONTH(clock_in) = ? 
-    AND YEAR(clock_in) = ?
-    ORDER BY clock_in
-", [$employeeId, $currentMonth, $currentYear])->results();
-
-// Convert to date-keyed array for easy lookup
-$attendanceMap = [];
-foreach ($attendanceCalendar as $record) {
-    $attendanceMap[$record->date] = $record->status;
-}
-
 // Fetch leave requests
 $leaveRequests = $db->query("
     SELECT * FROM leave_requests 
@@ -167,68 +146,75 @@ include_once '../templates/header.php';
                 </div>
 
                 <!-- Action Buttons -->
+                <!-- Action Buttons -->
                 <div class="flex flex-wrap gap-2">
-                    <a href="edit_employee.php?id=<?php echo $employee->id; ?>" 
-                       class="inline-flex items-center px-4 py-2 bg-white text-primary-600 rounded-lg hover:bg-primary-50 transition-colors shadow-md">
-                        <i class="fas fa-edit mr-2"></i>
-                        Edit Profile
-                    </a>
-                    
-                    <!-- Dropdown Menu Button -->
-                    <div class="relative inline-block text-left" id="actionDropdown">
-                        <button type="button" 
-                                onclick="toggleDropdown()"
-                                class="inline-flex items-center px-4 py-2 bg-white bg-opacity-10 text-white rounded-lg hover:bg-opacity-20 transition-colors">
-                            <i class="fas fa-ellipsis-v"></i>
-                        </button>
-                        
-                        <!-- Dropdown Menu -->
-                        <div id="dropdownMenu" 
-                             class="hidden absolute right-0 mt-2 w-56 rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
-                            <div class="py-1" role="menu">
-                                <!-- Generate Payslip -->
-                                <a href="payslip.php?id=<?php echo $employee->id; ?>" 
-                                   target="_blank"
-                                   class="group flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors">
-                                    <div class="flex-shrink-0 h-8 w-8 bg-indigo-100 rounded-lg flex items-center justify-center mr-3 group-hover:bg-indigo-200">
-                                        <i class="fas fa-file-invoice text-indigo-600"></i>
-                                    </div>
-                                    <div>
-                                        <p class="font-medium">Generate Payslip</p>
-                                        <p class="text-xs text-gray-500">Download salary slip</p>
-                                    </div>
-                                </a>
-                                
-                                <!-- Generate Salary Certificate -->
-                                <a href="generate_salary_certificate.php?id=<?php echo $employee->id; ?>" 
-                                   target="_blank"
-                                   class="group flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-600 transition-colors">
-                                    <div class="flex-shrink-0 h-8 w-8 bg-green-100 rounded-lg flex items-center justify-center mr-3 group-hover:bg-green-200">
-                                        <i class="fas fa-certificate text-green-600"></i>
-                                    </div>
-                                    <div>
-                                        <p class="font-medium">Salary Certificate</p>
-                                        <p class="text-xs text-gray-500">Download certificate</p>
-                                    </div>
-                                </a>
-                                
-                                <div class="border-t border-gray-100"></div>
-                                
-                                <!-- Print Profile -->
-                                <a href="javascript:window.print()" 
-                                   class="group flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors">
-                                    <div class="flex-shrink-0 h-8 w-8 bg-purple-100 rounded-lg flex items-center justify-center mr-3 group-hover:bg-purple-200">
-                                        <i class="fas fa-print text-purple-600"></i>
-                                    </div>
-                                    <div>
-                                        <p class="font-medium">Print Profile</p>
-                                        <p class="text-xs text-gray-500">Print this page</p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
+    <a href="edit_employee.php?id=<?php echo $employee->id; ?>" 
+       class="inline-flex items-center px-4 py-2 bg-white text-primary-600 rounded-lg hover:bg-primary-50 transition-colors shadow-md">
+        <i class="fas fa-edit mr-2"></i>
+        Edit Profile
+    </a>
+    
+    <!-- Dropdown Menu Button -->
+    <div class="relative inline-block text-left" id="actionDropdown">
+        <button type="button" 
+                onclick="toggleDropdown()"
+                class="inline-flex items-center px-4 py-2 bg-white bg-opacity-10 text-white rounded-lg hover:bg-opacity-20 transition-colors">
+            <i class="fas fa-ellipsis-v"></i>
+        </button>
+        
+        <!-- Dropdown Menu -->
+        <div id="dropdownMenu" 
+             class="hidden absolute right-0 mt-2 w-56 rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
+            <div class="py-1" role="menu">
+                <!-- Generate Payslip -->
+                <a href="generate_payslip.php?id=<?php echo $employee->id; ?>" 
+                   target="_blank"
+                   class="group flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors">
+                    <div class="flex-shrink-0 h-8 w-8 bg-indigo-100 rounded-lg flex items-center justify-center mr-3 group-hover:bg-indigo-200">
+                        <i class="fas fa-file-invoice text-indigo-600"></i>
                     </div>
-                </div>
+                    <div>
+                        <p class="font-medium">Generate Payslip</p>
+                        <p class="text-xs text-gray-500">Download salary slip</p>
+                    </div>
+                </a>
+                
+                <!-- Generate Salary Certificate -->
+                <a href="generate_salary_certificate.php?id=<?php echo $employee->id; ?>" 
+                   target="_blank"
+                   class="group flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-600 transition-colors">
+                    <div class="flex-shrink-0 h-8 w-8 bg-green-100 rounded-lg flex items-center justify-center mr-3 group-hover:bg-green-200">
+                        <i class="fas fa-certificate text-green-600"></i>
+                    </div>
+                    <div>
+                        <p class="font-medium">Salary Certificate</p>
+                        <p class="text-xs text-gray-500">Download certificate</p>
+                    </div>
+                </a>
+                
+                <div class="border-t border-gray-100"></div>
+                
+                <!-- Print Profile -->
+                <a href="javascript:window.print()" 
+                   class="group flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors">
+                    <div class="flex-shrink-0 h-8 w-8 bg-purple-100 rounded-lg flex items-center justify-center mr-3 group-hover:bg-purple-200">
+                        <i class="fas fa-print text-purple-600"></i>
+                    </div>
+                    <div>
+                        <p class="font-medium">Print Profile</p>
+                        <p class="text-xs text-gray-500">Print this page</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+                
+                
+                
+                
+                
             </div>
         </div>
     </div>
@@ -331,6 +317,13 @@ include_once '../templates/header.php';
                     </div>
 
                     <div class="flex items-start">
+                        <div class="flex-shrink-0 h-10 w-10 bg-pink-100 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-birthday-cake text-pink-600"></i>
+                        </div>
+                        
+                    </div>
+
+                    <div class="flex items-start">
                         <div class="flex-shrink-0 h-10 w-10 bg-indigo-100 rounded-lg flex items-center justify-center">
                             <i class="fas fa-venus-mars text-indigo-600"></i>
                         </div>
@@ -373,111 +366,6 @@ include_once '../templates/header.php';
 
         <!-- Right Column - Activity & History -->
         <div class="lg:col-span-2 space-y-6">
-            <!-- Attendance Calendar -->
-            <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-                <div class="bg-gradient-to-r from-gray-50 to-gray-100 px-6 py-4 border-b border-gray-200 flex items-center justify-between">
-                    <h2 class="text-lg font-semibold text-gray-900">
-                        <i class="fas fa-calendar text-primary-600 mr-2"></i>
-                        Attendance Calendar
-                    </h2>
-                    <div class="flex gap-2">
-                        <a href="?id=<?php echo $employeeId; ?>&month=<?php echo ($currentMonth == 1 ? 12 : $currentMonth - 1); ?>&year=<?php echo ($currentMonth == 1 ? $currentYear - 1 : $currentYear); ?>" 
-                           class="px-3 py-1 text-sm text-gray-600 hover:bg-gray-200 rounded transition-colors">
-                            <i class="fas fa-chevron-left"></i>
-                        </a>
-                        <span class="px-4 py-1 text-sm font-semibold text-gray-900 bg-gray-100 rounded">
-                            <?php echo date('F Y', mktime(0, 0, 0, $currentMonth, 1, $currentYear)); ?>
-                        </span>
-                        <a href="?id=<?php echo $employeeId; ?>&month=<?php echo ($currentMonth == 12 ? 1 : $currentMonth + 1); ?>&year=<?php echo ($currentMonth == 12 ? $currentYear + 1 : $currentYear); ?>" 
-                           class="px-3 py-1 text-sm text-gray-600 hover:bg-gray-200 rounded transition-colors">
-                            <i class="fas fa-chevron-right"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="p-6">
-                    <div class="grid grid-cols-7 gap-2">
-                        <!-- Day headers -->
-                        <?php foreach (['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'] as $day): ?>
-                            <div class="text-center font-semibold text-sm text-gray-600 py-2">
-                                <?php echo $day; ?>
-                            </div>
-                        <?php endforeach; ?>
-                        
-                        <!-- Calendar days -->
-                        <?php
-                        $firstDay = date('w', mktime(0, 0, 0, $currentMonth, 1, $currentYear));
-                        $daysInMonth = date('t', mktime(0, 0, 0, $currentMonth, 1, $currentYear));
-                        
-                        // Empty cells for days before month starts
-                        for ($i = 0; $i < $firstDay; $i++) {
-                            echo '<div></div>';
-                        }
-                        
-                        // Days of month
-                        for ($day = 1; $day <= $daysInMonth; $day++) {
-                            $date = sprintf('%04d-%02d-%02d', $currentYear, $currentMonth, $day);
-                            $status = $attendanceMap[$date] ?? null;
-                            $today = date('Y-m-d');
-                            $isToday = $date === $today;
-                            
-                            $statusClass = '';
-                            $statusLabel = '';
-                            $bgColor = 'bg-gray-50';
-                            
-                            if ($status === 'present') {
-                                $statusClass = 'bg-green-100 text-green-800 border-green-300';
-                                $statusLabel = '✓';
-                            } elseif ($status === 'absent') {
-                                $statusClass = 'bg-red-100 text-red-800 border-red-300';
-                                $statusLabel = '✕';
-                            } elseif ($status === 'late') {
-                                $statusClass = 'bg-amber-100 text-amber-800 border-amber-300';
-                                $statusLabel = '⚠';
-                            } else {
-                                $statusClass = 'bg-gray-100 text-gray-400';
-                                $statusLabel = '';
-                            }
-                            
-                            echo '<div class="relative">';
-                            echo '<div class="h-16 rounded-lg ' . $statusClass . ' border-2 flex items-center justify-center cursor-pointer hover:shadow-md transition-shadow group" title="' . ($status ? ucfirst($status) : 'No record') . '">';
-                            echo '<div class="text-center">';
-                            echo '<div class="text-xs font-bold">' . $day . '</div>';
-                            if ($statusLabel) {
-                                echo '<div class="text-lg">' . $statusLabel . '</div>';
-                            }
-                            echo '</div>';
-                            if ($isToday) {
-                                echo '<div class="absolute top-1 right-1 w-2 h-2 bg-blue-500 rounded-full"></div>';
-                            }
-                            echo '</div>';
-                            echo '</div>';
-                        }
-                        ?>
-                    </div>
-                    
-                    <!-- Legend -->
-                    <div class="mt-6 pt-6 border-t border-gray-200 flex flex-wrap gap-4 text-sm">
-                        <div class="flex items-center gap-2">
-                            <div class="w-4 h-4 bg-green-100 border-2 border-green-300 rounded"></div>
-                            <span class="text-gray-600">Present</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <div class="w-4 h-4 bg-red-100 border-2 border-red-300 rounded"></div>
-                            <span class="text-gray-600">Absent</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <div class="w-4 h-4 bg-amber-100 border-2 border-amber-300 rounded"></div>
-                            <span class="text-gray-600">Late</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <div class="w-4 h-4 bg-gray-100 border-2 border-gray-300 rounded"></div>
-                            <span class="text-gray-600">No Record</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <!-- Recent Attendance -->
             <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                 <div class="bg-gradient-to-r from-gray-50 to-gray-100 px-6 py-4 border-b border-gray-200">
@@ -533,7 +421,6 @@ include_once '../templates/header.php';
                 </div>
             </div>
 
-            <!-- Leave Requests -->
             <!-- Leave Requests -->
             <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                 <div class="bg-gradient-to-r from-gray-50 to-gray-100 px-6 py-4 border-b border-gray-200">
@@ -652,15 +539,6 @@ include_once '../templates/header.php';
         </div>
     </div>
 </div>
-
-<style>
-    @media print {
-        .no-print {
-            display: none !important;
-        }
-    }
-</style>
-
 <script>
 // Toggle dropdown menu
 function toggleDropdown() {
