@@ -136,6 +136,25 @@ $myLoans = (isset($currentUser['employee_id'])) ? $db->query("SELECT l.*, (l.amo
 $myAdvances = (isset($currentUser['employee_id'])) ? $db->query("SELECT * FROM salary_advances WHERE employee_id = ? AND status = 'approved' ORDER BY advance_date DESC", [$currentUser['employee_id']])->results() : [];
 $allLoans = $isAdmin ? $db->query("SELECT l.*, e.first_name, e.last_name, (l.amount - IFNULL((SELECT SUM(amount) FROM loan_installments WHERE loan_id = l.id), 0)) as outstanding_balance FROM loans l JOIN employees e ON l.employee_id = e.id ORDER BY l.loan_date DESC")->results() : [];
 $allEmployees = $db->query("SELECT id, first_name, last_name FROM employees WHERE status = 'active' ORDER BY first_name")->results();
+
+// --- NEW: Data for Salary Advances Tab with Employee Details ---
+$myAdvancesList = []; // Default to an empty array
+$adv_filter_month = $_GET['adv_month'] ?? date('m');
+$adv_filter_year = $_GET['adv_year'] ?? date('Y');
+
+// UPDATED: Query now includes employee details
+$adv_params = [$adv_filter_month, $adv_filter_year];
+    
+$myAdvancesList = $db->query("
+        SELECT sa.*, e.id as emp_id, e.first_name, e.last_name
+        FROM salary_advances sa
+        JOIN employees e ON sa.employee_id = e.id
+        WHERE sa.advance_month = ? 
+        AND sa.advance_year = ?
+        AND sa.status = 'approved' 
+        ORDER BY sa.advance_date DESC
+    ", $adv_params)->results();
+
 ?>
 
 <div class="space-y-6">
@@ -147,6 +166,8 @@ $allEmployees = $db->query("SELECT id, first_name, last_name FROM employees WHER
         <div class="border-b border-gray-200"><nav class="-mb-px flex space-x-8" aria-label="Tabs">
             <?php if ($isAdmin): ?><a href="#pending" @click.prevent="activeTab = 'pending'" :class="{'border-primary-500 text-primary-600': activeTab === 'pending'}" class="border-transparent text-gray-500 hover:border-gray-300 py-4 px-1 border-b-2 font-medium text-sm flex items-center gap-2"><i class="fas fa-clock"></i> Pending Approval <span class="bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full text-xs"><?php echo count($pendingApplications); ?></span></a><?php endif; ?>
             <a href="#apply" @click.prevent="activeTab = 'apply'" :class="{'border-primary-500 text-primary-600': activeTab === 'apply'}" class="border-transparent text-gray-500 hover:border-gray-300 py-4 px-1 border-b-2 font-medium text-sm flex items-center gap-2"><i class="fas fa-paper-plane"></i> Apply</a>
+            <a href="#salary_advances" @click.prevent="activeTab = 'salary_advances'" :class="{'border-primary-500 text-primary-600': activeTab === 'salary_advances'}" class="border-transparent text-gray-500 hover:border-gray-300 py-4 px-1 border-b-2 font-medium text-sm flex items-center gap-2"><i class="fas fa-hand-holding-usd"></i> Salary Advances</a>
+            
             <a href="#my_loans" @click.prevent="activeTab = 'my_loans'" :class="{'border-primary-500 text-primary-600': activeTab === 'my_loans'}" class="border-transparent text-gray-500 hover:border-gray-300 py-4 px-1 border-b-2 font-medium text-sm flex items-center gap-2"><i class="fas fa-history"></i> My History</a>
             <?php if ($isAdmin): ?><a href="#all_loans" @click.prevent="activeTab = 'all_loans'" :class="{'border-primary-500 text-primary-600': activeTab === 'all_loans'}" class="border-transparent text-gray-500 hover:border-gray-300 py-4 px-1 border-b-2 font-medium text-sm flex items-center gap-2"><i class="fas fa-list"></i> All Loans</a><?php endif; ?>
             <?php if ($currentUser['role'] === 'superadmin'): ?><a href="#reports" @click.prevent="activeTab = 'reports'" :class="{'border-primary-500 text-primary-600': activeTab === 'reports'}" class="border-transparent text-gray-500 hover:border-gray-300 py-4 px-1 border-b-2 font-medium text-sm flex items-center gap-2"><i class="fas fa-chart-pie"></i> Reports</a><?php endif; ?>
@@ -202,6 +223,24 @@ $allEmployees = $db->query("SELECT id, first_name, last_name FROM employees WHER
                     <tbody class="divide-y"><?php foreach ($allLoans as $loan): ?><tr><td class="px-6 py-4"><?php echo htmlspecialchars($loan->first_name . ' ' . $loan->last_name); ?></td><td class="px-6 py-4"><?php echo date('d M, Y', strtotime($loan->loan_date)); ?></td><td class="px-6 py-4 text-right">৳<?php echo number_format($loan->amount, 2); ?></td><td class="px-6 py-4 text-right text-red-600 font-semibold">৳<?php echo number_format($loan->outstanding_balance, 2); ?></td><td class="px-6 py-4 text-center"><?php echo ucfirst($loan->status); ?></td><td class="px-6 py-4 text-center"><?php if ($loan->outstanding_balance > 0 && $loan->status === 'active'): ?><button @click="paymentModal = true; selectedLoan = { id: <?php echo $loan->id; ?>, amount: <?php echo $loan->amount; ?>, outstanding: <?php echo $loan->outstanding_balance; ?>, date: '<?php echo date('d M, Y', strtotime($loan->loan_date)); ?>', employee: '<?php echo htmlspecialchars($loan->first_name . ' ' . $loan->last_name); ?>' }; paymentAmount = ''; redirectTab = 'all_loans';" class="px-3 py-1 text-sm bg-blue-500 text-white rounded-md hover:bg-blue-600">Add Payment</button><?php else: ?><span class="text-green-600 font-semibold">Paid</span><?php endif; ?></td></tr><?php endforeach; ?></tbody>
                 </table></div></div>
             <?php endif; ?></div>
+            
+            <div x-show="activeTab === 'salary_advances'" x-cloak>
+                <div class="bg-white rounded-2xl shadow-xl border">
+                    <div class="p-6 border-b"><h2 class="text-xl font-bold">Salary Advance History</h2></div>
+                    <div class="p-6 bg-gray-50 border-b">
+                        <form method="GET" class="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
+                            <input type="hidden" name="tab" value="salary_advances">
+                            <div><label class="block text-sm font-medium">Month</label><select name="adv_month" class="mt-1 w-full rounded-md border-gray-300"><?php for ($m=1; $m<=12; $m++): ?><option value="<?php echo str_pad($m, 2, '0', STR_PAD_LEFT); ?>" <?php if($adv_filter_month == $m) echo 'selected'; ?>><?php echo date('F', mktime(0,0,0,$m,1)); ?></option><?php endfor; ?></select></div>
+                            <div><label class="block text-sm font-medium">Year</label><select name="adv_year" class="mt-1 w-full rounded-md border-gray-300"><?php for ($y = date('Y'); $y >= date('Y')-2; $y--): ?><option value="<?php echo $y; ?>" <?php if($adv_filter_year == $y) echo 'selected'; ?>><?php echo $y; ?></option><?php endfor; ?></select></div>
+                            <div class="md:col-start-4 flex justify-end"><button type="submit" class="px-6 py-3 bg-primary-600 text-white rounded-lg font-bold">Filter</button></div>
+                        </form>
+                    </div>
+                    <div class="overflow-x-auto"><table class="min-w-full divide-y">
+                        <thead class="bg-gray-50"><tr><th class="px-6 py-3 text-left">Employee Name</th><th class="px-6 py-3 text-left">Department</th><th class="px-6 py-3 text-left">Advance Date</th><th class="px-6 py-3 text-right">Amount</th><th class="px-6 py-3 text-left">Deduction Period</th><th class="px-6 py-3 text-left">Reason</th><th class="px-6 py-3 text-center">Status</th></tr></thead>
+                        <tbody class="divide-y"><?php if(empty($myAdvancesList)): ?><tr><td colspan="7" class="text-center py-10 text-gray-500">No salary advances found for this period.</td></tr><?php else: ?><?php foreach ($myAdvancesList as $adv): ?><tr><td class="px-6 py-4 font-medium"><?php echo htmlspecialchars($adv->first_name . ' ' . $adv->last_name); ?></td><td class="px-6 py-4"><?php echo htmlspecialchars($adv->department_name ?? 'N/A'); ?></td><td class="px-6 py-4"><?php echo date('d M, Y', strtotime($adv->advance_date)); ?></td><td class="px-6 py-4 text-right font-semibold text-red-600">৳<?php echo number_format($adv->amount, 2); ?></td><td class="px-6 py-4"><?php echo date('F Y', mktime(0,0,0,$adv->advance_month,1,$adv->advance_year)); ?></td><td class="px-6 py-4"><?php echo htmlspecialchars($adv->reason); ?></td><td class="px-6 py-4 text-center"><span class="px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800"><?php echo ucfirst($adv->status); ?></span></td></tr><?php endforeach; ?><?php endif; ?></tbody>
+                    </table></div>
+                </div>
+            </div>
             
             <div x-show="activeTab === 'reports'" x-cloak><?php if ($currentUser['role'] === 'superadmin'): ?>
                 <div class="bg-white rounded-2xl shadow-xl border p-12 text-center"><i class="fas fa-chart-line text-primary-300 text-6xl mb-6"></i><h2 class="text-2xl font-bold">Loan Reports</h2><p class="text-gray-500 mt-2">This feature is coming soon.</p></div>
@@ -259,4 +298,3 @@ $allEmployees = $db->query("SELECT id, first_name, last_name FROM employees WHER
 </div>
 
 <?php include_once '../templates/footer.php'; ?>
-

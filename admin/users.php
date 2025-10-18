@@ -1,5 +1,5 @@
 <?php
-// new_ufmhrm/admin/users.php (User Management Hub with RBAC)
+// new_ufmhrm/admin/users.php (User Management Hub - Superadmin Only)
 
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
@@ -12,8 +12,6 @@ if (!is_admin_logged_in()) {
 }
 
 $currentUser = getCurrentUser();
-// This will work correctly with your updated getCurrentUser() function
-$isSuperAdmin = in_array('superadmin', $currentUser['roles'] ?? []);
 
 // --- Master List of All Permissions & Roles in the System ---
 $permissions = [
@@ -31,7 +29,7 @@ $roles = ['superadmin', 'admin-sirajgonj', 'admin-rampura', 'accounts-sirajgonj'
 
 
 // --- LOGIC: Handle ALL form submissions before any HTML is sent ---
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && $isSuperAdmin) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // 1. Handle New User Creation
     if (isset($_POST['create_user'])) {
         $employee_id = (int)$_POST['employee_id'];
@@ -133,7 +131,7 @@ include_once '../templates/header.php';
 // --- DATA FETCHING for different tabs ---
 $allUsers = $db->query("SELECT u.id, u.username, e.first_name, e.last_name, p.name as position_name, (SELECT GROUP_CONCAT(role ORDER BY role SEPARATOR ', ') FROM user_roles WHERE user_id = u.id) as roles FROM users u LEFT JOIN employees e ON u.employee_id = e.id LEFT JOIN positions p ON e.position_id = p.id WHERE u.deleted_at IS NULL ORDER BY e.first_name")->results();
 $unlinkedEmployees = $db->query("SELECT id, first_name, last_name FROM employees WHERE status = 'active' AND id NOT IN (SELECT employee_id FROM users WHERE employee_id IS NOT NULL AND deleted_at IS NULL)")->results();
-$activityLog = $isSuperAdmin ? $db->query("SELECT al.action, al.description, al.created_at, u.username FROM activity_log al JOIN users u ON al.user_id = u.id ORDER BY al.created_at DESC LIMIT 100")->results() : [];
+$activityLog = $db->query("SELECT al.action, al.description, al.created_at, u.username FROM activity_log al JOIN users u ON al.user_id = u.id ORDER BY al.created_at DESC LIMIT 100")->results();
 $saved_permissions_raw = $db->query("SELECT * FROM role_permissions")->results();
 $saved_permissions = [];
 foreach ($saved_permissions_raw as $perm) { $saved_permissions[$perm->role][$perm->permission] = true; }
@@ -147,17 +145,15 @@ foreach ($saved_permissions_raw as $perm) { $saved_permissions[$perm->role][$per
     <div x-data="{ activeTab: 'users', editUserId: null }" x-init="()=>{ const params = new URLSearchParams(window.location.search); if (params.get('tab')) { activeTab = params.get('tab'); } window.history.replaceState({}, document.title, window.location.pathname); }">
         <div class="border-b border-gray-200"><nav class="-mb-px flex space-x-8" aria-label="Tabs">
             <a href="#users" @click.prevent="activeTab = 'users'; editUserId = null" :class="{'border-primary-500 text-primary-600': activeTab === 'users'}" class="border-transparent text-gray-500 hover:border-gray-300 py-4 px-1 border-b-2 font-medium text-sm flex items-center gap-2"><i class="fas fa-list"></i> All Users</a>
-            <?php if ($isSuperAdmin): ?>
             <a href="#create" @click.prevent="activeTab = 'create'; editUserId = null" :class="{'border-primary-500 text-primary-600': activeTab === 'create'}" class="border-transparent text-gray-500 hover:border-gray-300 py-4 px-1 border-b-2 font-medium text-sm flex items-center gap-2"><i class="fas fa-user-plus"></i> Create User</a>
             <a href="#activity" @click.prevent="activeTab = 'activity'; editUserId = null" :class="{'border-primary-500 text-primary-600': activeTab === 'activity'}" class="border-transparent text-gray-500 hover:border-gray-300 py-4 px-1 border-b-2 font-medium text-sm flex items-center gap-2"><i class="fas fa-history"></i> Activity Log</a>
             <a href="#permissions" @click.prevent="activeTab = 'permissions'; editUserId = null" :class="{'border-primary-500 text-primary-600': activeTab === 'permissions'}" class="border-transparent text-gray-500 hover:border-gray-300 py-4 px-1 border-b-2 font-medium text-sm flex items-center gap-2"><i class="fas fa-user-shield"></i> Permissions</a>
-            <?php endif; ?>
         </nav></div>
 
         <div class="mt-6">
             <div x-show="activeTab === 'users'" x-cloak>
                 <div class="bg-white rounded-2xl shadow-xl border overflow-hidden"><div class="p-6 border-b"><h2 class="text-xl font-bold">System Users</h2></div><div class="overflow-x-auto"><table class="min-w-full divide-y">
-                    <thead class="bg-gray-50"><tr><th class="px-6 py-3 text-left">Full Name</th><th class="px-6 py-3 text-left">Username</th><th class="px-6 py-3 text-left">Assigned Roles</th><?php if($isSuperAdmin): ?><th class="px-6 py-3 text-center">Actions</th><?php endif; ?></tr></thead>
+                    <thead class="bg-gray-50"><tr><th class="px-6 py-3 text-left">Full Name</th><th class="px-6 py-3 text-left">Username</th><th class="px-6 py-3 text-left">Assigned Roles</th><th class="px-6 py-3 text-center">Actions</th></tr></thead>
                     <tbody class="divide-y"><?php foreach ($allUsers as $user): ?><tr>
                         <td class="px-6 py-4"><div class="font-semibold"><?php echo htmlspecialchars($user->first_name . ' ' . $user->last_name); ?></div><div class="text-sm text-gray-500"><?php echo htmlspecialchars($user->position_name ?? 'N/A'); ?></div></td>
                         <td class="px-6 py-4 text-sm"><?php echo htmlspecialchars($user->username); ?></td>
@@ -165,15 +161,14 @@ foreach ($saved_permissions_raw as $perm) { $saved_permissions[$perm->role][$per
                             <?php $current_roles = $user->roles ? explode(', ', $user->roles) : [];
                             foreach ($current_roles as $role): ?><span class="px-2 py-1 text-xs font-semibold rounded-full bg-primary-100 text-primary-800"><?php echo ucfirst(str_replace(['-','_'], ' ', $role)); ?></span><?php endforeach; ?>
                         </div></td>
-                        <?php if ($isSuperAdmin): ?><td class="px-6 py-4 text-center whitespace-nowrap">
+                        <td class="px-6 py-4 text-center whitespace-nowrap">
                             <button @click="activeTab = 'edit'; editUserId = <?php echo $user->id; ?>" class="px-3 py-1 text-sm bg-blue-500 text-white rounded-md hover:bg-blue-600">Edit Roles</button>
                             <form method="POST" class="inline-block" onsubmit="return confirm('Are you sure you want to deactivate this user?');"><input type="hidden" name="delete_user" value="1"><input type="hidden" name="user_id" value="<?php echo $user->id; ?>"><button type="submit" class="px-3 py-1 text-sm bg-red-500 text-white rounded-md hover:bg-red-600">Delete</button></form>
-                        </td><?php endif; ?>
+                        </td>
                     </tr><?php endforeach; ?></tbody>
                 </table></div></div>
             </div>
 
-            <?php if ($isSuperAdmin): ?>
             <div x-show="activeTab === 'create'" x-cloak>
                 <div class="bg-white rounded-2xl shadow-xl border p-8 max-w-2xl mx-auto"><h2 class="text-2xl font-bold mb-6">Create New User</h2>
                     <form method="POST" class="space-y-6">
@@ -185,6 +180,7 @@ foreach ($saved_permissions_raw as $perm) { $saved_permissions[$perm->role][$per
                     </form>
                 </div>
             </div>
+
             <div x-show="activeTab === 'edit'" x-cloak>
                 <?php foreach($allUsers as $user): ?>
                 <div x-show="editUserId === <?php echo $user->id; ?>" class="bg-white rounded-2xl shadow-xl border p-8 max-w-2xl mx-auto">
@@ -201,12 +197,14 @@ foreach ($saved_permissions_raw as $perm) { $saved_permissions[$perm->role][$per
                 </div>
                 <?php endforeach; ?>
             </div>
+
             <div x-show="activeTab === 'activity'" x-cloak>
                 <div class="bg-white rounded-2xl shadow-xl border overflow-hidden"><div class="p-6 border-b"><h2 class="text-xl font-bold">Recent User Activity</h2></div><div class="overflow-x-auto"><table class="min-w-full divide-y">
                     <thead class="bg-gray-50"><tr><th class="px-6 py-3 text-left">Timestamp</th><th class="px-6 py-3 text-left">User</th><th class="px-6 py-3 text-left">Action</th><th class="px-6 py-3 text-left">Description</th></tr></thead>
                     <tbody class="divide-y"><?php foreach ($activityLog as $log): ?><tr><td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap"><?php echo date('M d, Y h:i A', strtotime($log->created_at)); ?></td><td class="px-6 py-4 font-semibold text-primary-700"><?php echo htmlspecialchars($log->username); ?></td><td class="px-6 py-4 text-sm font-medium"><?php echo htmlspecialchars($log->action); ?></td><td class="px-6 py-4 text-sm text-gray-600"><?php echo htmlspecialchars($log->description); ?></td></tr><?php endforeach; ?></tbody>
                 </table></div></div>
             </div>
+
             <div x-show="activeTab === 'permissions'" x-cloak>
                 <form method="POST">
                     <div class="bg-white rounded-2xl shadow-xl border overflow-hidden">
@@ -237,9 +235,9 @@ foreach ($saved_permissions_raw as $perm) { $saved_permissions[$perm->role][$per
                     </div>
                 </form>
             </div>
-            <?php endif; ?>
         </div>
     </div>
 </div>
 
 <?php include_once '../templates/footer.php'; ?>
+

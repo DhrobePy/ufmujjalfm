@@ -1,5 +1,5 @@
 <?php
-// new_ufmhrm/admin/payroll_history.php (Fajracct Style)
+// new_ufmhrm/admin/payroll_history.php (Fajracct Style with Breakdown Exports)
 
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
@@ -31,19 +31,25 @@ if (!empty($searchTerm)) {
     $searchTermWildcard = '%' . $searchTerm . '%';
     array_push($params, $searchTermWildcard, $searchTermWildcard, $searchTermWildcard);
 }
-
-if (!empty($filterMonth)) {
-    $whereClauses[] = "MONTH(p.pay_period_end) = ?";
-    $params[] = $filterMonth;
-}
-
-if (!empty($filterYear)) {
-    $whereClauses[] = "YEAR(p.pay_period_end) = ?";
-    $params[] = $filterYear;
-}
-
+if (!empty($filterMonth)) { $whereClauses[] = "MONTH(p.pay_period_end) = ?"; $params[] = $filterMonth; }
+if (!empty($filterYear)) { $whereClauses[] = "YEAR(p.pay_period_end) = ?"; $params[] = $filterYear; }
 $whereSql = 'WHERE ' . implode(' AND ', $whereClauses);
 
+// --- Fetch ALL records with FULL DETAILS for export, ignoring pagination ---
+$exportSql = "
+    SELECT 
+        e.first_name, e.last_name, p.pay_period_end,
+        pd.*
+    FROM payrolls p
+    JOIN employees e ON p.employee_id = e.id
+    LEFT JOIN payroll_details pd ON p.id = pd.payroll_id
+    $whereSql 
+    ORDER BY p.pay_period_end DESC, e.first_name
+";
+$allPayrollHistory = $db->query($exportSql, $params)->results();
+
+
+// --- Fetch PAGINATED records for display ---
 $countSql = "SELECT COUNT(p.id) as total FROM payrolls p JOIN employees e ON p.employee_id = e.id $whereSql";
 $totalRecords = $db->query($countSql, $params)->first()->total;
 $totalPages = ceil($totalRecords / $limit);
@@ -88,6 +94,9 @@ foreach ($payrollHistory as $item) {
 }
 ?>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+
 <style>
     .detail-row { display: none; }
     .detail-row.active { display: table-row; background-color: #f8fafc; }
@@ -104,12 +113,9 @@ foreach ($payrollHistory as $item) {
                 Back to Payroll Hub
             </a>
             <h1 class="text-3xl font-bold text-gray-900 flex items-center gap-3">
-                <div class="h-12 w-12 bg-primary-100 rounded-xl flex items-center justify-center">
-                    <i class="fas fa-history text-primary-600 text-xl"></i>
-                </div>
+                <div class="h-12 w-12 bg-primary-100 rounded-xl flex items-center justify-center"><i class="fas fa-history text-primary-600 text-xl"></i></div>
                 Payroll History
             </h1>
-            <p class="mt-2 text-gray-600">Search and review all previously processed payroll records.</p>
         </div>
 
         <div class="bg-white rounded-2xl shadow-xl border border-gray-200 p-6">
@@ -158,8 +164,15 @@ foreach ($payrollHistory as $item) {
         </div>
 
         <div class="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
+            <div class="p-6 bg-gray-50 border-b flex justify-between items-center">
+                <h2 class="text-xl font-bold text-gray-800">Processed Records</h2>
+                <div class="flex gap-2">
+                    <button onclick="exportPayrollToCSV()" class="px-4 py-2 text-sm bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition-colors"><i class="fas fa-file-csv mr-2"></i>Export Breakdown (CSV)</button>
+                    <button onclick="exportPayrollToPDF()" class="px-4 py-2 text-sm bg-red-600 text-white rounded-lg font-semibold hover:bg-red-700 transition-colors"><i class="fas fa-file-pdf mr-2"></i>Export Summary (PDF)</button>
+                </div>
+            </div>
             <div class="overflow-x-auto">
-                <table class="min-w-full divide-y divide-gray-200">
+                <table class="min-w-full divide-y divide-gray-200" id="payroll-history-table">
                     <thead class="bg-gradient-to-r from-primary-50 to-blue-50">
                         <tr>
                             <th class="w-12 px-4 py-4"></th>
@@ -173,52 +186,18 @@ foreach ($payrollHistory as $item) {
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
                         <?php if (empty($payrollHistory)): ?>
-                            <tr>
-                                <td colspan="7" class="text-center py-12 text-gray-500">
-                                    <i class="fas fa-inbox text-5xl text-gray-300 mb-4"></i>
-                                    <p class="text-lg">No payroll history found for the selected filters.</p>
-                                </td>
-                            </tr>
+                            <tr><td colspan="7" class="text-center py-12 text-gray-500"><p>No payroll history found.</p></td></tr>
                         <?php endif; ?>
                         <?php foreach ($payrollHistory as $item): ?>
-                            <tr class="hover:bg-primary-50 transition-colors">
-                                <td class="px-4 py-4 text-center cursor-pointer" onclick="toggleDetail(<?php echo $item->id; ?>)">
-                                    <i class="fas fa-chevron-down text-gray-400 chevron-icon" id="chevron-<?php echo $item->id; ?>"></i>
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="flex items-center gap-3">
-                                        <div class="h-10 w-10 bg-primary-100 rounded-full flex items-center justify-center">
-                                            <span class="text-primary-600 font-bold text-sm">
-                                                <?php echo strtoupper(substr($item->first_name, 0, 1) . substr($item->last_name, 0, 1)); ?>
-                                            </span>
-                                        </div>
-                                        <div>
-                                            <div class="font-semibold text-gray-900"><?php echo htmlspecialchars($item->first_name . ' ' . $item->last_name); ?></div>
-                                            <div class="text-sm text-gray-500"><?php echo htmlspecialchars($item->position_name ?? 'N/A'); ?></div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm font-medium text-gray-900"><?php echo date('F Y', strtotime($item->pay_period_end)); ?></div>
-                                    <div class="text-xs text-gray-500"><?php echo date('M d', strtotime($item->pay_period_start)) . ' - ' . date('M d, Y', strtotime($item->pay_period_end)); ?></div>
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-semibold text-gray-900">
-                                    ৳<?php echo number_format($item->gross_salary, 2); ?>
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-semibold text-red-600">
-                                    ৳<?php echo number_format($item->total_deductions, 2); ?>
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-bold text-green-600">
-                                    ৳<?php echo number_format($item->net_salary, 2); ?>
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-center">
-                                    <a href="payslip.php?id=<?php echo $item->id; ?>" target="_blank" 
-                                       class="inline-flex items-center px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors font-semibold">
-                                        <i class="fas fa-print mr-2"></i> Payslip
-                                    </a>
-                                </td>
+                            <tr class="hover:bg-primary-50">
+                                <td class="px-4 py-4 text-center cursor-pointer" onclick="toggleDetail(<?php echo $item->id; ?>)"><i class="fas fa-chevron-down text-gray-400 chevron-icon" id="chevron-<?php echo $item->id; ?>"></i></td>
+                                <td class="px-6 py-4 whitespace-nowrap"><div class="font-semibold"><?php echo htmlspecialchars($item->first_name . ' ' . $item->last_name); ?></div><div class="text-sm text-gray-500"><?php echo htmlspecialchars($item->position_name ?? 'N/A'); ?></div></td>
+                                <td class="px-6 py-4 whitespace-nowrap"><?php echo date('F Y', strtotime($item->pay_period_end)); ?></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right font-semibold">৳<?php echo number_format($item->gross_salary, 2); ?></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right font-semibold text-red-600">৳<?php echo number_format($item->total_deductions, 2); ?></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right font-bold text-green-600">৳<?php echo number_format($item->net_salary, 2); ?></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-center"><a href="payslip.php?id=<?php echo $item->id; ?>" target="_blank" class="inline-flex items-center px-4 py-2 bg-primary-600 text-white rounded-lg font-semibold"><i class="fas fa-print mr-2"></i> Payslip</a></td>
                             </tr>
-                            
                             <tr class="detail-row" id="detail-<?php echo $item->id; ?>">
                                 <td colspan="7" class="p-0">
                                     <div class="bg-gradient-to-r from-primary-50 to-blue-50 p-6 border-l-4 border-primary-500">
@@ -255,7 +234,7 @@ foreach ($payrollHistory as $item) {
                     </tbody>
                 </table>
             </div>
-
+            
             <?php if ($totalPages > 1): ?>
             <div class="p-6 bg-gray-50 border-t flex items-center justify-between">
                 <span class="text-sm text-gray-700">Showing <span class="font-semibold"><?php echo $offset + 1; ?></span> to <span class="font-semibold"><?php echo min($offset + $limit, $totalRecords); ?></span> of <span class="font-semibold"><?php echo $totalRecords; ?></span> results</span>
@@ -272,12 +251,80 @@ foreach ($payrollHistory as $item) {
 
 <script>
 function toggleDetail(payrollId) {
-    const detailRow = document.getElementById('detail-' + payrollId);
-    const chevron = document.getElementById('chevron-' + payrollId);
-    if (detailRow && chevron) {
-        detailRow.classList.toggle('active');
-        chevron.classList.toggle('rotated');
-    }
+    document.getElementById('detail-' + payrollId).classList.toggle('active');
+    document.getElementById('chevron-' + payrollId).classList.toggle('rotated');
+}
+
+// Data for export, now with all breakdown details
+const exportData = <?php echo json_encode($allPayrollHistory); ?>;
+
+function exportPayrollToCSV() {
+    const headers = [
+        'Employee Name', 'Pay Period', 'Basic Salary', 'House Allowance', 'Transport Allowance', 
+        'Medical Allowance', 'Other Allowances', 'Gross Salary', 'Absence Deduction', 
+        'Salary Advance', 'Loan Installment', 'Provident Fund', 'Tax Deduction', 
+        'Other Deductions', 'Total Deductions', 'Net Salary'
+    ];
+    let csvContent = headers.join(',') + '\n';
+
+    exportData.forEach(row => {
+        const rowData = [
+            `"${row.first_name} ${row.last_name}"`,
+            new Date(row.pay_period_end).toLocaleString('default', { month: 'long', year: 'numeric' }),
+            row.basic_salary || 0,
+            row.house_allowance || 0,
+            row.transport_allowance || 0,
+            row.medical_allowance || 0,
+            row.other_allowances || 0,
+            row.gross_salary || 0,
+            row.absence_deduction || 0,
+            row.salary_advance_deduction || 0,
+            row.loan_installment_deduction || 0,
+            row.provident_fund || 0,
+            row.tax_deduction || 0,
+            row.other_deductions || 0,
+            row.total_deductions || 0,
+            row.net_salary || 0
+        ];
+        csvContent += rowData.join(',') + '\n';
+    });
+
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = 'payroll_breakdown_history.csv';
+    link.click();
+}
+
+function exportPayrollToPDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    
+    const tableColumn = ['Employee Name', 'Pay Period', 'Gross Salary', 'Deductions', 'Net Salary'];
+    const tableRows = [];
+
+    exportData.forEach(row => {
+        const rowData = [
+            `${row.first_name} ${row.last_name}`,
+            new Date(row.pay_period_end).toLocaleString('default', { month: 'long', year: 'numeric' }),
+            `৳${parseFloat(row.gross_salary || 0).toFixed(2)}`,
+            `৳${parseFloat(row.deductions || 0).toFixed(2)}`,
+            `৳${parseFloat(row.net_salary || 0).toFixed(2)}`
+        ];
+        tableRows.push(rowData);
+    });
+
+    doc.autoTable({
+        head: [tableColumn],
+        body: tableRows,
+        startY: 20,
+        headStyles: { fillColor: [40, 167, 69] },
+        didDrawPage: function(data) {
+            doc.setFontSize(20);
+            doc.text("Payroll History Summary", data.settings.margin.left, 15);
+        }
+    });
+    doc.save('payroll_summary_history.pdf');
 }
 </script>
 
