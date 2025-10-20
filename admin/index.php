@@ -8,15 +8,19 @@ error_reporting(E_ALL);
 // Load all core files and create the global $db variable
 require_once '../core/init.php';
 
+
 // Authentication Check
 if (!is_admin_logged_in()) {
     header('Location: ../auth/login.php');
     exit();
 }
 
-$pageTitle = 'Dashboard - ' . APP_NAME;
-include_once '../templates/header.php';
 
+
+$pageTitle = 'Dashboard - ' . APP_NAME;
+//die('reached here');
+include_once '../templates/header.php';
+//die('reached here');
 // --- Comprehensive Data Fetching for All Dashboard Components ---
 $employee = new Employee($db);
 $totalEmployees = $employee->count();

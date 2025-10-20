@@ -1,9 +1,10 @@
 <?php
-require_once __DIR__ . '/../core/init.php';
+// new_ufmhrm/auth/logout.php
+require_once '../core/init.php';
 
-$user = new User($pdo);
-$user->logout();
+// Use the helper function to handle the entire logout process.
+logout_admin();
 
-header('Location: login.php');
+// Use the helper function to redirect back to the login page.
+redirect('login.php');
 exit();
-?>

@@ -1,12 +1,20 @@
 <?php
 // new_ufmhrm/auth/login.php
 
-// *** THIS PATH IS NOW CORRECTED ***
 require_once '../core/init.php';
+
+// --- CSRF TOKEN GENERATION ---
+// This is the crucial part. It creates the secret token for the form.
+if (empty($_SESSION['csrf_token'])) {
+    // Generate a secure random token and store it in the session.
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+$csrf_token = $_SESSION['csrf_token'];
+// --- END OF CSRF LOGIC ---
 
 // Redirect if already logged in
 if (is_admin_logged_in()) {
-    header('Location: ../admin/index.php');
+    redirect_to_dashboard(); // Use our new helper for consistency
     exit();
 }
 
@@ -55,7 +63,8 @@ $pageTitle = 'Login - ' . APP_NAME;
             <?php echo display_message(); ?>
             
             <form action="login_handler.php" method="POST" class="space-y-6">
-                <input type="hidden" name="login" value="1">
+                <!-- This hidden field is the "secret ticket" that must be submitted -->
+                <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
                 
                 <div>
                     <label for="username" class="block text-sm font-medium text-gray-700 mb-2">
@@ -86,9 +95,9 @@ $pageTitle = 'Login - ' . APP_NAME;
         <div class="text-center text-sm text-gray-500">
             <p>© <?php echo date('Y'); ?> UFM-HRM</p>
             <p class="mt-1">Ujjal Flour Mills HR Management </p>
-
         </div>
     </div>
     
 </body>
 </html>
+

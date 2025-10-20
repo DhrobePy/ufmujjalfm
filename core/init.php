@@ -6,10 +6,15 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-// Load the configuration file which defines database constants.
+// --- CORE FILE LOADING ORDER ---
+
+// 1. Load the configuration file which defines constants like database credentials and APP_URL.
 require_once __DIR__ . '/config/config.php';
 
-// Set up a robust autoloader with an absolute path.
+// 2. Include all global helper functions so they are available everywhere.
+require_once __DIR__ . '/functions/helpers.php';
+
+// 3. Set up a robust autoloader for all your class files.
 spl_autoload_register(function ($class) {
     $class_file = __DIR__ . '/classes/' . $class . '.php';
     if (file_exists($class_file)) {
@@ -17,8 +22,7 @@ spl_autoload_register(function ($class) {
     }
 });
 
-// Include all helper functions.
-require_once __DIR__ . '/functions/helpers.php';
-
-// Create a single database instance for the application to use.
+// 4. Create a single database instance for the application to use.
+// This comes last so that all configs and classes are ready.
 $db = Database::getInstance();
+

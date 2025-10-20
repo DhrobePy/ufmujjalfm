@@ -1,0 +1,33 @@
+[21-Oct-2025 03:39:13 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.employee_id' in 'SELECT' in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php:49
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php(49): PDOStatement->execute()
+#1 /home/ujjalfmc/public_html/hrm.ujjalfm.com/accounts/employees.php(51): Database->query()
+#2 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php on line 49
+[21-Oct-2025 03:46:39 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ujjalfmc_hr.allowances' doesn't exist in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php:49
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php(49): PDOStatement->execute()
+#1 /home/ujjalfmc/public_html/hrm.ujjalfm.com/accounts/employees.php(64): Database->query()
+#2 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php on line 49
+[21-Oct-2025 04:25:25 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE e.status = 'active' AND e.branch_id = '2'' at line 1 in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php:49
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php(49): PDOStatement->execute()
+#1 /home/ujjalfmc/public_html/hrm.ujjalfm.com/accounts/attendance.php(61): Database->query()
+#2 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php on line 49
+[21-Oct-2025 04:43:12 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.branch_id' in 'WHERE' in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php:49
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php(49): PDOStatement->execute()
+#1 /home/ujjalfmc/public_html/hrm.ujjalfm.com/accounts/loans.php(107): Database->query()
+#2 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php on line 49
+[21-Oct-2025 04:45:37 Asia/Dhaka] PHP Warning:  Undefined variable $is_branch_accountant in /home/ujjalfmc/public_html/hrm.ujjalfm.com/accounts/loans.php on line 119
+[21-Oct-2025 04:45:37 Asia/Dhaka] PHP Warning:  Undefined variable $is_branch_accountant in /home/ujjalfmc/public_html/hrm.ujjalfm.com/accounts/loans.php on line 133
+[21-Oct-2025 04:45:37 Asia/Dhaka] PHP Warning:  Undefined variable $is_branch_accountant in /home/ujjalfmc/public_html/hrm.ujjalfm.com/accounts/loans.php on line 140
+[21-Oct-2025 04:48:26 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.branch_id' in 'WHERE' in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php:49
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php(49): PDOStatement->execute()
+#1 /home/ujjalfmc/public_html/hrm.ujjalfm.com/accounts/loans.php(109): Database->query()
+#2 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php on line 49

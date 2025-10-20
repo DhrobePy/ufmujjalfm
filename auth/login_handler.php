@@ -1,30 +1,47 @@
 <?php
 // new_ufmhrm/auth/login_handler.php
 
-// This file now gets the $db variable from init.php
 require_once '../core/init.php';
 
-if (isset($_POST['login'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    
+    // --- STEP 1: CSRF Token Validation ---
+    if (!isset($_POST['csrf_token']) || !isset($_SESSION['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+        set_message('Invalid or missing security token.', 'error');
+        redirect('login.php');
+        exit();
+    }
+    
+    // The token is valid, so we can remove it to prevent it from being used again.
+    unset($_SESSION['csrf_token']);
+
+    // --- STEP 2: User Authentication ---
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
 
-    // Pass the globally available $db object to the User class
-    $user = new User($db); 
-    $login = $user->login($username, $password);
+    // Create a new User object and attempt to log in.
+    $user_obj = new User($db);
+    $loggedInUser = $user_obj->login($username, $password);
 
-    if ($login) {
-        // Success: Set the session and redirect to the admin dashboard
-        $_SESSION['success_flash'] = 'Login successful!';
-        header('Location: ../admin/index.php');
+    // --- STEP 3: Handle Login Result ---
+    if ($loggedInUser) {
+        // If login() returns a user object, it was successful.
+        // Use the helper functions to set the session and redirect.
+        login_admin((array)$loggedInUser);
+        set_message('Welcome back, ' . $loggedInUser->full_name . '!', 'success');
+        redirect_to_dashboard();
         exit();
+
     } else {
-        // Failure: Set an error and redirect back to the login page
-        $_SESSION['error_flash'] = 'Invalid credentials. Please try again.';
-        header('Location: login.php');
+        // If login() returns false, the credentials were wrong.
+        set_message('Invalid credentials. Please try again.', 'error');
+        redirect('login.php');
         exit();
     }
+
 } else {
     // Redirect if someone tries to access this page directly
-    header('Location: login.php');
+    redirect('login.php');
     exit();
 }
+

@@ -162,3 +162,28 @@ Stack trace:
 [20-Oct-2025 22:32:19 Asia/Dhaka] PHP Warning:  Undefined property: stdClass::$role in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/User.php on line 25
 [21-Oct-2025 00:46:42 Asia/Dhaka] PHP Warning:  Undefined property: stdClass::$role in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/User.php on line 25
 
+[21-Oct-2025 02:11:01 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function set_message() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login_handler.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login_handler.php on line 12
+[21-Oct-2025 02:13:48 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function set_message() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login_handler.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login_handler.php on line 12
+[21-Oct-2025 02:14:56 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function set_message() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login_handler.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login_handler.php on line 12
+[21-Oct-2025 02:16:58 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function set_message() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login_handler.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login_handler.php on line 12
+[21-Oct-2025 02:17:05 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function set_message() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login_handler.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/login_handler.php on line 12
+[21-Oct-2025 02:39:55 Asia/Dhaka] PHP Warning:  Undefined variable $pdo in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/logout.php on line 4
+[21-Oct-2025 02:39:55 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined method User::logout() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/logout.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/auth/logout.php on line 5

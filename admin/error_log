@@ -3528,3 +3528,53 @@ Stack trace:
 #1 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/loans.php(148): Database->query()
 #2 {main}
   thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php on line 49
+[21-Oct-2025 02:39:00 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function asset() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php:12
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(18): include_once()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php on line 12
+[21-Oct-2025 02:39:16 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function asset() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php:12
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(18): include_once()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php on line 12
+[21-Oct-2025 02:39:24 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function asset() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php:12
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(18): include_once()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php on line 12
+[21-Oct-2025 02:39:26 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function asset() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php:12
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(18): include_once()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php on line 12
+[21-Oct-2025 02:39:42 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function asset() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php:12
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/loans.php(131): include_once()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php on line 12
+[21-Oct-2025 02:39:48 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function asset() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php:12
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(18): include_once()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php on line 12
+[21-Oct-2025 02:39:50 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function asset() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php:12
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(18): include_once()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php on line 12
+[21-Oct-2025 02:40:27 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function asset() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php:12
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(18): include_once()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php on line 12
+[21-Oct-2025 02:52:13 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function asset() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php:12
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(20): include_once()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php on line 12
+[21-Oct-2025 02:53:03 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function asset() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php:12
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(21): include_once()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php on line 12
