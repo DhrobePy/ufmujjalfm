@@ -59,6 +59,7 @@ class EmployeeRepository {
                 'present_days' => $presentDays[$employee->id] ?? 0,
                 'advance_amount' => $advances[$employee->id] ?? 0,
                 'loan_installment' => $loans[$employee->id] ?? 0,
+
             ];
         }
 

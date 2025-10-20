@@ -157,6 +157,8 @@ Stack trace:
 [18-Oct-2025 18:27:51 Asia/Dhaka] PHP Warning:  Undefined property: stdClass::$role in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/User.php on line 25
 [18-Oct-2025 20:37:15 Asia/Dhaka] PHP Warning:  Undefined property: stdClass::$role in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/User.php on line 25
 [18-Oct-2025 21:45:58 Asia/Dhaka] PHP Warning:  Undefined property: stdClass::$role in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/User.php on line 25
+<<<<<<< HEAD
 [20-Oct-2025 20:55:26 Asia/Dhaka] PHP Warning:  Undefined property: stdClass::$role in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/User.php on line 25
 [20-Oct-2025 22:32:19 Asia/Dhaka] PHP Warning:  Undefined property: stdClass::$role in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/User.php on line 25
 [21-Oct-2025 00:46:42 Asia/Dhaka] PHP Warning:  Undefined property: stdClass::$role in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/User.php on line 25
+

@@ -86,6 +86,7 @@ $pageTitle = 'Login - ' . APP_NAME;
         <div class="text-center text-sm text-gray-500">
             <p>© <?php echo date('Y'); ?> UFM-HRM</p>
             <p class="mt-1">Ujjal Flour Mills HR Management </p>
+
         </div>
     </div>
     
