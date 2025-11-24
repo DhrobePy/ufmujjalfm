@@ -35,6 +35,16 @@ if ($is_branch_accountant && !empty($branch_id)) {
     $branch_params = [$branch_id];
 }
 
+// --- GET BRANCH NAME FOR DISPLAY ---
+$branch_name = 'All Branches'; // Default for admins
+if ($is_branch_accountant && !empty($branch_id)) {
+    $branchResult = $db->query("SELECT name FROM branches WHERE id = ?", [$branch_id])->first();
+    if ($branchResult) {
+        $branch_name = $branchResult->name;
+    }
+}
+
+
 $pageTitle = 'Accounts Dashboard - ' . APP_NAME;
 
 // --- CONDITIONAL HEADER LOADING ---
@@ -125,11 +135,11 @@ $chartData = [
     <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
         <h1 class="text-2xl font-bold text-gray-900"><i class="fas fa-file-invoice-dollar text-primary-600 mr-3"></i>Accounts Dashboard</h1>
         <p class="mt-1 text-sm text-gray-600">
-            Financial overview for <?php echo date("F Y"); ?>. 
-            <?php if ($is_branch_accountant): ?>
-                <span class="font-semibold text-primary-700">(Branch: Sirajgonj Mills)</span>
-            <?php endif; ?>
-        </p>
+    Financial overview for <?php echo date("F Y"); ?>. 
+    <?php if ($is_branch_accountant): ?>
+        <span class="font-semibold text-primary-700">(Branch: <?php echo htmlspecialchars($branch_name); ?>)</span>
+    <?php endif; ?>
+</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

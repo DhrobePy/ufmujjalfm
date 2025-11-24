@@ -6,137 +6,128 @@ error_reporting(E_ALL);
 
 require_once '../core/init.php';
 
+// --- THIS IS THE CRITICAL PHP LOGIC BLOCK ---
+
 if (!is_admin_logged_in()) {
     header('Location: ../auth/login.php');
     exit();
 }
 
-// Fetch all departments for dropdown
+// Fetch data for dropdowns
+
 $departments = $db->query("SELECT * FROM departments ORDER BY name")->results();
-
-// Fetch all positions
 $positions = $db->query("SELECT * FROM positions ORDER BY name")->results();
+$branches = $db->query("SELECT * FROM branches ORDER BY name")->results();
 
-// Handle form submission
+$errors = []; // Initialize errors array
+
+// --- THIS BLOCK RUNS WHEN YOU CLICK "ADD EMPLOYEE" ---
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $errors = [];
+
+    // --- 1. VALIDATION ---
+    $email = trim($_POST['email']);
+    $positionId = (int)$_POST['position_id'];
+    $addSalary = isset($_POST['add_salary']) && $_POST['add_salary'] == '1';
     
-    // Validate required fields
-    if (empty($_POST['first_name'])) {
-        $errors[] = 'First name is required';
-    }
-    if (empty($_POST['last_name'])) {
-        $errors[] = 'Last name is required';
-    }
-    if (empty($_POST['email'])) {
-        $errors[] = 'Email is required';
+    // Get salary from the *Salary Tab*
+    $basicSalary = (float)($_POST['basic_salary'] ?? 0); 
+    
+    // Get base_salary from the *Employment Tab*
+    $baseSalaryFromEmployment = (float)($_POST['base_salary'] ?? 0);
+
+    if (empty(trim($_POST['first_name']))) $errors[] = "First name is required.";
+    if (empty(trim($_POST['last_name']))) $errors[] = "Last name is required.";
+    if (empty($email)) {
+        $errors[] = "Email is required.";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors[] = "Please enter a valid email address.";
     } else {
-        // Check if email already exists
-        $existingEmail = $db->query("SELECT id FROM employees WHERE email = ?", [$_POST['email']])->first();
-        if ($existingEmail) {
-            $errors[] = 'Email address already exists';
+        $emailCheck = $db->query("SELECT * FROM employees WHERE email = ?", [$email])->count();
+        if ($emailCheck > 0) {
+            $errors[] = "This email address is already in use.";
         }
     }
-    if (empty($_POST['position_id'])) {
-        $errors[] = 'Position is required';
-    }
-    if (empty($_POST['hire_date'])) {
-        $errors[] = 'Hire date is required';
+    
+    if (empty($positionId)) $errors[] = "Position is required.";
+    if (empty(trim($_POST['hire_date']))) $errors[] = "Hire date is required.";
+
+    // Consolidate Salary Logic
+    if ($addSalary && $basicSalary <= 0) {
+         $errors[] = "Basic Salary (in Salary Tab) must be greater than 0 to add a salary structure.";
     }
     
-    $profilePicture = null;
+    // Determine the final salary to save to the 'employees' table
+    $finalBaseSalary = 0;
+    if ($addSalary) {
+        $finalBaseSalary = $basicSalary; // Use value from Salary Tab
+    } else {
+        $finalBaseSalary = $baseSalaryFromEmployment; // Use value from Employment Tab
+    }
     
+    // --- 2. PROCESS DATA IF NO ERRORS ---
     if (empty($errors)) {
-        // Insert employee information
-        $insertSql = "
-            INSERT INTO employees (
-                first_name, last_name, email, phone, address, 
-                position_id, hire_date, base_salary, status, profile_picture
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        ";
-        
-        $params = [
-            $_POST['first_name'],
-            $_POST['last_name'],
-            $_POST['email'],
-            $_POST['phone'] ?? null,
-            $_POST['address'] ?? null,
-            $_POST['position_id'],
-            $_POST['hire_date'],
-            $_POST['base_salary'] ?? 0,
-            $_POST['status'] ?? 'active',
-            $profilePicture
-        ];
-        
-        if ($db->query($insertSql, $params)) {
-            // Get the newly created employee ID
-            $newEmployeeId = $db->query("SELECT LAST_INSERT_ID() as id")->first()->id;
-            
-            // Handle profile picture upload after getting employee ID
-            if (isset($_FILES['profile_picture']) && $_FILES['profile_picture']['error'] === UPLOAD_ERR_OK) {
-                $uploadDir = '../uploads/profiles/';
-                if (!is_dir($uploadDir)) {
-                    mkdir($uploadDir, 0755, true);
-                }
-                
-                $fileExtension = strtolower(pathinfo($_FILES['profile_picture']['name'], PATHINFO_EXTENSION));
-                $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif'];
-                
-                if (in_array($fileExtension, $allowedExtensions)) {
-                    $newFileName = 'profile_' . $newEmployeeId . '_' . time() . '.' . $fileExtension;
-                    $targetPath = $uploadDir . $newFileName;
-                    
-                    if (move_uploaded_file($_FILES['profile_picture']['tmp_name'], $targetPath)) {
-                        $profilePicture = 'uploads/profiles/' . $newFileName;
-                        
-                        // Update employee with profile picture
-                        $db->query("UPDATE employees SET profile_picture = ? WHERE id = ?", [$profilePicture, $newEmployeeId]);
-                    }
-                }
-            }
-            
-            // Insert salary structure if checkbox is checked
-            if (isset($_POST['add_salary']) && $_POST['add_salary'] === '1') {
-                $basicSalary = floatval($_POST['basic_salary'] ?? 0);
-                $houseAllowance = floatval($_POST['house_allowance'] ?? 0);
-                $transportAllowance = floatval($_POST['transport_allowance'] ?? 0);
-                $medicalAllowance = floatval($_POST['medical_allowance'] ?? 0);
-                $otherAllowances = floatval($_POST['other_allowances'] ?? 0);
-                $providentFund = floatval($_POST['provident_fund'] ?? 0);
-                $taxDeduction = floatval($_POST['tax_deduction'] ?? 0);
-                $otherDeductions = floatval($_POST['other_deductions'] ?? 0);
+        $db->getPdo()->beginTransaction();
+        try {
+            // 1. Insert into employees table
+            $employee = new Employee($db);
+            $newEmployeeId = $employee->create([
+                'first_name'    => trim($_POST['first_name']),
+                'last_name'     => trim($_POST['last_name']),
+                'email'         => $email,
+                'phone'         => trim($_POST['phone']),
+                'address'       => trim($_POST['address']),
+                'position_id'   => $positionId,
+                'hire_date'     => trim($_POST['hire_date']),
+                'base_salary'   => $finalBaseSalary,
+                'status'        => trim($_POST['status']),
+                'branch_id'     => (int)$_POST['branch_id']
+                // 'profile_picture' field is no longer needed
+            ]);
+           $newEmployeeId = $db->getPdo()->lastInsertId();
+
+            // 2. Insert into salary_structures table (ONLY if checkbox was checked)
+            if ($addSalary) {
+                $houseAllowance = (float)($_POST['house_allowance'] ?? 0);
+                $transportAllowance = (float)($_POST['transport_allowance'] ?? 0);
+                $medicalAllowance = (float)($_POST['medical_allowance'] ?? 0);
+                $otherAllowances = (float)($_POST['other_allowances'] ?? 0);
+                $providentFund = (float)($_POST['provident_fund'] ?? 0);
+                $taxDeduction = (float)($_POST['tax_deduction'] ?? 0);
+                $otherDeductions = (float)($_POST['other_deductions'] ?? 0);
                 
                 $grossSalary = $basicSalary + $houseAllowance + $transportAllowance + $medicalAllowance + $otherAllowances;
                 $netSalary = $grossSalary - $providentFund - $taxDeduction - $otherDeductions;
-                
-                $salarySql = "
-                    INSERT INTO salary_structures (
-                        employee_id, basic_salary, house_allowance, transport_allowance,
-                        medical_allowance, other_allowances, provident_fund, tax_deduction,
-                        other_deductions, gross_salary, net_salary, created_date
-                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURDATE())
-                ";
-                
-                $salaryParams = [
-                    $newEmployeeId, $basicSalary, $houseAllowance, $transportAllowance,
-                    $medicalAllowance, $otherAllowances, $providentFund, $taxDeduction,
-                    $otherDeductions, $grossSalary, $netSalary
-                ];
-                
-                $db->query($salarySql, $salaryParams);
+
+                $db->insert('salary_structures', [
+                    'employee_id' => $newEmployeeId,
+                    'basic_salary' => $basicSalary,
+                    'house_allowance' => $houseAllowance,
+                    'transport_allowance' => $transportAllowance,
+                    'medical_allowance' => $medicalAllowance,
+                    'other_allowances' => $otherAllowances,
+                    'provident_fund' => $providentFund,
+                    'tax_deduction' => $taxDeduction,
+                    'other_deductions' => $otherDeductions,
+                    'gross_salary' => $grossSalary,
+                    'net_salary' => $netSalary,
+                    'created_date' => date('Y-m-d') // <-- This is the fixed date
+                ]);
             }
             
-            $_SESSION['success_message'] = 'Employee added successfully!';
-            header('Location: employee_profile.php?id=' . $newEmployeeId);
+            $db->getPdo()->commit();
+            $_SESSION['success_flash'] = 'New employee has been successfully added!';
+            header('Location: employees.php');
             exit();
-        } else {
-            $errors[] = 'Failed to add employee';
+
+        } catch (Exception $e) {
+            $db->getPdo()->rollBack();
+            $errors[] = 'Database error: Could not add employee. ' . $e->getMessage();
         }
     }
 }
 
-$pageTitle = 'Add New Employee';
 include_once '../templates/header.php';
+// --- END OF PHP LOGIC BLOCK ---
 ?>
 
 <style>
@@ -150,12 +141,6 @@ include_once '../templates/header.php';
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
-}
-.preview-image {
-    transition: all 0.3s ease;
-}
-.preview-image:hover {
-    transform: scale(1.05);
 }
 .salary-input:focus {
     transform: translateY(-2px);
@@ -173,7 +158,6 @@ include_once '../templates/header.php';
 
 <div class="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 py-8">
     <div class="max-w-6xl mx-auto px-4">
-        <!-- Back Button -->
         <div class="mb-6">
             <a href="employees.php" 
                class="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors">
@@ -182,7 +166,6 @@ include_once '../templates/header.php';
             </a>
         </div>
 
-        <!-- Error Messages -->
         <?php if (isset($errors) && !empty($errors)): ?>
         <div class="bg-red-50 border-l-4 border-red-500 p-4 mb-6 rounded-lg">
             <div class="flex items-center">
@@ -199,32 +182,12 @@ include_once '../templates/header.php';
         </div>
         <?php endif; ?>
 
-        <form method="POST" enctype="multipart/form-data" id="addEmployeeForm">
-            <!-- Header Card with Profile Picture -->
+        <form method="POST" id="addEmployeeForm">
             <div class="bg-white rounded-2xl shadow-xl overflow-hidden mb-6">
-                <div class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 h-32"></div>
-                <div class="px-8 pb-8">
-                    <div class="flex flex-col md:flex-row items-center md:items-end -mt-16 gap-6">
-                        <!-- Profile Picture Upload -->
-                        <div class="relative group">
-                            <div class="w-32 h-32 rounded-full border-4 border-white shadow-lg overflow-hidden bg-gradient-to-br from-indigo-100 to-purple-100">
-                                <div id="profilePreview" class="w-full h-full flex items-center justify-center preview-image">
-                                    <i class="fas fa-user text-6xl text-indigo-400"></i>
-                                </div>
-                            </div>
-                            <label for="profilePictureInput" 
-                                   class="absolute bottom-0 right-0 bg-indigo-600 text-white p-2.5 rounded-full shadow-lg hover:bg-indigo-700 transition-all transform hover:scale-110 cursor-pointer">
-                                <i class="fas fa-camera text-lg"></i>
-                            </label>
-                            <input type="file" 
-                                   id="profilePictureInput" 
-                                   name="profile_picture" 
-                                   accept="image/*" 
-                                   class="hidden">
-                        </div>
+                <div class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 h-24"></div>
+                <div class="px-8 pb-8 pt-6"> <div class="flex flex-col md:flex-row items-center justify-between gap-4">
                         
-                        <!-- Employee Info -->
-                        <div class="flex-1 text-center md:text-left">
+                        <div class="text-center md:text-left">
                             <h1 class="text-3xl font-bold text-gray-900">
                                 Add New Employee
                             </h1>
@@ -239,7 +202,6 @@ include_once '../templates/header.php';
                             </div>
                         </div>
 
-                        <!-- Save Button -->
                         <button type="submit" 
                                 class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all flex items-center gap-2">
                             <i class="fas fa-user-plus"></i>
@@ -249,7 +211,6 @@ include_once '../templates/header.php';
                 </div>
             </div>
 
-            <!-- Tabs -->
             <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
                 <div class="flex border-b border-gray-200 overflow-x-auto">
                     <button type="button" 
@@ -282,7 +243,6 @@ include_once '../templates/header.php';
                 </div>
 
                 <div class="p-8">
-                    <!-- Personal Information Tab -->
                     <div id="content-personal" class="tab-content active">
                         <div class="mb-6">
                             <h2 class="text-2xl font-bold text-gray-900 mb-2">Personal Information</h2>
@@ -364,7 +324,6 @@ include_once '../templates/header.php';
                         </div>
                     </div>
 
-                    <!-- Employment Tab -->
                     <div id="content-employment" class="tab-content">
                         <div class="mb-6">
                             <h2 class="text-2xl font-bold text-gray-900 mb-2">Employment Information</h2>
@@ -409,6 +368,25 @@ include_once '../templates/header.php';
                                                     data-department="<?php echo $pos->department_id; ?>"
                                                     <?php echo (isset($_POST['position_id']) && $_POST['position_id'] == $pos->id) ? 'selected' : ''; ?>>
                                                 <?php echo htmlspecialchars($pos->name); ?>
+                                            </option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                    <div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
+                                        <i class="fas fa-chevron-down text-gray-400"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                    Branch
+                                </label>
+                                <div class="relative">
+                                    <select name="branch_id"
+                                            class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none appearance-none bg-white">
+                                        <option value="1">Default Branch</option> <?php foreach ($branches as $branch): ?>
+                                            <option value="<?php echo $branch->id; ?>" <?php echo (isset($_POST['branch_id']) && $_POST['branch_id'] == $branch->id) ? 'selected' : ''; ?>>
+                                                <?php echo htmlspecialchars($branch->name); ?>
                                             </option>
                                         <?php endforeach; ?>
                                     </select>
@@ -469,7 +447,6 @@ include_once '../templates/header.php';
                             </div>
                         </div>
 
-                        <!-- Info Cards -->
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
                             <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 border border-blue-200">
                                 <div class="flex items-center justify-between">
@@ -482,7 +459,6 @@ include_once '../templates/header.php';
                                     </div>
                                 </div>
                             </div>
-
                             <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 border border-green-200">
                                 <div class="flex items-center justify-between">
                                     <div>
@@ -494,7 +470,6 @@ include_once '../templates/header.php';
                                     </div>
                                 </div>
                             </div>
-
                             <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 border border-purple-200">
                                 <div class="flex items-center justify-between">
                                     <div>
@@ -509,7 +484,6 @@ include_once '../templates/header.php';
                         </div>
                     </div>
 
-                    <!-- Salary Structure Tab -->
                     <div id="content-salary" class="tab-content">
                         <div class="mb-6">
                             <div class="flex items-center justify-between">
@@ -540,7 +514,6 @@ include_once '../templates/header.php';
                             </div>
                         </div>
 
-                        <!-- Earnings Section -->
                         <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-6 mb-6 border border-green-200">
                             <div class="flex items-center mb-4">
                                 <div class="h-10 w-10 bg-green-500 rounded-lg flex items-center justify-center mr-3">
@@ -548,7 +521,6 @@ include_once '../templates/header.php';
                                 </div>
                                 <h3 class="text-xl font-bold text-green-900">Earnings</h3>
                             </div>
-
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div>
                                     <label class="block text-sm font-semibold text-green-800 mb-2">
@@ -568,7 +540,6 @@ include_once '../templates/header.php';
                                                placeholder="0.00">
                                     </div>
                                 </div>
-
                                 <div>
                                     <label class="block text-sm font-semibold text-green-800 mb-2">
                                         House Allowance (৳)
@@ -587,7 +558,6 @@ include_once '../templates/header.php';
                                                placeholder="0.00">
                                     </div>
                                 </div>
-
                                 <div>
                                     <label class="block text-sm font-semibold text-green-800 mb-2">
                                         Transport Allowance (৳)
@@ -606,7 +576,6 @@ include_once '../templates/header.php';
                                                placeholder="0.00">
                                     </div>
                                 </div>
-
                                 <div>
                                     <label class="block text-sm font-semibold text-green-800 mb-2">
                                         Medical Allowance (৳)
@@ -625,7 +594,6 @@ include_once '../templates/header.php';
                                                placeholder="0.00">
                                     </div>
                                 </div>
-
                                 <div class="md:col-span-2">
                                     <label class="block text-sm font-semibold text-green-800 mb-2">
                                         Other Allowances (৳)
@@ -647,7 +615,6 @@ include_once '../templates/header.php';
                             </div>
                         </div>
 
-                        <!-- Deductions Section -->
                         <div class="bg-gradient-to-r from-red-50 to-rose-50 rounded-xl p-6 mb-6 border border-red-200">
                             <div class="flex items-center mb-4">
                                 <div class="h-10 w-10 bg-red-500 rounded-lg flex items-center justify-center mr-3">
@@ -655,7 +622,6 @@ include_once '../templates/header.php';
                                 </div>
                                 <h3 class="text-xl font-bold text-red-900">Deductions</h3>
                             </div>
-
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div>
                                     <label class="block text-sm font-semibold text-red-800 mb-2">
@@ -675,7 +641,6 @@ include_once '../templates/header.php';
                                                placeholder="0.00">
                                     </div>
                                 </div>
-
                                 <div>
                                     <label class="block text-sm font-semibold text-red-800 mb-2">
                                         Tax Deduction (৳)
@@ -694,7 +659,6 @@ include_once '../templates/header.php';
                                                placeholder="0.00">
                                     </div>
                                 </div>
-
                                 <div class="md:col-span-2">
                                     <label class="block text-sm font-semibold text-red-800 mb-2">
                                         Other Deductions (৳)
@@ -716,7 +680,6 @@ include_once '../templates/header.php';
                             </div>
                         </div>
 
-                        <!-- Salary Summary Cards -->
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="summary-card rounded-2xl p-6 text-white shadow-lg">
                                 <div class="flex items-center justify-between">
@@ -730,7 +693,6 @@ include_once '../templates/header.php';
                                     </div>
                                 </div>
                             </div>
-
                             <div class="bg-gradient-to-r from-emerald-500 to-teal-600 rounded-2xl p-6 text-white shadow-lg hover:shadow-xl transition-all">
                                 <div class="flex items-center justify-between">
                                     <div>
@@ -745,7 +707,6 @@ include_once '../templates/header.php';
                             </div>
                         </div>
 
-                        <!-- Salary Breakdown Chart -->
                         <div class="mt-6 bg-white rounded-xl p-6 border-2 border-gray-200">
                             <h3 class="text-lg font-bold text-gray-900 mb-4">
                                 <i class="fas fa-chart-pie text-indigo-600 mr-2"></i>
@@ -800,18 +761,7 @@ function switchTab(tabName) {
     activeButton.classList.add('text-indigo-600', 'border-b-2', 'border-indigo-600', 'bg-indigo-50');
 }
 
-// Profile Picture Preview
-document.getElementById('profilePictureInput').addEventListener('change', function(e) {
-    const file = e.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            const preview = document.getElementById('profilePreview');
-            preview.innerHTML = '<img src="' + e.target.result + '" alt="Profile" class="w-full h-full object-cover preview-image">';
-        };
-        reader.readAsDataURL(file);
-    }
-});
+// --- FIX: Removed Profile Picture Preview JavaScript ---
 
 // Load Positions based on Department
 function loadPositions(departmentId) {
@@ -906,4 +856,3 @@ document.getElementById('addEmployeeForm').addEventListener('submit', function(e
 </script>
 
 <?php include_once '../templates/footer.php'; ?>
-

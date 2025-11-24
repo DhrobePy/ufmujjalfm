@@ -45,7 +45,6 @@ $departments = $db->query("SELECT * FROM departments ORDER BY name")->results();
 
 // Fetch positions based on department
 $positions = $db->query("SELECT * FROM positions ORDER BY name")->results();
-$branches = $db->query("SELECT * FROM branches ORDER BY name")->results();
 
 // Fetch salary structure for this employee
 $salaryStructure = $db->query("
@@ -114,7 +113,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 phone = ?,
                 address = ?,
                 position_id = ?,
-                branch_id = ?,
                 hire_date = ?,
                 base_salary = ?,
                 status = ?,
@@ -129,7 +127,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_POST['phone'] ?? null,
             $_POST['address'] ?? null,
             $_POST['position_id'],
-            !empty($_POST['branch_id']) ? (int)$_POST['branch_id'] : 1,
             $_POST['hire_date'],
             $_POST['base_salary'] ?? 0,
             $_POST['status'] ?? 'active',
@@ -432,23 +429,6 @@ include_once '../templates/header.php';
                             <h2 class="text-2xl font-bold text-gray-900 mb-2">Employment Information</h2>
                             <p class="text-gray-600">Manage employee's position, department, and work details</p>
                         </div>
-                        
-                        <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Branch</label>
-                                <div class="relative">
-                                    <select name="branch_id" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 appearance-none">
-                                        <option value="1">Default Branch</option>
-                                        <?php foreach($branches as $branch): ?>
-                                            <option value="<?php echo $branch->id; ?>" <?php echo ($employee->branch_id == $branch->id) ? 'selected' : ''; ?>>
-                                                <?php echo htmlspecialchars($branch->name); ?>
-                                            </option>
-                                        <?php endforeach; ?>
-                                    </select>
-                                    <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                                        <i class="fas fa-chevron-down text-gray-400"></i>
-                                    </div>
-                                </div>
-                            </div>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>

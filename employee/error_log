@@ -6,3 +6,47 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/employee/index.php on line 4
+[21-Oct-2025 17:56:49 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_employee_logged_in() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/employee/index.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/employee/index.php on line 4
+[21-Oct-2025 18:25:53 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_employee_logged_in() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/employee/index.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/employee/index.php on line 4
+[22-Nov-2025 11:26:25 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_employee_logged_in() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/employee/index.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/employee/index.php on line 4
+[22-Nov-2025 11:26:40 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_employee_logged_in() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/employee/index.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/employee/index.php on line 4
+[22-Nov-2025 11:26:45 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_employee_logged_in() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/employee/index.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/employee/index.php on line 4
+[23-Nov-2025 16:23:15 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_employee_logged_in() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/employee/index.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/employee/index.php on line 4
+[23-Nov-2025 16:23:20 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_employee_logged_in() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/employee/index.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/employee/index.php on line 4
+[23-Nov-2025 16:27:06 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_employee_logged_in() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/employee/index.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/employee/index.php on line 4
+[23-Nov-2025 16:27:11 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_employee_logged_in() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/employee/index.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/employee/index.php on line 4
+[23-Nov-2025 16:30:03 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_employee_logged_in() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/employee/index.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/employee/index.php on line 4
+[23-Nov-2025 16:30:09 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_employee_logged_in() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/employee/index.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/employee/index.php on line 4

@@ -7,27 +7,20 @@ function is_admin_logged_in() {
     return isset($_SESSION['admin_id']);
 }
 
-function is_superadmin() {
-    return is_admin_logged_in() && 
-           isset($_SESSION['admin_role']) && 
-           $_SESSION['admin_role'] === 'superadmin';
-}
-
 function isLoggedIn() {
     return is_admin_logged_in();
 }
 
 /**
  * (MODIFIED) Logs in a user by setting all necessary session variables,
- * INCLUDING branch_id and employee_id.
+ * INCLUDING branch_id.
  * @param array $user - The user data from the database.
  */
 function login_admin($user) {
     $_SESSION['admin_id'] = $user['id'];
     $_SESSION['admin_name'] = $user['full_name'] ?? $user['username'];
     $_SESSION['admin_role'] = $user['role'];
-    $_SESSION['admin_branch_id'] = $user['branch_id'];
-    $_SESSION['admin_employee_id'] = $user['employee_id'] ?? null;
+    $_SESSION['admin_branch_id'] = $user['branch_id']; // <-- NEWLY ADDED
     session_regenerate_id(true);
 }
 
@@ -35,42 +28,26 @@ function logout_admin() {
     unset($_SESSION['admin_id']);
     unset($_SESSION['admin_name']);
     unset($_SESSION['admin_role']);
-    unset($_SESSION['admin_branch_id']);
-    unset($_SESSION['admin_employee_id']);
+    unset($_SESSION['admin_branch_id']); // <-- NEWLY ADDED
     set_message('You have been successfully logged out.', 'success');
     session_destroy();
 }
 
 /**
  * (MODIFIED) Gets the current logged-in user's details from the session,
- * INCLUDING branch_id and employee_id.
+ * INCLUDING branch_id.
  * @return array|null
  */
 function getCurrentUser() {
     if (is_admin_logged_in()) {
         return [
-            'id'          => $_SESSION['admin_id'],
-            'full_name'   => $_SESSION['admin_name'] ?? 'Admin',
-            'role'        => $_SESSION['admin_role'] ?? 'admin',
-            'branch_id'   => $_SESSION['admin_branch_id'] ?? null,
-            'employee_id' => $_SESSION['admin_employee_id'] ?? null,
+            'id'        => $_SESSION['admin_id'],
+            'full_name' => $_SESSION['admin_name'] ?? 'Admin',
+            'role'      => $_SESSION['admin_role'] ?? 'admin',
+            'branch_id' => $_SESSION['admin_branch_id'] ?? null, // <-- NEWLY ADDED
         ];
     }
     return null;
-}
-
-/**
- * (NEW) Check if the current user has admin privileges
- * Centralizes admin role checking across the application
- * @return bool
- */
-function is_admin_role() {
-    if (!is_admin_logged_in()) {
-        return false;
-    }
-    
-    $adminRoles = ['superadmin', 'Admin', 'Admin-HO', 'Admin-srg', 'Admin-rampura'];
-    return in_array($_SESSION['admin_role'] ?? '', $adminRoles);
 }
 
 /**

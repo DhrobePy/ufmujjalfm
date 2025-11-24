@@ -3578,3 +3578,554 @@ Stack trace:
 #0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/index.php(21): include_once()
 #1 {main}
   thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php on line 12
+[01-Nov-2025 16:28:30 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '521' for key 'employee_id' in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php:49
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php(49): PDOStatement->execute()
+#1 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/edit_employee.php(166): Database->query()
+#2 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php on line 49
+[01-Nov-2025 16:28:58 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '521' for key 'employee_id' in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php:49
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php(49): PDOStatement->execute()
+#1 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/edit_employee.php(166): Database->query()
+#2 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php on line 49
+[01-Nov-2025 12:12:32 UTC] PHP Warning:  Attempt to read property "first_name" on false in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 153
+[01-Nov-2025 12:12:32 UTC] PHP Warning:  Attempt to read property "last_name" on false in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 153
+[01-Nov-2025 12:41:38 UTC] PHP Warning:  Attempt to read property "first_name" on false in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 153
+[01-Nov-2025 12:41:38 UTC] PHP Warning:  Attempt to read property "last_name" on false in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 153
+[01-Nov-2025 20:14:40 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_superadmin() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php on line 4
+[01-Nov-2025 20:15:07 Asia/Dhaka] PHP Warning:  Undefined variable $pdo in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php on line 5
+[01-Nov-2025 20:15:07 Asia/Dhaka] PHP Warning:  Undefined variable $pdo in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php on line 6
+[01-Nov-2025 20:15:07 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_superadmin() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/sidebar.php:13
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php(170): include()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/sidebar.php on line 13
+[01-Nov-2025 20:15:37 Asia/Dhaka] PHP Warning:  Undefined variable $pdo in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php on line 5
+[01-Nov-2025 20:15:37 Asia/Dhaka] PHP Warning:  Undefined variable $pdo in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php on line 6
+[01-Nov-2025 20:15:37 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_superadmin() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/sidebar.php:13
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php(170): include()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/sidebar.php on line 13
+[01-Nov-2025 20:15:51 Asia/Dhaka] PHP Warning:  Undefined variable $pdo in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php on line 5
+[01-Nov-2025 20:15:51 Asia/Dhaka] PHP Warning:  Undefined variable $pdo in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php on line 6
+[01-Nov-2025 20:15:51 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_superadmin() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/sidebar.php:13
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php(170): include()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/sidebar.php on line 13
+[01-Nov-2025 20:17:32 Asia/Dhaka] PHP Warning:  Undefined variable $pdo in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php on line 10
+[01-Nov-2025 20:17:32 Asia/Dhaka] PHP Warning:  Undefined variable $pdo in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php on line 11
+[01-Nov-2025 20:17:32 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_superadmin() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/sidebar.php:13
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php(175): include()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/sidebar.php on line 13
+[01-Nov-2025 14:38:19 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`ujjalfmc_hr`.`attendance`, CONSTRAINT `attendance_ibfk_1` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`id`) ON DELETE CASCADE) in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php:53
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php(53): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php on line 53
+[01-Nov-2025 14:39:58 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`ujjalfmc_hr`.`attendance`, CONSTRAINT `attendance_ibfk_1` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`id`) ON DELETE CASCADE) in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php:53
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php(53): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php on line 53
+[01-Nov-2025 14:40:15 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`ujjalfmc_hr`.`attendance`, CONSTRAINT `attendance_ibfk_1` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`id`) ON DELETE CASCADE) in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php:53
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php(53): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php on line 53
+[01-Nov-2025 14:43:57 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`ujjalfmc_hr`.`attendance`, CONSTRAINT `attendance_ibfk_1` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`id`) ON DELETE CASCADE) in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php:53
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php(53): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php on line 53
+[01-Nov-2025 21:31:08 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1364 Field 'id' doesn't have a default value in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php:49
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php(49): PDOStatement->execute()
+#1 /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php(105): Database->query()
+#2 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/attendance.php(52): Database->insert()
+#3 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php on line 49
+[01-Nov-2025 22:07:53 Asia/Dhaka] PHP Warning:  Undefined array key "employee_id" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/loans.php on line 196
+[01-Nov-2025 22:11:59 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1364 Field 'id' doesn't have a default value in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php:49
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php(49): PDOStatement->execute()
+#1 /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php(105): Database->query()
+#2 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/attendance.php(52): Database->insert()
+#3 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php on line 49
+[02-Nov-2025 02:26:27 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1364 Field 'id' doesn't have a default value in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php:53
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php(53): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php on line 53
+[02-Nov-2025 02:26:35 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1364 Field 'id' doesn't have a default value in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php:53
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php(53): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php on line 53
+[02-Nov-2025 02:26:39 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1364 Field 'id' doesn't have a default value in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php:53
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php(53): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php on line 53
+[02-Nov-2025 02:26:51 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1364 Field 'id' doesn't have a default value in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php:53
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php(53): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php on line 53
+[02-Nov-2025 02:28:30 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1364 Field 'id' doesn't have a default value in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php:53
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php(53): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php on line 53
+[02-Nov-2025 02:28:45 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1364 Field 'id' doesn't have a default value in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php:53
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php(53): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php on line 53
+[02-Nov-2025 02:28:50 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1364 Field 'id' doesn't have a default value in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php:53
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php(53): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php on line 53
+[02-Nov-2025 02:28:54 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1364 Field 'id' doesn't have a default value in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php:53
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php(53): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php on line 53
+[02-Nov-2025 02:30:00 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1364 Field 'id' doesn't have a default value in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php:53
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php(53): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php on line 53
+[02-Nov-2025 02:30:05 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1364 Field 'id' doesn't have a default value in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php:53
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php(53): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php on line 53
+[02-Nov-2025 02:30:11 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1364 Field 'id' doesn't have a default value in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php:53
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php(53): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php on line 53
+[02-Nov-2025 03:58:19 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1364 Field 'id' doesn't have a default value in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php:53
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php(53): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php on line 53
+[02-Nov-2025 03:58:41 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1364 Field 'id' doesn't have a default value in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php:53
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php(53): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php on line 53
+[02-Nov-2025 03:58:46 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1364 Field 'id' doesn't have a default value in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php:53
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php(53): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php on line 53
+[02-Nov-2025 03:58:53 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1364 Field 'id' doesn't have a default value in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php:53
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php(53): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php on line 53
+[02-Nov-2025 03:59:10 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1364 Field 'id' doesn't have a default value in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php:53
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php(53): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/bulk_attendance.php on line 53
+[02-Nov-2025 17:42:51 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '580' for key 'employee_id' in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php:49
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php(49): PDOStatement->execute()
+#1 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/edit_employee.php(166): Database->query()
+#2 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php on line 49
+[02-Nov-2025 18:58:49 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '570' for key 'employee_id' in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php:49
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php(49): PDOStatement->execute()
+#1 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/edit_employee.php(166): Database->query()
+#2 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php on line 49
+[02-Nov-2025 18:59:02 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '570' for key 'employee_id' in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php:49
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php(49): PDOStatement->execute()
+#1 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/edit_employee.php(166): Database->query()
+#2 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php on line 49
+[02-Nov-2025 19:00:12 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '570' for key 'employee_id' in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php:49
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php(49): PDOStatement->execute()
+#1 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/edit_employee.php(166): Database->query()
+#2 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php on line 49
+[02-Nov-2025 19:04:16 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '570' for key 'employee_id' in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php:49
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php(49): PDOStatement->execute()
+#1 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/edit_employee.php(166): Database->query()
+#2 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php on line 49
+[02-Nov-2025 19:04:30 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '572' for key 'employee_id' in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php:49
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php(49): PDOStatement->execute()
+#1 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/edit_employee.php(166): Database->query()
+#2 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php on line 49
+[05-Nov-2025 05:01:46 UTC] PHP Parse error:  Unclosed '{' on line 26 in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 973
+[06-Nov-2025 03:52:27 UTC] PHP Parse error:  Unclosed '(' in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 2
+[06-Nov-2025 04:01:21 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 1
+[06-Nov-2025 04:02:00 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "php" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 2
+[06-Nov-2025 04:02:32 UTC] PHP Parse error:  syntax error, unexpected token "?" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 2
+[06-Nov-2025 04:07:12 UTC] PHP Parse error:  syntax error, unexpected token ";" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 2
+[06-Nov-2025 04:10:48 UTC] PHP Parse error:  syntax error, unexpected identifier "AAE", expecting "]" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 32
+[06-Nov-2025 04:11:34 UTC] PHP Parse error:  syntax error, unexpected token "," in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 32
+[06-Nov-2025 18:31:19 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_superadmin_logged_in() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 11
+[06-Nov-2025 19:00:26 Asia/Dhaka] PHP Warning:  Undefined variable $departments in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 253
+[06-Nov-2025 19:00:26 Asia/Dhaka] PHP Warning:  foreach() argument must be of type array|object, null given in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 253
+[06-Nov-2025 19:00:26 Asia/Dhaka] PHP Warning:  Undefined variable $positions in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 275
+[06-Nov-2025 19:00:26 Asia/Dhaka] PHP Warning:  foreach() argument must be of type array|object, null given in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 275
+[06-Nov-2025 19:00:26 Asia/Dhaka] PHP Warning:  Undefined variable $branches in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 297
+[06-Nov-2025 19:00:26 Asia/Dhaka] PHP Warning:  foreach() argument must be of type array|object, null given in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 297
+[06-Nov-2025 19:00:59 Asia/Dhaka] PHP Warning:  Undefined variable $departments in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 253
+[06-Nov-2025 19:00:59 Asia/Dhaka] PHP Warning:  foreach() argument must be of type array|object, null given in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 253
+[06-Nov-2025 19:00:59 Asia/Dhaka] PHP Warning:  Undefined variable $positions in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 275
+[06-Nov-2025 19:00:59 Asia/Dhaka] PHP Warning:  foreach() argument must be of type array|object, null given in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 275
+[06-Nov-2025 19:00:59 Asia/Dhaka] PHP Warning:  Undefined variable $branches in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 297
+[06-Nov-2025 19:00:59 Asia/Dhaka] PHP Warning:  foreach() argument must be of type array|object, null given in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 297
+[06-Nov-2025 19:01:48 Asia/Dhaka] PHP Warning:  Undefined variable $departments in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 253
+[06-Nov-2025 19:01:48 Asia/Dhaka] PHP Warning:  foreach() argument must be of type array|object, null given in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 253
+[06-Nov-2025 19:01:48 Asia/Dhaka] PHP Warning:  Undefined variable $positions in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 275
+[06-Nov-2025 19:01:48 Asia/Dhaka] PHP Warning:  foreach() argument must be of type array|object, null given in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 275
+[06-Nov-2025 19:01:48 Asia/Dhaka] PHP Warning:  Undefined variable $branches in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 297
+[06-Nov-2025 19:01:48 Asia/Dhaka] PHP Warning:  foreach() argument must be of type array|object, null given in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 297
+[06-Nov-2025 19:10:55 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined method Database::lastInsertId() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php:85
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 85
+[06-Nov-2025 19:14:11 Asia/Dhaka] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php:59) in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 118
+[06-Nov-2025 19:17:56 Asia/Dhaka] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php:59) in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/add_employee.php on line 118
+[07-Nov-2025 00:39:57 Asia/Dhaka] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/export_loans.php on line 28
+[07-Nov-2025 00:39:57 Asia/Dhaka] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/export_loans.php on line 64
+[07-Nov-2025 00:39:57 Asia/Dhaka] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/export_loans.php on line 64
+[07-Nov-2025 00:39:57 Asia/Dhaka] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/export_loans.php on line 64
+[07-Nov-2025 00:39:57 Asia/Dhaka] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/export_loans.php on line 64
+[07-Nov-2025 00:39:57 Asia/Dhaka] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/export_loans.php on line 64
+[07-Nov-2025 00:39:57 Asia/Dhaka] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/export_loans.php on line 64
+[07-Nov-2025 00:39:57 Asia/Dhaka] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/export_loans.php on line 64
+[07-Nov-2025 00:39:57 Asia/Dhaka] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/export_loans.php on line 64
+[07-Nov-2025 00:39:57 Asia/Dhaka] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/export_loans.php on line 64
+[07-Nov-2025 00:39:57 Asia/Dhaka] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/export_loans.php on line 64
+[14-Nov-2025 11:36:50 Asia/Dhaka] PHP Warning:  Undefined array key "employee_id" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/loans.php on line 449
+[14-Nov-2025 11:47:46 Asia/Dhaka] PHP Warning:  Undefined array key "employee_id" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/loans.php on line 449
+[14-Nov-2025 12:01:01 Asia/Dhaka] PHP Warning:  Undefined array key "employee_id" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/loans.php on line 449
+[14-Nov-2025 12:01:49 Asia/Dhaka] PHP Warning:  Undefined array key "employee_id" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/loans.php on line 449
+[14-Nov-2025 12:02:41 Asia/Dhaka] PHP Warning:  Undefined array key "employee_id" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/loans.php on line 449
+[14-Nov-2025 12:02:43 Asia/Dhaka] PHP Warning:  Undefined array key "employee_id" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/loans.php on line 449
+[14-Nov-2025 12:03:37 Asia/Dhaka] PHP Warning:  Undefined array key "employee_id" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/loans.php on line 449
+[17-Nov-2025 12:51:47 Asia/Dhaka] PHP Warning:  Undefined array key "employee_id" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/loans.php on line 449
+[17-Nov-2025 12:52:03 Asia/Dhaka] PHP Warning:  Undefined array key "employee_id" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/loans.php on line 449
+[17-Nov-2025 12:52:08 Asia/Dhaka] PHP Warning:  Undefined array key "employee_id" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/loans.php on line 449
+[17-Nov-2025 12:52:16 Asia/Dhaka] PHP Warning:  Undefined array key "employee_id" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/loans.php on line 449
+[17-Nov-2025 12:59:28 Asia/Dhaka] PHP Warning:  Undefined array key "employee_id" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/loans.php on line 449
+[17-Nov-2025 13:00:19 Asia/Dhaka] PHP Warning:  Undefined array key "employee_id" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/loans.php on line 449
+[17-Nov-2025 13:00:39 Asia/Dhaka] PHP Warning:  Undefined array key "employee_id" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/loans.php on line 449
+[17-Nov-2025 13:02:33 Asia/Dhaka] PHP Warning:  Undefined array key "employee_id" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/loans.php on line 449
+[17-Nov-2025 13:03:42 Asia/Dhaka] PHP Warning:  Undefined array key "employee_id" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/loans.php on line 449
+[17-Nov-2025 17:25:54 Asia/Dhaka] PHP Warning:  Undefined array key "employee_id" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/loans.php on line 449
+[17-Nov-2025 17:26:13 Asia/Dhaka] PHP Warning:  Undefined array key "employee_id" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/loans.php on line 449
+[17-Nov-2025 21:47:10 Asia/Dhaka] PHP Warning:  Undefined array key "employee_id" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/loans.php on line 449
+[18-Nov-2025 15:34:15 Asia/Dhaka] PHP Warning:  Undefined array key "employee_id" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/loans.php on line 449
+[22-Nov-2025 11:27:10 Asia/Dhaka] PHP Warning:  Undefined array key "employee_id" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/loans.php on line 449
+[22-Nov-2025 11:28:03 Asia/Dhaka] PHP Warning:  Undefined array key "employee_id" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/loans.php on line 449
+[22-Nov-2025 11:28:20 Asia/Dhaka] PHP Warning:  Undefined array key "employee_id" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/loans.php on line 449
+[22-Nov-2025 13:42:28 Asia/Dhaka] PHP Warning:  Undefined array key "employee_id" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/loans.php on line 449
+[22-Nov-2025 13:45:42 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_admin_role() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/loans.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/loans.php on line 15
+[22-Nov-2025 16:44:44 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_superadmin() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/loans.php:447
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/loans.php on line 447
+[22-Nov-2025 18:09:34 Asia/Dhaka] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/leave.php on line 129
+[22-Nov-2025 18:09:34 Asia/Dhaka] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/leave.php on line 132
+[22-Nov-2025 18:17:23 Asia/Dhaka] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/leave.php on line 140
+[22-Nov-2025 18:17:23 Asia/Dhaka] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/leave.php on line 147
+[22-Nov-2025 20:26:53 Asia/Dhaka] PHP Warning:  Undefined variable $is_paid in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/leave.php on line 53
+[22-Nov-2025 20:26:53 Asia/Dhaka] PHP Warning:  Undefined variable $id in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/leave.php on line 53
+[22-Nov-2025 20:26:53 Asia/Dhaka] PHP Warning:  Undefined variable $id in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/leave.php on line 57
+[22-Nov-2025 20:27:23 Asia/Dhaka] PHP Warning:  Undefined variable $is_paid in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/leave.php on line 53
+[22-Nov-2025 20:27:23 Asia/Dhaka] PHP Warning:  Undefined variable $id in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/leave.php on line 53
+[22-Nov-2025 20:27:23 Asia/Dhaka] PHP Warning:  Undefined variable $id in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/leave.php on line 57
+[22-Nov-2025 14:46:18 UTC] PHP Warning:  Undefined variable $presentCount in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 175
+[22-Nov-2025 14:46:18 UTC] PHP Warning:  Undefined variable $onLeaveCount in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 179
+[22-Nov-2025 14:46:18 UTC] PHP Warning:  Undefined variable $lateCount in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 183
+[22-Nov-2025 14:46:18 UTC] PHP Warning:  Undefined variable $absentCount in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 187
+[22-Nov-2025 16:04:49 UTC] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 281
+[22-Nov-2025 17:35:15 UTC] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 281
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 38
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:57:55 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 38
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[22-Nov-2025 18:58:04 UTC] PHP Deprecated:  fputcsv(): the $escape parameter must be provided as its default value will change in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 90
+[23-Nov-2025 01:32:03 Asia/Dhaka] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'employee_id' in 'SELECT' in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php:49
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php(49): PDOStatement->execute()
+#1 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/monthly_attendance_report.php(28): Database->query()
+#2 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/core/classes/Database.php on line 49
+[23-Nov-2025 19:32:55 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "APP_NAME" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php on line 7
+[23-Nov-2025 19:33:10 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "APP_NAME" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php:6
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php(9): include_once()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php on line 6
+[23-Nov-2025 19:33:18 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "APP_NAME" in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php:6
+Stack trace:
+#0 /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/salary_calculation.php(9): include_once()
+#1 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/templates/header.php on line 6
+[24-Nov-2025 01:49:42 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Call to undefined function is_superadmin_logged_in() in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/users.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/ujjalfmc/public_html/hrm.ujjalfm.com/admin/users.php on line 9

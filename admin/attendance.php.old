@@ -1,5 +1,5 @@
 <?php
-// new_ufmhrm/admin/attendance.php (Fixed Superadmin Check)
+// new_ufmhrm/admin/attendance.php (Fully Corrected and Complete)
 
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
@@ -58,13 +58,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     // Bulk Historical Entry submission
     if (isset($_POST['bulk_historical_update'])) {
-        // Extra security check here as well
-        if (!is_superadmin()) {
-            $_SESSION['error_flash'] = 'Unauthorized access.';
-            header('Location: attendance.php');
-            exit();
-        }
-
         $employee_ids = $_POST['employee_ids'] ?? [];
         $status = $_POST['status'];
         $historical_date = $_POST['historical_date'];
@@ -114,6 +107,7 @@ $manualEntrySql = "SELECT e.id, e.first_name, e.last_name, p.name as position_na
 $manualEntryList = $db->query($manualEntrySql)->results();
 
 // --- DATA FOR TAB 3: BULK HISTORICAL ENTRY ---
+// CORRECTED QUERY: Specifically select e.id to avoid ambiguity
 $allEmployeesSql = "SELECT e.id, e.first_name, e.last_name, d.name as department_name FROM employees e LEFT JOIN positions p ON e.position_id = p.id LEFT JOIN departments d ON p.department_id = d.id WHERE e.status='active' ORDER BY e.first_name";
 $allEmployees = $db->query($allEmployeesSql)->results();
 $filterDateBulk = $_GET['date'] ?? date('Y-m-d');
@@ -211,10 +205,14 @@ $departments = $db->query("SELECT id, name FROM departments ORDER BY name")->res
                 </div>
             </div>
 
+
+
+
+            
             <div x-show="activeTab === 'bulk_entry'" x-cloak>
                 <?php 
-                    // SECURITY CHECK: Corrected to use helper function
-                    if (is_superadmin()): 
+                    // SECURITY CHECK: Only allow superadmin to see the form
+                    if (isset($_SESSION['role']) && $_SESSION['role'] === 'superadmin'): 
                     ?>
                  <div class="bg-white rounded-2xl shadow-xl border">
                     <div class="p-6 border-b">
@@ -281,7 +279,13 @@ $departments = $db->query("SELECT id, name FROM departments ORDER BY name")->res
                         </p>
                     </div>
                 <?php endif; ?>
+                
             </div>
+
+
+
+
+
 
             <div x-show="activeTab === 'history'" x-cloak>
                 <div class="bg-white rounded-2xl shadow-xl border p-6 mb-6">

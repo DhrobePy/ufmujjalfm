@@ -89,46 +89,32 @@ $permissions = [
     'Reports' => ['report:view_all', 'report:view_location'],
     'System' => ['activity_log:view', 'permissions:manage']
 ];
-// Simplified Roles List
-$roles = ['superadmin', 'admin-sirajgonj', 'Admin', 'accounts-sirajgonj', 'accounts-rampura', 'attendant-sirajgonj', 'attendant-rampura', 'employee'];
+$roles = ['superadmin', 'admin-sirajgonj', 'admin-rampura', 'accounts-sirajgonj', 'accounts-rampura', 'attendant-sirajgonj', 'attendant-rampura', 'employee'];
 
 
 // --- LOGIC: Handle ALL form submissions before any HTML is sent ---
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // 1. Handle Independent User Creation
+    // 1. Handle New User Creation
     if (isset($_POST['create_user'])) {
-        $fullName = trim($_POST['full_name']); // Now taking Full Name directly
+        $employee_id = (int)$_POST['employee_id'];
         $username = trim($_POST['username']);
         $password = $_POST['password'];
-        $selectedRole = $_POST['role']; // Single role selection
+        $user_roles = $_POST['roles'] ?? [];
 
-        if (!empty($username) && !empty($password) && !empty($fullName) && !empty($selectedRole)) {
+        if (!empty($username) && !empty($password) && !empty($user_roles) && !empty($employee_id)) {
             $db->getPdo()->beginTransaction();
             try {
-                // Insert user independent of employee table (employee_id is NULL)
-                $db->insert('users', [
-                    'employee_id' => null, 
-                    'username' => $username, 
-                    'password' => password_hash($password, PASSWORD_DEFAULT), 
-                    'full_name' => $fullName,
-                    'role' => $selectedRole // Store primary role in main table for reference
-                ]);
-                
+                $employee = $db->query("SELECT first_name, last_name FROM employees WHERE id = ?", [$employee_id])->first();
+                $db->insert('users', ['employee_id' => $employee_id, 'username' => $username, 'password' => password_hash($password, PASSWORD_DEFAULT), 'full_name' => $employee->first_name . ' ' . $employee->last_name]);
                 $userId = $db->getPdo()->lastInsertId();
-                
-                // Assign the selected role in the user_roles table
-                $db->insert('user_roles', ['user_id' => $userId, 'role' => $selectedRole]);
-                
+                foreach ($user_roles as $role) {
+                    $db->insert('user_roles', ['user_id' => $userId, 'role' => $role]);
+                }
                 $db->getPdo()->commit();
-                $_SESSION['success_flash'] = 'User created successfully.';
+                $_SESSION['success_flash'] = 'New user created successfully.';
             } catch (Exception $e) {
                 $db->getPdo()->rollBack();
-                // Check for duplicate entry error
-                if (strpos($e->getMessage(), 'Duplicate entry') !== false) {
-                    $_SESSION['error_flash'] = 'Error: Username already exists.';
-                } else {
-                    $_SESSION['error_flash'] = 'Error creating user: ' . $e->getMessage();
-                }
+                $_SESSION['error_flash'] = 'Error: Username or employee may already be linked.';
             }
         } else {
             $_SESSION['error_flash'] = 'Please fill in all required fields.';
@@ -140,7 +126,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // 2. Handle Role Update
     if (isset($_POST['update_roles'])) {
         $userId = (int)$_POST['user_id'];
-        $newRoles = $_POST['roles'] ?? []; // Keeping array for backward compatibility in editing
+        $newRoles = $_POST['roles'] ?? [];
         
         $db->getPdo()->beginTransaction();
         try {
@@ -149,9 +135,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 foreach ($newRoles as $role) {
                     $db->insert('user_roles', ['user_id' => $userId, 'role' => $role]);
                 }
-                // Update the main role column with the first selected role
-                $primaryRole = reset($newRoles);
-                $db->query("UPDATE users SET role = ? WHERE id = ?", [$primaryRole, $userId]);
             }
             $db->getPdo()->commit();
             $_SESSION['success_flash'] = 'User roles updated successfully.';
@@ -210,9 +193,8 @@ $pageTitle = 'User Management - ' . APP_NAME;
 include_once '../templates/header.php';
 
 // --- DATA FETCHING for different tabs ---
-// Modified query to prefer users.full_name, fallback to employees name if linked
-$allUsers = $db->query("SELECT u.id, u.username, u.full_name as user_full_name, e.first_name, e.last_name, p.name as position_name, (SELECT GROUP_CONCAT(role ORDER BY role SEPARATOR ', ') FROM user_roles WHERE user_id = u.id) as roles FROM users u LEFT JOIN employees e ON u.employee_id = e.id LEFT JOIN positions p ON e.position_id = p.id WHERE u.deleted_at IS NULL ORDER BY u.created_at DESC")->results();
-
+$allUsers = $db->query("SELECT u.id, u.username, e.first_name, e.last_name, p.name as position_name, (SELECT GROUP_CONCAT(role ORDER BY role SEPARATOR ', ') FROM user_roles WHERE user_id = u.id) as roles FROM users u LEFT JOIN employees e ON u.employee_id = e.id LEFT JOIN positions p ON e.position_id = p.id WHERE u.deleted_at IS NULL ORDER BY e.first_name")->results();
+$unlinkedEmployees = $db->query("SELECT id, first_name, last_name FROM employees WHERE status = 'active' AND id NOT IN (SELECT employee_id FROM users WHERE employee_id IS NOT NULL AND deleted_at IS NULL)")->results();
 $activityLog = $db->query("SELECT al.action, al.description, al.created_at, u.username FROM activity_log al JOIN users u ON al.user_id = u.id ORDER BY al.created_at DESC LIMIT 100")->results();
 $saved_permissions_raw = $db->query("SELECT * FROM role_permissions")->results();
 $saved_permissions = [];
@@ -237,19 +219,7 @@ foreach ($saved_permissions_raw as $perm) { $saved_permissions[$perm->role][$per
                 <div class="bg-white rounded-2xl shadow-xl border overflow-hidden"><div class="p-6 border-b"><h2 class="text-xl font-bold">System Users</h2></div><div class="overflow-x-auto"><table class="min-w-full divide-y">
                     <thead class="bg-gray-50"><tr><th class="px-6 py-3 text-left">Full Name</th><th class="px-6 py-3 text-left">Username</th><th class="px-6 py-3 text-left">Assigned Roles</th><th class="px-6 py-3 text-center">Actions</th></tr></thead>
                     <tbody class="divide-y"><?php foreach ($allUsers as $user): ?><tr>
-                        <td class="px-6 py-4">
-                            <div class="font-semibold text-gray-900">
-                                <?php 
-                                // Display direct full_name if available, otherwise combine First+Last from linked employee
-                                echo htmlspecialchars($user->user_full_name ?: ($user->first_name . ' ' . $user->last_name)); 
-                                ?>
-                            </div>
-                            <?php if ($user->position_name): ?>
-                                <div class="text-sm text-gray-500"><?php echo htmlspecialchars($user->position_name); ?></div>
-                            <?php else: ?>
-                                <div class="text-xs text-gray-400 italic">System User</div>
-                            <?php endif; ?>
-                        </td>
+                        <td class="px-6 py-4"><div class="font-semibold"><?php echo htmlspecialchars($user->first_name . ' ' . $user->last_name); ?></div><div class="text-sm text-gray-500"><?php echo htmlspecialchars($user->position_name ?? 'N/A'); ?></div></td>
                         <td class="px-6 py-4 text-sm"><?php echo htmlspecialchars($user->username); ?></td>
                         <td class="px-6 py-4"><div class="flex flex-wrap gap-2 max-w-md">
                             <?php $current_roles = $user->roles ? explode(', ', $user->roles) : [];
@@ -264,45 +234,13 @@ foreach ($saved_permissions_raw as $perm) { $saved_permissions[$perm->role][$per
             </div>
 
             <div x-show="activeTab === 'create'" x-cloak>
-                <div class="bg-white rounded-2xl shadow-xl border p-8 max-w-2xl mx-auto">
-                    <h2 class="text-2xl font-bold mb-6 flex items-center gap-2"><i class="fas fa-user-plus text-primary-600"></i> Create System User</h2>
+                <div class="bg-white rounded-2xl shadow-xl border p-8 max-w-2xl mx-auto"><h2 class="text-2xl font-bold mb-6">Create New User</h2>
                     <form method="POST" class="space-y-6">
                         <input type="hidden" name="create_user" value="1">
-                        
-                        <!-- Full Name Input -->
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-                            <input type="text" name="full_name" required class="w-full rounded-lg border-gray-300 focus:border-primary-500 focus:ring focus:ring-primary-200 transition" placeholder="e.g. John Doe">
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">Username</label>
-                                <input type="text" name="username" required class="w-full rounded-lg border-gray-300 focus:border-primary-500 focus:ring focus:ring-primary-200 transition" placeholder="johndoe">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
-                                <input type="password" name="password" required class="w-full rounded-lg border-gray-300 focus:border-primary-500 focus:ring focus:ring-primary-200 transition" placeholder="********">
-                            </div>
-                        </div>
-
-                        <!-- Simplified Role Selection -->
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Assign Role</label>
-                            <select name="role" required class="w-full rounded-lg border-gray-300 focus:border-primary-500 focus:ring focus:ring-primary-200 transition h-12">
-                                <option value="" disabled selected>Select a role...</option>
-                                <?php foreach ($roles as $role): ?>
-                                    <option value="<?php echo $role; ?>"><?php echo ucfirst(str_replace(['-','_'], ' ', $role)); ?></option>
-                                <?php endforeach; ?>
-                            </select>
-                            <p class="text-xs text-gray-500 mt-1">Select the primary role for this user.</p>
-                        </div>
-
-                        <div class="pt-4 flex justify-end">
-                            <button type="submit" class="px-6 py-3 bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white rounded-lg font-bold shadow-lg transform hover:-translate-y-0.5 transition-all">
-                                <i class="fas fa-check-circle mr-2"></i> Create User Account
-                            </button>
-                        </div>
+                        <div><label class="block text-sm font-medium">Link to Employee</label><select name="employee_id" required class="mt-1 w-full rounded-md border-gray-300"><option value="">Select an unlinked employee...</option><?php foreach($unlinkedEmployees as $emp): ?><option value="<?php echo $emp->id; ?>"><?php echo htmlspecialchars($emp->first_name . ' ' . $emp->last_name); ?></option><?php endforeach; ?></select></div>
+                        <div class="grid grid-cols-2 gap-4"><div><label class="block text-sm font-medium">Username</label><input type="text" name="username" required class="mt-1 w-full rounded-md border-gray-300"></div><div><label class="block text-sm font-medium">Password</label><input type="password" name="password" required class="mt-1 w-full rounded-md border-gray-300"></div></div>
+                        <div><label class="block text-sm font-medium">Assign Roles</label><select name="roles[]" multiple required class="mt-1 w-full rounded-md border-gray-300 h-40"><?php foreach ($roles as $role): ?><option value="<?php echo $role; ?>"><?php echo ucfirst(str_replace(['-','_'], ' ', $role)); ?></option><?php endforeach; ?></select><p class="text-xs text-gray-500 mt-1">Hold Ctrl (or Cmd on Mac) to select multiple roles.</p></div>
+                        <div class="flex justify-end"><button type="submit" class="px-6 py-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-lg font-bold">Create User Account</button></div>
                     </form>
                 </div>
             </div>
@@ -310,7 +248,7 @@ foreach ($saved_permissions_raw as $perm) { $saved_permissions[$perm->role][$per
             <div x-show="activeTab === 'edit'" x-cloak>
                 <?php foreach($allUsers as $user): ?>
                 <div x-show="editUserId === <?php echo $user->id; ?>" class="bg-white rounded-2xl shadow-xl border p-8 max-w-2xl mx-auto">
-                    <h2 class="text-2xl font-bold mb-6">Edit Roles for <?php echo htmlspecialchars($user->user_full_name ?: $user->username); ?></h2>
+                    <h2 class="text-2xl font-bold mb-6">Edit Roles for <?php echo htmlspecialchars($user->first_name . ' ' . $user->last_name); ?></h2>
                     <form method="POST" class="space-y-6">
                         <input type="hidden" name="update_roles" value="1">
                         <input type="hidden" name="user_id" value="<?php echo $user->id; ?>">
